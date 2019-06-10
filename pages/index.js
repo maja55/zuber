@@ -1,50 +1,38 @@
 import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
-import Navigation from '../components/Navigation'
+import data from '../data.json'
 
 class Homepage extends Component {
-  static async getInitialProps () {
+  static getInitialProps () {
+    // fetch('http://localhost:8888/wordpress/wp-json/wp/v2/posts?category=home', {
+    //   method: 'get',
+    //   mode: 'no-cors',
+    // }).then((response) => {
+    //   response.json().then((r) => ({ posts: r }))
+    // }).catch(() => {
+    //   return { posts: data.homepage }
+    // })
 
-    const response = await fetch('http://localhost:8888/wordpress/wp-json/wp/v2/posts?category=home', { 
-      method: 'get',
-      mode: 'no-cors',
-    })
-
-    const posts = await response.json()
-
-    console.log(response, posts);
-    return { posts }
+    return { posts: data.homepage }
   }
 
 
   render() {
-    const { line1, line2, line3, line4, bgImage, topImage } = this.props.posts[0].acf;
+    const { statistics } = this.props.posts;
 
     return (
-      <Fragment>
-        <Navigation/>
-        <header>
-          <h3>{ line1 }</h3>
-          <h3>{ line2 }</h3>
-          <h3>{ line3 }</h3>
-          <h3>{ line4 }</h3>
-        </header>
-        <img src={ bgImage } alt='football' />
-        <img src={ topImage } alt='Zuber' />
-      </Fragment>
+      <div className="bg-dark">
+        <section className="intro">
+          <img className="intro__image" src="/static/images/zuber-intro@2x.png" alt="Steven Zuber" />
+        </section>
+      </div>
     )
   }
 }
 
-Homepage.defaultProps = {
-  posts: []
-}
-
 Homepage.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.shape({
-    acf: PropTypes.shape({})
-  }))
+  posts: PropTypes.shape({})
 }
 
 export default Homepage

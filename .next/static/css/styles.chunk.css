@@ -1,0 +1,233 @@
+@font-face {
+  font-family: drukBold;
+  src: url("/static/fonts/DrukBoldItalic.otf"); }
+
+@font-face {
+  font-family: drukTextBold;
+  src: url("/static/fonts/DrukText-BoldItalic.otf"); }
+
+@font-face {
+  font-family: drukWideBold;
+  src: url("/static/fonts/DrukTextWide-BoldItalic.otf"); }
+
+@font-face {
+  font-family: drukWideSuper;
+  src: url("/static/fonts/DrukTextWide-SuperItalic.otf"); }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  text-transform: uppercase;
+  font-family: drukWideSuper;
+  font-size: 23px;
+  color: #232425;
+  position: relative;
+  overflow: hidden; }
+
+.bg-dark {
+  background-color: #232425; }
+
+.bg-light {
+  background-color: #dadbdb; }
+
+.t-1 {
+  font-size: 259px; }
+
+.t-2 {
+  font-size: 120px; }
+
+.t-3 {
+  font-size: 140px; }
+
+.t-4 {
+  font-size: 80px; }
+
+.t-5 {
+  font-size: 59px; }
+
+.t-6 {
+  font-size: 46px; }
+
+.t-7 {
+  font-size: 40px; }
+
+.t-8 {
+  font-size: 23px; }
+
+@media screen and (max-width: 768px) {
+  .t-6 {
+    font-size: 90%; }
+  .t-8 {
+    font-size: 70%; } }
+
+.t-dark {
+  color: #232425; }
+
+.t-grey {
+  color: #58595b; }
+
+.t-light {
+  color: #dadbdb; }
+
+.t-gold {
+  color: #927c50; }
+
+.t-center {
+  text-align: center; }
+
+.t-left {
+  text-align: left; }
+
+p {
+  font-family: drukWideBold;
+  color: #dadbdb; }
+
+a {
+  text-decoration: none;
+  color: #232425; }
+
+ul {
+  margin: 0;
+  list-style: none; }
+
+button {
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer; }
+
+section {
+  width: 100vw;
+  height: 100vh;
+  padding: 3vh 5vw;
+  overflow: hidden; }
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 5vw; }
+  @media screen and (min-width: 768px) {
+    .header {
+      padding: 3vh 5vw; } }
+  .header img {
+    width: 100px;
+    z-index: 99; }
+    @media screen and (min-width: 480px) {
+      .header img {
+        width: 120px; } }
+    @media screen and (min-width: 960px) {
+      .header img {
+        width: 135px; } }
+    @media screen and (min-width: 1440px) {
+      .header img {
+        width: 146px; } }
+
+.menu-btn {
+  position: relative;
+  width: 30px;
+  height: 26px;
+  margin-left: auto;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  z-index: 101; }
+  .menu-btn span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #dadbdb;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out; }
+    .menu-btn span:nth-child(1) {
+      top: 3px; }
+    .menu-btn span:nth-child(2) {
+      top: 10px; }
+    .menu-btn span:nth-child(3) {
+      top: 17px; }
+  .menu-btn.open span {
+    background: #232425; }
+  .menu-btn.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(140deg); }
+  .menu-btn.open span:nth-child(2) {
+    opacity: 0;
+    left: -30px; }
+  .menu-btn.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-140deg); }
+
+.nav-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateX(100vw);
+  background-color: transparent;
+  transition: all .25s ease-in-out;
+  z-index: 100; }
+  .nav-list img {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    max-height: 95%;
+    transform: scale(0.5);
+    transition: .2s ease .2s; }
+  .nav-list ul {
+    margin: 10vh auto auto 50%;
+    position: relative;
+    z-index: 101;
+    line-height: 84px; }
+    @media screen and (max-width: 768px) {
+      .nav-list ul {
+        line-height: 44px; } }
+    @media screen and (max-width: 480px) {
+      .nav-list ul {
+        margin: 5vh 5vw; } }
+  .nav-list.open {
+    transform: translateX(0);
+    background-color: #dadbdb; }
+    .nav-list.open img {
+      transform: translateX(-95vw) scale(1); }
+      @media screen and (max-width: 480px) {
+        .nav-list.open img {
+          max-height: 85%;
+          transform: translateX(-90vw); } }
+  .nav-list a {
+    padding-left: 0;
+    transition: all .2s ease-out; }
+    .nav-list a:hover {
+      padding-left: 30px; }
+
+.intro {
+  position: relative;
+  background: url("/static/svgs/zuber_desktop.svg");
+  background-size: cover;
+  background-position: center; }
+  .intro .intro__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    max-height: 95%;
+    transform: translateX(-50%); }
+  @media screen and (max-width: 480px) {
+    .intro {
+      background-size: 100% 75%;
+      height: 95vh; }
+      .intro .intro__image {
+        max-height: 75%; } }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/

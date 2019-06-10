@@ -1,0 +1,266 @@
+@font-face {
+  font-family: drukBold;
+  src: url('/static/fonts/DrukBoldItalic.otf');
+}
+
+@font-face {
+  font-family: drukTextBold;
+  src: url('/static/fonts/DrukText-BoldItalic.otf');
+}
+
+@font-face {
+  font-family: drukWideBold;
+  src: url('/static/fonts/DrukTextWide-BoldItalic.otf');
+}
+
+
+@font-face {
+  font-family: drukWideSuper;
+  src: url('/static/fonts/DrukTextWide-SuperItalic.otf');
+}
+
+// breakpoints
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 960px;
+$screen-lg: 1200px;
+$screen-xl: 1440px;
+
+// colors
+$dark: #232425;
+$light: #dadbdb;
+$grey: #58595b;
+$gold: #927c50;
+
+// font sizes
+$font-xxxs: 16px;
+$font-xxs: 23px;
+$font-xs: 40px;
+$font-s: 46px;
+$font-m: 59px;
+$font-l: 80px;
+$font-xl: 140px;
+$font-xxl: 120px;
+$font-xxxl: 259px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-transform: uppercase;
+  font-family: drukWideSuper;
+  font-size: $font-xxs;
+  color: $dark;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-dark { background-color: $dark; }
+.bg-light { background-color: $light; }
+
+// typography
+.t-1 { font-size: $font-xxxl; }
+.t-2 { font-size: $font-xxl; }
+.t-3 { font-size: $font-xl; }
+.t-4 { font-size: $font-l; }
+.t-5 { font-size: $font-m; }
+.t-6 { font-size: $font-s; }
+.t-7 { font-size: $font-xs; }
+.t-8 { font-size: $font-xxs; }
+
+@media screen and (max-width: $screen-sm) {
+  .t-6 { font-size: 90%; }
+  .t-8 { font-size: 70%; }
+}
+
+.t-dark { color: $dark; }
+.t-grey { color: $grey; }
+.t-light { color: $light; }
+.t-gold { color: $gold; }
+
+.t-center { text-align: center; }
+.t-left { text-align: left; }
+
+p {
+  font-family: drukWideBold;
+  color: $light;
+}
+
+a {
+  text-decoration: none;
+  color: $dark;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  padding: 3vh 5vw;
+  overflow: hidden;
+}
+
+// header
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 5vw;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 3vh 5vw;
+  }
+
+  img {
+    width: 100px;
+    z-index: 99;
+
+    @media screen and (min-width: $screen-xs) {
+      width: 120px;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      width: 135px;
+    }
+    
+    @media screen and (min-width: $screen-xl) {
+      width: 146px;
+    }
+  }
+}
+
+.menu-btn {
+  position: relative;
+  width: 30px;
+  height: 26px;
+  margin-left: auto;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  z-index: 101;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $light;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+
+    &:nth-child(1) { top: 3px; }
+    &:nth-child(2) { top: 10px; }
+    &:nth-child(3) { top: 17px; }
+  }
+
+  &.open {
+    span { background: $dark };
+    span:nth-child(1) { top: 10px; transform: rotate(140deg); }
+    span:nth-child(2) { opacity: 0; left: -30px; }
+    span:nth-child(3) { top: 10px; transform: rotate(-140deg); }
+  }
+}
+
+.nav-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateX(100vw);
+  background-color: transparent;
+  transition: all .25s ease-in-out;
+  z-index: 100;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    max-height: 95%;
+    transform: scale(0.5);
+    transition: .2s ease .2s;
+  }
+
+  ul {
+    margin: 10vh auto auto 50%;
+    position: relative;
+    z-index: 101;
+    line-height: 84px;
+
+    @media screen and (max-width: $screen-sm) {
+      line-height: 44px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      margin: 5vh 5vw;
+    }
+  }
+
+  &.open { 
+    transform: translateX(0);
+    background-color: $light;
+
+    img {
+      transform: translateX(-95vw) scale(1);
+
+      @media screen and (max-width: $screen-xs) {
+        max-height: 85%;
+        transform: translateX(-90vw);
+      }
+    }
+  }
+
+  a {
+    padding-left: 0;
+    transition: all .2s ease-out;
+
+    &:hover {
+      padding-left: 30px;
+    }
+  }
+}
+
+// sectiom intro
+.intro {
+  position: relative;
+  background: url('/static/svgs/zuber_desktop.svg');
+  background-size: cover;
+  background-position: center;
+
+  .intro__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    max-height: 95%;
+    transform: translateX(-50%);
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    background-size: 100% 75%;
+    height: 95vh;
+
+    .intro__image {
+      max-height: 75%;
+    }
+  }
+}
