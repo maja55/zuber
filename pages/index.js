@@ -1,38 +1,46 @@
-import React, { Fragment, Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 import data from '../data.json'
+import Section from '../components/Section'
+import Statistics from '../components/Statistics'
+import NationalTeam from '../components/NationalTeam'
+import Fifa from '../components/Fifa'
+import Clubs from '../components/Clubs'
 
-class Homepage extends Component {
-  static getInitialProps () {
-    // fetch('http://localhost:8888/wordpress/wp-json/wp/v2/posts?category=home', {
-    //   method: 'get',
-    //   mode: 'no-cors',
-    // }).then((response) => {
-    //   response.json().then((r) => ({ posts: r }))
-    // }).catch(() => {
-    //   return { posts: data.homepage }
-    // })
-
-    return { posts: data.homepage }
-  }
-
-
-  render() {
-    const { statistics } = this.props.posts;
-
+const Homepage = ({ data, labels }) => {
     return (
-      <div className="bg-dark">
-        <section className="intro">
-          <img className="intro__image" src="/static/images/zuber-intro@2x.png" alt="Steven Zuber" />
-        </section>
-      </div>
+        <div className="bg-dark t-light">
+            <section className="intro">
+                <img className="intro__image" src="/static/images/zuber-intro@2x.png" alt="Steven Zuber" />
+                <img className="intro__logo" src="/static/svgs/lion.svg" alt="Zuber Coat Of Arms" />
+            </section>
+            <Statistics />
+            <NationalTeam />
+            <Fifa />
+            <Clubs />
+
+            {/* video */}
+
+            {/* sponsor */}
+
+            {/* footer */}
+        </div>
     )
-  }
 }
 
+Homepage.getInitialProps = async () => {
+    // const res = await fetch('http://localhost:8888/wordpress/wp-json/wp/v2/posts?category=home', {
+    //   method: 'get',
+    //   mode: 'no-cors',
+    // })
+    // const json = await res.json()
+
+    return { data: data.homepage, labels: data.labels }
+};
+
 Homepage.propTypes = {
-  posts: PropTypes.shape({})
+    data: PropTypes.shape({})
 }
 
 export default Homepage

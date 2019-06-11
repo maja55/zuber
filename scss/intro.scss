@@ -1,0 +1,34 @@
+.intro {
+    position: relative;
+    background: url('/static/svgs/zuber_desktop.svg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .intro__image {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        max-height: 93%;
+        transform: translateX(-50%);
+    }
+
+    .intro__logo {
+        width: 110px;
+        position: absolute;
+        bottom: 6%;
+        right: 5%;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+        background-size: 100% auto;
+        height: 95vh;
+
+        .intro__image {
+            max-height: 75%;
+        }
+
+        .intro__logo {
+            width: 55px;
+        }
+    }
+}

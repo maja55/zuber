@@ -1,0 +1,142 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 7vw;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 3vh 7vw;
+  }
+
+  img {
+    width: 100px;
+    z-index: 99;
+
+    @media screen and (min-width: $screen-xs) {
+      width: 120px;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      width: 135px;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      width: 146px;
+    }
+  }
+}
+
+.menu-btn {
+  position: relative;
+  width: 30px;
+  height: 26px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 101;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $light;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 3px;
+    }
+    &:nth-child(2) {
+      top: 10px;
+    }
+    &:nth-child(3) {
+      top: 17px;
+    }
+  }
+
+  &.open {
+    span {
+      background: $dark;
+    }
+    span:nth-child(1) {
+      top: 10px;
+      transform: rotate(140deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      left: -30px;
+    }
+    span:nth-child(3) {
+      top: 10px;
+      transform: rotate(-140deg);
+    }
+  }
+}
+
+.nav-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateX(100vw);
+  background-color: transparent;
+  transition: all 0.25s ease-in-out;
+  z-index: 100;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    max-height: 95%;
+    transform: scale(0.5);
+    transition: 0.2s ease 0.2s;
+  }
+
+  ul {
+    margin: 10vh auto auto 50%;
+    position: relative;
+    z-index: 101;
+    line-height: 84px;
+
+    @media screen and (max-width: $screen-sm) {
+      line-height: 44px;
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      margin: 5vh 5vw;
+
+      .t-8 {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &.open {
+    transform: translateX(0);
+    background-color: $light;
+
+    img {
+      transform: translateX(-95vw) scale(1);
+
+      @media screen and (max-width: $screen-xs) {
+        max-height: 85%;
+        transform: translateX(-90vw);
+      }
+    }
+  }
+
+  a {
+    padding-left: 0;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      padding-left: 30px;
+    }
+  }
+}

@@ -2297,6 +2297,7 @@ function (_Document) {
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("body", {
+        className: "t-8",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 15

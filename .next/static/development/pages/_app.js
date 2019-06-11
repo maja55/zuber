@@ -75,27 +75,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
 
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Navigation.js";
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
+
+var navLinks = [{
+  href: '/#statistics',
+  labelKey: 'statistics'
+}, {
+  href: '/#career',
+  labelKey: 'career'
+}, {
+  href: '/life',
+  labelKey: 'life'
+}, {
+  href: '/shop',
+  labelKey: 'shop'
+}];
+
+var disableScrolling = function disableScrolling() {
+  window.onscroll = function () {
+    return window.scrollTo(0, 0);
+  };
+};
+
+var enableScrolling = function enableScrolling() {
+  window.onscroll = function () {};
+};
+
+var Navigation = function Navigation() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
       isOpen = _useState2[0],
       toggleMenu = _useState2[1];
 
+  var labels = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["LabelsContext"]);
+
+  var onClick = function onClick() {
+    if (isOpen) {
+      enableScrolling();
+    } else {
+      disableScrolling();
+    }
+
+    toggleMenu(!isOpen);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 36
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -103,48 +141,48 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Navigation.js";
     alt: "Stefan Zuber logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 37
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "menu-btn".concat(isOpen ? ' open' : ''),
-    onClick: function onClick() {
-      return toggleMenu(!isOpen);
-    },
+    onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 42
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 43
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 44
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
     className: "nav-list".concat(isOpen ? ' open' : ''),
+    onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 47
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+    className: "section--nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 48
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -152,125 +190,83 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Navigation.js";
     alt: "Stefan Zuber",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 49
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "t-6",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 50
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/#statistics",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "/#statistics",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, "Statistics"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/#career",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "/life",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, "Career"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/life",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "/life",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, "Life"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/shop",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "/shop",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, "Shop"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+  }, navLinks.map(function (_ref) {
+    var href = _ref.href,
+        labelKey = _ref.labelKey;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: labelKey,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: href,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      href: href,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }, labels[labelKey])));
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     className: "t-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 60
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 61
     },
     __self: this
   }, "EN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 62
     },
     __self: this
   }, " | "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 63
     },
     __self: this
   }, "DE"))))));
-});
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Navigation);
+
+/***/ }),
+
+/***/ "./data.json":
+/*!*******************!*\
+  !*** ./data.json ***!
+  \*******************/
+/*! exports provided: labels, heroImage, footer, homepage, shop, default */
+/***/ (function(module) {
+
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"homepage":{"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"club":"Grasshopper Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"stadium-grashopper-img.jpg","backgroundImageM":"stadium-grashopper-img@2x.jpg","backgroundImageL":"stadium-grashopper-img@3x.jpg","playerImageS":"zuber-grashopper.png","playerImageM":"zuber-grashopper@2x.png","playerImageL":"zuber-grashopper@3x.png"},{"club":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"stadium-cska-moscow-img.jpg","backgroundImageM":"stadium-cska-moscow-img@2x.jpg","backgroundImageL":"stadium-cska-moscow-img@3x.jpg","playerImageS":"zuber-cska.png","playerImageM":"zuber-cska@2x.png","playerImageL":"zuber-cska@3x.png"},{"club":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"stadium-hoffenheim-img.jpg","backgroundImageM":"stadium-hoffenheim-img@2x.jpg","backgroundImageL":"stadium-hoffenheim-img@3x.jpg","playerImageS":"zuber-hoffenheim-img.png","playerImageM":"zuber-hoffenheim-img@2x.png","playerImageL":"zuber-hoffenheim-img@3x.png"},{"club":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"stadium-studttgart-img.jpg","backgroundImageM":"stadium-studttgart-img@2x.jpg","backgroundImageL":"stadium-studttgart-img@3x.jpg","playerImageS":"zuber-stuttgart-img.png","playerImageM":"zuber-stuttgart-img@2x.png","playerImageL":"zuber-stuttgart-img@3x.png"}],"video":"https://www.youtube.com/watch?v=d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","logoKey":"nike","productName":"NIKE MERCURIAL","productImageS":"image-1.png","productImageM":"image-1@2x.png","productImageL":"image-1@3x.png"}},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
 
 /***/ }),
 
@@ -11072,11 +11068,13 @@ module.exports = function(module) {
 /*!***********************!*\
   !*** ./pages/_app.js ***!
   \***********************/
-/*! exports provided: default */
+/*! exports provided: LabelsContext, DataContext, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LabelsContext", function() { return LabelsContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataContext", function() { return DataContext; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
@@ -11094,6 +11092,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_13___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
 
 
 
@@ -11108,6 +11108,9 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_app.js";
 
 
 
+
+var LabelsContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
+var DataContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
 
 var MyApp =
 /*#__PURE__*/
@@ -11129,6 +11132,13 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(LabelsContext.Provider, {
+        value: pageProps.shared.labels,
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 22
         },
         __self: this
@@ -11145,13 +11155,20 @@ function (_App) {
           lineNumber: 24
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
+        value: pageProps.data,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
         },
         __self: this
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      })))));
     }
   }], [{
     key: "getInitialProps",
@@ -11165,25 +11182,20 @@ function (_App) {
             switch (_context.prev = _context.next) {
               case 0:
                 Component = _ref.Component, ctx = _ref.ctx;
-                pageProps = {};
-
-                if (!Component.getInitialProps) {
-                  _context.next = 6;
-                  break;
-                }
-
-                _context.next = 5;
+                _context.next = 3;
                 return Component.getInitialProps(ctx);
 
-              case 5:
+              case 3:
                 pageProps = _context.sent;
-
-              case 6:
+                pageProps.shared = {
+                  labels: _data_json__WEBPACK_IMPORTED_MODULE_13__.labels,
+                  footer: _data_json__WEBPACK_IMPORTED_MODULE_13__.footer
+                };
                 return _context.abrupt("return", {
                   pageProps: pageProps
                 });
 
-              case 7:
+              case 6:
               case "end":
                 return _context.stop();
             }

@@ -1,0 +1,47 @@
+.fifa__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 82vh;
+    position: relative;
+}
+
+.fifa__top {
+    max-width: 75%;
+
+    @media screen and (min-width: $screen-xs) {
+        max-width: 100%;
+    }
+}
+
+.fifa__image {
+    position: relative;
+    width: 100%;
+    right: -20%;
+    height: auto;
+    margin-top: -50px;
+
+    @media screen and (min-width: $screen-sm) {
+        position: absolute;
+        height: auto;
+        width: 90%;
+        top: 0;
+        bottom: 0;
+        right: -7vw;
+        margin-top: 7vh;
+    }
+
+    @media screen and (min-width: $screen-md) {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.fifa__copy {
+    margin: 40px 0;
+}
+
+.fifa__top, .fifa__copy, .fifa__count-bar {
+    position: relative;
+    z-index: 1;
+}

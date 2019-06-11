@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
-        <body>
+        <body className="t-8">
           <Main />
           <NextScript />
         </body>

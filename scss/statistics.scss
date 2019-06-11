@@ -1,0 +1,95 @@
+.statistics {
+    background: url('/static/svgs/thunders.svg') no-repeat;
+    background-size: 85% 90%;
+    background-position: right 20px;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $screen-xs - 1) {
+        background: none;
+        margin-bottom: 0;
+    }
+}
+
+.statistics__content {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+
+    @media screen and (max-width: $screen-xs - 1) {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+}
+
+.statistics__image {
+    position: absolute;
+    height: 78%;
+    top: 20%;
+
+    @media screen and (max-width: $screen-lg - 1) {
+        height: auto;
+        max-height: 78%;
+        max-width: 75%;
+        bottom: 2%;
+        left: 5vw;
+        top: auto;
+    }
+}
+
+.stat-left {
+    margin-right: 7vw;
+}
+
+.stat-right__row {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: $screen-xs - 1) {
+    .stat-left__top.t-6 { font-size: 15vw; }
+
+    .stat-left__bottom {
+        display: flex;
+
+        .t-1 { margin-right: 15px; font-size: 28vw; }
+        .t-2 { line-height: 0.8; font-size: 28vw; }
+    }
+
+    .stat-right {
+        margin-left: auto;
+        margin-top: 20px;
+    }
+
+    .stat-right__row {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (min-width: $screen-xs) {
+    .stat-left__bottom .t-1 { margin-top: 3px; }
+}
+
+
+// count-bar
+
+.count-bar, .count-bar__item , .count-bar__label {
+    display: flex;
+    font-family: drukWideBold;
+}
+
+.count-bar__label {
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+@media screen and (max-width: $screen-md - 1) { 
+    .count-bar__label { font-size: 2.5vw; margin-right: 30px; }
+    .count-bar__count { font-size: 6.3vw; }
+}
+
+@media screen and (max-width: $screen-xs - 1) { 
+    .count-bar { flex-direction: column; }
+    .count-bar__item { margin: 3px 0; }
+    .count-bar__label { font-size: 3vw; }
+    .count-bar__count { font-size: 7.5vw; flex-basis: 15vw; text-align: right; }
+}

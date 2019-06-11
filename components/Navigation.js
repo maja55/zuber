@@ -1,8 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Link from 'next/link'
+import { LabelsContext } from '../pages/_app';
 
-export default () => {
-    const [isOpen, toggleMenu] = useState(false);
+const navLinks = [
+    { href: '/#statistics', labelKey: 'statistics' },
+    { href: '/#career', labelKey: 'career' },
+    { href: '/life', labelKey: 'life' },
+    { href: '/shop', labelKey: 'shop' }
+]
+
+const disableScrolling = () => {
+    window.onscroll = () => window.scrollTo(0, 0)
+}
+
+const enableScrolling = () => {
+    window.onscroll = () => {}
+}
+
+const Navigation = () => {
+    const [isOpen, toggleMenu] = useState(false)
+    const labels = useContext(LabelsContext)
+
+    const onClick = () => {
+        if (isOpen) { 
+            enableScrolling()
+        } else {
+            disableScrolling()
+        }
+
+        toggleMenu(!isOpen)
+    }
 
     return (
         <React.Fragment>
@@ -11,20 +38,25 @@ export default () => {
 
                 <div
                     className={ `menu-btn${isOpen ? ' open' : ''}` }
-                    onClick={ () => toggleMenu(!isOpen) }>
+                    onClick={ onClick }>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </header>
-            <nav className={ `nav-list${isOpen ? ' open' : ''}` }>
-                <section>
+            <nav className={ `nav-list${isOpen ? ' open' : ''}` } onClick={ onClick }>
+                <section className="section--nav">
                     <img src="/static/images/zuber-hero-page@2x.png" alt="Stefan Zuber" />
                     <ul className="t-6">
-                        <li><Link href="/#statistics"><a href="/#statistics">Statistics</a></Link></li>
-                        <li><Link href="/#career"><a href="/life">Career</a></Link></li>
-                        <li><Link href="/life"><a href="/life">Life</a></Link></li>
-                        <li><Link href="/shop"><a href="/shop">Shop</a></Link></li>
+                        {
+                            navLinks.map(({ href, labelKey }) => (
+                                <li key={ labelKey }>
+                                    <Link href={ href }>
+                                        <a href={ href }>{ labels[labelKey] }</a>
+                                    </Link>
+                                </li>
+                            ))
+                        }
                         <li className="t-8">
                             <button onClick={() => {}}>EN</button>
                             <span> | </span>
@@ -36,3 +68,5 @@ export default () => {
         </React.Fragment>
     );
 }
+
+export default Navigation
