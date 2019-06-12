@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { LabelsContext, DataContext } from '../pages/_app'
+import { DataContext } from '../pages/_app'
 import Image from './Image'
 import CountBar from './CountBar'
 
@@ -10,8 +10,7 @@ const data = {
 }
 
 const Fifa = () => {
-    const labels = useContext(LabelsContext);
-    const { fifa } = useContext(DataContext);
+    const { labels, fifa } = useContext(DataContext);
 
     return (
         <section className="fifa">

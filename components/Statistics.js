@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import { LabelsContext, DataContext } from '../pages/_app';
+import { DataContext } from '../pages/_app';
 import Section from './Section';
 import Image from './Image';
 
 const Statistics = () => {
-    const labels = useContext(LabelsContext);
-    const { statistics } = useContext(DataContext);
+    const { labels, statistics } = useContext(DataContext);
 
     return (
         <Section title={ labels.statistics } baseClass="statistics">

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import Link from 'next/link'
-import { LabelsContext } from '../pages/_app';
+import { DataContext } from '../pages/_app';
 
 const navLinks = [
     { href: '/#statistics', labelKey: 'statistics' },
@@ -19,7 +19,7 @@ const enableScrolling = () => {
 
 const Navigation = () => {
     const [isOpen, toggleMenu] = useState(false)
-    const labels = useContext(LabelsContext)
+    const { labels } = useContext(DataContext)
 
     const onClick = () => {
         if (isOpen) { 

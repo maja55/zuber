@@ -1,0 +1,43 @@
+.sponsor__content {
+    display: flex;
+}
+
+.sponsor__title {
+    width: 70vw;
+    position: relative;
+    margin-right: 10vw;
+}
+
+.sponsor__copy {
+    display: none;
+}
+
+.sponsor__copy-lg {
+    margin: 0;
+}
+
+.sponsor__logo {
+    position: absolute;
+    top: 0;
+}
+
+.sponsor__image {
+    position: relative;
+    width: 70%;
+    text-align: center;
+    margin: -5vw 15% 0;
+}
+
+@media screen and (max-width: $screen-md - 1) {
+    .sponsor__copy-lg {
+        display: none;
+    }
+
+    .sponsor__copy {
+        display: block;
+        font-size: 2vw;
+        margin-left: auto;
+        max-width: 70vw;
+        text-align: right;
+    }
+}

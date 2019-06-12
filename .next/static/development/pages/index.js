@@ -25,9 +25,8 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Clubs.js";
 
 
 var Clubs = function Clubs() {
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["LabelsContext"]);
-
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
+      labels = _useContext.labels,
       clubs = _useContext.clubs;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(clubs.length - 1),
@@ -41,21 +40,21 @@ var Clubs = function Clubs() {
     baseClass: "clubs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "club__top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 14
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "clubs__menu t-7 t-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 15
     },
     __self: this
   }, clubs.map(function (_ref, index) {
@@ -66,7 +65,7 @@ var Clubs = function Clubs() {
       className: "clubs__menu-item cta-hover".concat(index === activeClub ? ' active t-light' : ''),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 17
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
@@ -75,7 +74,7 @@ var Clubs = function Clubs() {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 18
       },
       __self: this
     }, startYear, " - ", name));
@@ -87,46 +86,46 @@ var Clubs = function Clubs() {
     imageL: club.backgroundImageL,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 24
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "club__copy t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 31
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "club__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 32
     },
     __self: this
   }, club.name), club.addition && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }, club.addition), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
   }, club.startYear, "-", club.endYear), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
   }, club.position, " #", club.playerNumber))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "club__bottom",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -135,7 +134,7 @@ var Clubs = function Clubs() {
     alt: "".concat(club.name, " Coat of Arms"),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -156,7 +155,7 @@ var Clubs = function Clubs() {
     }],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -167,7 +166,7 @@ var Clubs = function Clubs() {
     imageL: club.playerImageL,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 50
     },
     __self: this
   }));
@@ -274,42 +273,41 @@ var data = {
 };
 
 var Fifa = function Fifa() {
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["LabelsContext"]);
-
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
+      labels = _useContext.labels,
       fifa = _useContext.fifa;
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "fifa",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "fifa__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "fifa__top t-gold t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   }, labels.fifaWorldCup, " 2019"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }, labels.statistics)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -319,14 +317,14 @@ var Fifa = function Fifa() {
     imageL: fifa.imageL,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "fifa__copy",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 28
     },
     __self: this
   }, fifa.copy), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -346,13 +344,124 @@ var Fifa = function Fifa() {
     }],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 29
     },
     __self: this
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Fifa);
+
+/***/ }),
+
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+
+var _jsxFileName = "/Users/maja/code/ZuberSite/components/Footer.js";
+
+
+
+var Footer = function Footer() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
+      labels = _useContext.labels,
+      footer = _useContext.footer,
+      page = _useContext.page;
+
+  var socials = footer.socials,
+      email = footer.email,
+      copyright = footer.copyright;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
+    className: page === 'Homepage' ? 't-grey' : '',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+    className: "section--flex site-footer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "site-footer__social",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, labels.socialLinks), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    className: "site-footer__social-links",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(socials).map(function (label, index, array) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      href: socials[label],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }, label), index !== array.length - 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "divider",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, "|"));
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "site-footer__info",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    href: "mailto:".concat(email),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, email), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, copyright))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
 
 /***/ }),
 
@@ -478,31 +587,30 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/NationalTeam.js";
 
 
 var NationalTeam = function NationalTeam() {
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["LabelsContext"]);
-
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
-      nationalTeam = _useContext.nationalTeam;
+      nationalTeam = _useContext.nationalTeam,
+      labels = _useContext.labels;
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: labels.internationalCareer,
     baseClass: "national-team",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "national-team__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "national-team__top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -510,13 +618,13 @@ var NationalTeam = function NationalTeam() {
     alt: "Swiss National Team Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 14
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 15
     },
     __self: this
   }, nationalTeam.copy)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -526,28 +634,28 @@ var NationalTeam = function NationalTeam() {
     imageL: nationalTeam.imageL,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 17
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "national-team__bottom t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-3 t-outline t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 24
     },
     __self: this
   }, nationalTeam.startYear, "-", nationalTeam.endYear), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, nationalTeam.position, " #", nationalTeam.playerNumber))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -567,7 +675,7 @@ var NationalTeam = function NationalTeam() {
     }],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 28
     },
     __self: this
   }));
@@ -627,7 +735,8 @@ var Navigation = function Navigation() {
       isOpen = _useState2[0],
       toggleMenu = _useState2[1];
 
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["LabelsContext"]);
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
+      labels = _useContext.labels;
 
   var onClick = function onClick() {
     if (isOpen) {
@@ -793,9 +902,10 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Section.js";
 var Section = function Section(_ref) {
   var baseClass = _ref.baseClass,
       title = _ref.title,
-      children = _ref.children;
+      children = _ref.children,
+      flexHeight = _ref.flexHeight;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: baseClass,
+    className: "".concat(baseClass).concat(flexHeight ? 'section--flex' : ''),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
@@ -812,6 +922,102 @@ var Section = function Section(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Section);
+
+/***/ }),
+
+/***/ "./components/Sponsor.js":
+/*!*******************************!*\
+  !*** ./components/Sponsor.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+var _jsxFileName = "/Users/maja/code/ZuberSite/components/Sponsor.js";
+
+
+
+
+var Sponsor = function Sponsor() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
+      sponsor = _useContext.sponsor;
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "sponsor section--flex",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "sponsor__logo",
+    src: "/static/svgs/nike.svg",
+    alt: "Nike Logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sponsor__content",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sponsor__title t-3 t-gold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "t-outline t-gold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, sponsor.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, sponsor.productName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "sponsor__copy-lg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, sponsor.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    baseClase: "sponsor",
+    imageS: sponsor.productImageS,
+    imageM: sponsor.productImageM,
+    imageL: sponsor.productImageL,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "sponsor__copy",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, sponsor.description));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Sponsor);
 
 /***/ }),
 
@@ -836,9 +1042,8 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Statistics.js";
 
 
 var Statistics = function Statistics() {
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["LabelsContext"]);
-
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
+      labels = _useContext.labels,
       statistics = _useContext.statistics;
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -846,7 +1051,7 @@ var Statistics = function Statistics() {
     baseClass: "statistics",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -856,155 +1061,155 @@ var Statistics = function Statistics() {
     imageL: statistics.imageL,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "statistics__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-left t-center",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-left__top t-6 t-outline t-light",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   }, labels.played), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-left__bottom",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-1",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }, statistics.totalGamesCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-2",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }, labels.games))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-right t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-right__row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-6 t-outline t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 27
     },
     __self: this
   }, labels.scored), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 28
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 29
     },
     __self: this
   }, statistics.totalGoalsCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 30
     },
     __self: this
   }, " ", labels.goals))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-right__row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-6 t-outline t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
   }, labels.won), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 36
     },
     __self: this
   }, statistics.totalTrophiesCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 37
     },
     __self: this
   }, " ", labels.trophies))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stat-right__row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-6 t-outline t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: this
   }, labels.made), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 42
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 43
     },
     __self: this
   }, statistics.totalAssistsCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 44
     },
     __self: this
   }, " ", labels.assists))))));
@@ -1018,10 +1223,10 @@ var Statistics = function Statistics() {
 /*!*******************!*\
   !*** ./data.json ***!
   \*******************/
-/*! exports provided: labels, heroImage, footer, homepage, shop, default */
+/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, shop, default */
 /***/ (function(module) {
 
-module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"homepage":{"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"video":"https://www.youtube.com/watch?v=d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","logoKey":"nike","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"}},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
 
 /***/ }),
 
@@ -1110,6 +1315,28 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/create */ "./
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "./node_modules/core-js/library/fn/object/define-property.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "./node_modules/core-js/library/fn/object/get-own-property-descriptor.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "./node_modules/core-js/library/fn/object/get-own-property-symbols.js");
 
 /***/ }),
 
@@ -1479,35 +1706,32 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
+  return obj;
 }
 
 /***/ }),
@@ -1660,6 +1884,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+
+
+
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    var ownKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default()(source);
+
+    if (typeof _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a === 'function') {
+      ownKeys = ownKeys.concat(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(source).filter(function (sym) {
+        return _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
 }
 
 /***/ }),
@@ -2060,6 +2327,35 @@ var $Object = __webpack_require__(/*! ../../modules/_core */ "./node_modules/cor
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/object/get-own-property-descriptor.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/core-js/library/fn/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.object.get-own-property-descriptor */ "./node_modules/core-js/library/modules/es6.object.get-own-property-descriptor.js");
+var $Object = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object;
+module.exports = function getOwnPropertyDescriptor(it, key) {
+  return $Object.getOwnPropertyDescriptor(it, key);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/object/get-own-property-symbols.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/core-js/library/fn/object/get-own-property-symbols.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../modules/es6.symbol */ "./node_modules/core-js/library/modules/es6.symbol.js");
+module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.getOwnPropertySymbols;
 
 
 /***/ }),
@@ -4724,6 +5020,26 @@ $export($export.S, 'Object', { create: __webpack_require__(/*! ./_object-create 
 var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !__webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js"), 'Object', { defineProperty: __webpack_require__(/*! ./_object-dp */ "./node_modules/core-js/library/modules/_object-dp.js").f });
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.object.get-own-property-descriptor.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.object.get-own-property-descriptor.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+var toIObject = __webpack_require__(/*! ./_to-iobject */ "./node_modules/core-js/library/modules/_to-iobject.js");
+var $getOwnPropertyDescriptor = __webpack_require__(/*! ./_object-gopd */ "./node_modules/core-js/library/modules/_object-gopd.js").f;
+
+__webpack_require__(/*! ./_object-sap */ "./node_modules/core-js/library/modules/_object-sap.js")('getOwnPropertyDescriptor', function () {
+  return function getOwnPropertyDescriptor(it, key) {
+    return $getOwnPropertyDescriptor(toIObject(it), key);
+  };
+});
 
 
 /***/ }),
@@ -12501,17 +12817,16 @@ module.exports = function(module) {
 /*!***********************!*\
   !*** ./pages/_app.js ***!
   \***********************/
-/*! exports provided: LabelsContext, DataContext, default */
+/*! exports provided: DataContext, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LabelsContext", function() { return LabelsContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataContext", function() { return DataContext; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -12523,10 +12838,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
 /* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_13___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_14___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
 
 
 
@@ -12542,7 +12858,7 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_app.js";
 
 
 
-var LabelsContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
+
 var DataContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
 
 var MyApp =
@@ -12561,47 +12877,55 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
-          pageProps = _this$props.pageProps;
+          data = _this$props.data;
+      var bgClass = Component.name === 'Homepage' ? 'bg-dark' : 'bg-light';
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 29
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(LabelsContext.Provider, {
-        value: pageProps.shared.labels,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
+        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
+          page: Component.name
+        }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 30
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "page page--".concat(Component.name, " ").concat(bgClass),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 32
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        key: "navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 33
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
-        value: pageProps.data,
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 34
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 35
         },
         __self: this
-      })))));
+      }))));
     }
   }], [{
     key: "getInitialProps",
@@ -12609,26 +12933,17 @@ function (_App) {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var Component, ctx, pageProps;
+        var Component, ctx;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 Component = _ref.Component, ctx = _ref.ctx;
-                _context.next = 3;
-                return Component.getInitialProps(ctx);
-
-              case 3:
-                pageProps = _context.sent;
-                pageProps.shared = {
-                  labels: _data_json__WEBPACK_IMPORTED_MODULE_13__.labels,
-                  footer: _data_json__WEBPACK_IMPORTED_MODULE_13__.footer
-                };
                 return _context.abrupt("return", {
-                  pageProps: pageProps
+                  data: _data_json__WEBPACK_IMPORTED_MODULE_14__
                 });
 
-              case 6:
+              case 2:
               case "end":
                 return _context.stop();
             }
@@ -12647,7 +12962,12 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_9___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp);
+/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get("https://api-football-v1.p.rapidapi.com/v2/players/team/172")
+// .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
+// .header("X-RapidAPI-Key", "d828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453")
+// .end(function (result) {
+//   console.log(result.status, result.headers, result.body);
+// });
 
 /***/ }),
 
@@ -12660,24 +12980,19 @@ function (_App) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
-/* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Section */ "./components/Section.js");
-/* harmony import */ var _components_Statistics__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Statistics */ "./components/Statistics.js");
-/* harmony import */ var _components_NationalTeam__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/NationalTeam */ "./components/NationalTeam.js");
-/* harmony import */ var _components_Fifa__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Fifa */ "./components/Fifa.js");
-/* harmony import */ var _components_Clubs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Clubs */ "./components/Clubs.js");
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
+/* harmony import */ var _components_Statistics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Statistics */ "./components/Statistics.js");
+/* harmony import */ var _components_NationalTeam__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/NationalTeam */ "./components/NationalTeam.js");
+/* harmony import */ var _components_Fifa__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Fifa */ "./components/Fifa.js");
+/* harmony import */ var _components_Clubs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Clubs */ "./components/Clubs.js");
+/* harmony import */ var _components_Sponsor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Sponsor */ "./components/Sponsor.js");
 var _jsxFileName = "/Users/maja/code/ZuberSite/pages/index.js";
 
 
@@ -12689,98 +13004,73 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/index.js";
 
 
 
-var Homepage = function Homepage(_ref) {
-  var data = _ref.data,
-      labels = _ref.labels;
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+var Homepage = function Homepage() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bg-dark t-light",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("section", {
-    className: "intro",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
-    className: "intro__image",
-    src: "/static/images/zuber-intro@2x.png",
-    alt: "Steven Zuber",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "intro",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
-    className: "intro__logo",
-    src: "/static/svgs/lion.svg",
-    alt: "Zuber Coat Of Arms",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "intro__image",
+    src: "/static/images/zuber-intro@2x.png",
+    alt: "Steven Zuber",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Statistics__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "intro__logo",
+    src: "/static/svgs/lion.svg",
+    alt: "Zuber Coat Of Arms",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 17
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_NationalTeam__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Statistics__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Fifa__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NationalTeam__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Clubs__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Fifa__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21
     },
     __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Clubs__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Sponsor__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
   }));
 };
 
-Homepage.getInitialProps =
-/*#__PURE__*/
-Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-/*#__PURE__*/
-_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          return _context.abrupt("return", {
-            data: _data_json__WEBPACK_IMPORTED_MODULE_5__.homepage,
-            labels: _data_json__WEBPACK_IMPORTED_MODULE_5__.labels
-          });
-
-        case 1:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, _callee);
-}));
-Homepage.propTypes = {
-  data: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({})
-};
-/* harmony default export */ __webpack_exports__["default"] = (Homepage); // unirest.get("https://api-football-v1.p.rapidapi.com/v2/players/team/172")
-// .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
-// .header("X-RapidAPI-Key", "d828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453")
-// .end(function (result) {
-//   console.log(result.status, result.headers, result.body);
-// });
+/* harmony default export */ __webpack_exports__["default"] = (Homepage);
 
 /***/ }),
 

@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react'
-import { LabelsContext, DataContext } from '../pages/_app'
+import { DataContext } from '../pages/_app'
 import Image from './Image'
 import Section from './Section'
 import CountBar from './CountBar'
 
 const Clubs = () => {
-    const labels = useContext(LabelsContext)
-    const { clubs } = useContext(DataContext)
+    const { labels, clubs } = useContext(DataContext)
     const [activeClub, setActiveClub ] = useState(clubs.length - 1)
     const club = clubs[activeClub]
 

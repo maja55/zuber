@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
-import { LabelsContext, DataContext } from '../pages/_app'
+import { DataContext } from '../pages/_app'
 import Image from './Image'
 import Section from './Section'
 import CountBar from './CountBar'
 
 const NationalTeam = () => {
-    const labels = useContext(LabelsContext);
-    const { nationalTeam } = useContext(DataContext);
+    const { nationalTeam, labels } = useContext(DataContext);
 
     return (
         <Section title={ labels.internationalCareer } baseClass="national-team">

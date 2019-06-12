@@ -93,6 +93,117 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Footer.js":
+/*!******************************!*\
+  !*** ./components/Footer.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+
+var _jsxFileName = "/Users/maja/code/ZuberSite/components/Footer.js";
+
+
+
+var Footer = function Footer() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
+      labels = _useContext.labels,
+      footer = _useContext.footer,
+      page = _useContext.page;
+
+  var socials = footer.socials,
+      email = footer.email,
+      copyright = footer.copyright;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
+    className: page === 'Homepage' ? 't-grey' : '',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+    className: "section--flex site-footer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "site-footer__social",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, labels.socialLinks), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    className: "site-footer__social-links",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(socials).map(function (label, index, array) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      href: socials[label],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }, label), index !== array.length - 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "divider",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, "|"));
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "site-footer__info",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    href: "mailto:".concat(email),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, email), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, copyright))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
+
+/***/ }),
+
 /***/ "./components/Head.js":
 /*!****************************!*\
   !*** ./components/Head.js ***!
@@ -204,7 +315,8 @@ var Navigation = function Navigation() {
       isOpen = _useState2[0],
       toggleMenu = _useState2[1];
 
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["LabelsContext"]);
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
+      labels = _useContext.labels;
 
   var onClick = function onClick() {
     if (isOpen) {
@@ -357,10 +469,10 @@ var Navigation = function Navigation() {
 /*!*******************!*\
   !*** ./data.json ***!
   \*******************/
-/*! exports provided: labels, heroImage, footer, homepage, shop, default */
+/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, shop, default */
 /***/ (function(module) {
 
-module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"homepage":{"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"video":"https://www.youtube.com/watch?v=d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","logoKey":"nike","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"}},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
 
 /***/ }),
 
@@ -430,6 +542,28 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js":
 /*!********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js ***!
@@ -438,6 +572,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/get-prototype-of */ "core-js/library/fn/object/get-prototype-of");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
 
 /***/ }),
 
@@ -693,35 +838,32 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
+  return obj;
 }
 
 /***/ }),
@@ -836,6 +978,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableRest; });
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+
+
+
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    var ownKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default()(source);
+
+    if (typeof _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a === 'function') {
+      ownKeys = ownKeys.concat(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(source).filter(function (sym) {
+        return _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
 }
 
 /***/ }),
@@ -1601,17 +1786,16 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 /*!***********************!*\
   !*** ./pages/_app.js ***!
   \***********************/
-/*! exports provided: LabelsContext, DataContext, default */
+/*! exports provided: DataContext, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LabelsContext", function() { return LabelsContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataContext", function() { return DataContext; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -1623,10 +1807,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
 /* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_13___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_14___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
 
 
 
@@ -1642,7 +1827,7 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_app.js";
 
 
 
-var LabelsContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
+
 var DataContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
 
 var MyApp =
@@ -1661,47 +1846,55 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
-          pageProps = _this$props.pageProps;
+          data = _this$props.data;
+      var bgClass = Component.name === 'Homepage' ? 'bg-dark' : 'bg-light';
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 29
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(LabelsContext.Provider, {
-        value: pageProps.shared.labels,
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
+        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
+          page: Component.name
+        }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 30
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "page page--".concat(Component.name, " ").concat(bgClass),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 32
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        key: "navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 33
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
-        value: pageProps.data,
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 34
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 35
         },
         __self: this
-      })))));
+      }))));
     }
   }], [{
     key: "getInitialProps",
@@ -1709,26 +1902,17 @@ function (_App) {
       var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
       /*#__PURE__*/
       _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_ref) {
-        var Component, ctx, pageProps;
+        var Component, ctx;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 Component = _ref.Component, ctx = _ref.ctx;
-                _context.next = 3;
-                return Component.getInitialProps(ctx);
-
-              case 3:
-                pageProps = _context.sent;
-                pageProps.shared = {
-                  labels: _data_json__WEBPACK_IMPORTED_MODULE_13__.labels,
-                  footer: _data_json__WEBPACK_IMPORTED_MODULE_13__.footer
-                };
                 return _context.abrupt("return", {
-                  pageProps: pageProps
+                  data: _data_json__WEBPACK_IMPORTED_MODULE_14__
                 });
 
-              case 6:
+              case 2:
               case "end":
                 return _context.stop();
             }
@@ -1747,7 +1931,12 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_9___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp);
+/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get("https://api-football-v1.p.rapidapi.com/v2/players/team/172")
+// .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
+// .header("X-RapidAPI-Key", "d828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453")
+// .end(function (result) {
+//   console.log(result.status, result.headers, result.body);
+// });
 
 /***/ }),
 
@@ -1840,6 +2029,28 @@ module.exports = require("core-js/library/fn/object/define-property");
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/get-own-property-descriptor":
+/*!************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptor" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
 /***/ "core-js/library/fn/object/get-prototype-of":
 /*!*************************************************************!*\
   !*** external "core-js/library/fn/object/get-prototype-of" ***!
@@ -1848,6 +2059,17 @@ module.exports = require("core-js/library/fn/object/define-property");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/get-prototype-of");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/keys":
+/*!*************************************************!*\
+  !*** external "core-js/library/fn/object/keys" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/keys");
 
 /***/ }),
 
