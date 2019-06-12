@@ -44,15 +44,15 @@ const Navigation = () => {
                     <span></span>
                 </div>
             </header>
-            <nav className={ `nav-list${isOpen ? ' open' : ''}` } onClick={ onClick }>
-                <section className="section--nav">
+            <nav className={ `menu${isOpen ? ' open' : ''}` } onClick={ onClick }>
+                <section className="section--menu">
                     <img src="/static/images/zuber-hero-page@2x.png" alt="Stefan Zuber" />
                     <ul className="t-6">
                         {
                             navLinks.map(({ href, labelKey }) => (
                                 <li key={ labelKey }>
                                     <Link href={ href }>
-                                        <a href={ href }>{ labels[labelKey] }</a>
+                                        <a className="cta-hover" href={ href }>{ labels[labelKey] }</a>
                                     </Link>
                                 </li>
                             ))

@@ -35,45 +35,34 @@ $gold: #927c50;
 
 // font sizes
 $font-xxxs: 16px;
-$font-xxs: 23px;
-$font-xs: 40px;
-$font-s: 46px;
-$font-m: 59px;
+$font-xxs: 1.65vw; // 23px
+$font-xs: 3.3vw; // 40px
+$font-s: 3.5vw; // 46px
+$font-m: 4.3vw; // 59px
 $font-l: 80px;
-$font-xl: 120px;
-$font-xxl: 140px;
-$font-xxxl: 259px;
-
-$font-xxxs: 16px;
-$font-xxs: 1.65vw;
-$font-xs: 40px;
-$font-s: 3.6vw;
-$font-m: 4.3vw;
-$font-l: 80px;
-$font-xl: 8.5vw;
-$font-xxl: 11vw;
-$font-xxxl: 20vw;
+$font-xl: 8.3vw; // 120px
+$font-xxl: 11vw; // 140px
+$font-xxxl: 20vw; // 259px
 
 $min-font-xxs: 15px;
 $min-font-s: 18px;
 $min-font-l: 28px;
-$min-font-xl: 45px;
+$min-font-xl: 43px;
 
 // typography
-
 .t-1 { font-size: $font-xxxl; font-family: drukBold; line-height: 0.8; }
 .t-2 { font-size: $font-xxl; font-family: drukBold; line-height: 0.9; }
-.t-3 { font-size: $font-xl; font-family: drukTextBold; line-height: 0.9; }
+.t-3 { font-size: $font-xl; font-family: drukTextBold; line-height: 0.9; letter-spacing: -1.5px; }
 .t-4 { font-size: $font-l; }
 .t-5 { font-size: $font-m; line-height: 0.9; }
 .t-6 { font-size: $font-s; line-height: 1.1; }
-.t-7 { font-size: $font-xs; }
+.t-7 { font-size: $font-xs; font-family: drukTextBold; }
 .t-8 { font-size: $font-xxs; font-family: drukWideSuper; line-height: 1.2; }
 
 @media screen and (max-width: $screen-xs) { 
     .t-3 { font-size: $min-font-xl; }
-    .t-6.t-outline { font-size: $min-font-l; }
     .t-6 { font-size: $min-font-s; }
+    .t-6.t-outline { font-size: $min-font-l; }
     .t-8 { font-size: $min-font-xxs; }
 }
 
@@ -98,13 +87,11 @@ $min-font-xl: 45px;
 
 
 // background
-
 .bg-dark { background-color: $dark; }
 .bg-light { background-color: $light; }
 
 
 // global styles
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -140,6 +127,7 @@ button {
     background-color: transparent;
     font-family: inherit;
     font-size: inherit;
+    text-transform: uppercase;
     outline: none;
     cursor: pointer;
 }
@@ -148,7 +136,7 @@ section {
     width: 100vw;
     min-height: 100vh;
     padding: 6vh 7vw;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
     margin-bottom: 6vw;
 
@@ -164,11 +152,28 @@ section {
     }
 }
 
+.section-title {
+    margin-bottom: 4vw;
+}
+
+.cta-hover {
+    padding-left: 0;
+    padding-right: 30px;
+    transition: all 0.15s ease-out;
+
+    &.active,
+    &:focus,
+    &:hover {
+      padding-left: 30px;
+      padding-right: 0;
+    }
+}
+
 
 // components
-
 @import './menu.scss';
 @import './intro.scss';
 @import './statistics.scss';
-@import './national-team';
-@import './fifa';
+@import './national-team.scss';
+@import './fifa.scss';
+@import './clubs.scss'

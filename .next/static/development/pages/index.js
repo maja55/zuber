@@ -9,12 +9,14 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
-/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
-/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
+/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Clubs.js";
 
 
@@ -23,96 +25,149 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Clubs.js";
 
 
 var Clubs = function Clubs() {
-  var labels = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["LabelsContext"]);
+  var labels = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["LabelsContext"]);
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
       clubs = _useContext.clubs;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(clubs.length - 1),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      activeClub = _useState2[0],
+      setActiveClub = _useState2[1];
+
+  var club = clubs[activeClub];
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: labels.clubCareer,
     baseClass: "clubs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "club__content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "club__top",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/static/svgs/swiss-club.svg",
-    alt: "Swiss National Team Logo",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club__top",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    className: "clubs__menu t-7 t-grey",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: this
-  }, clubs.copy)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    baseClase: "club",
-    imageS: clubs.imageS,
-    imageM: clubs.imageM,
-    imageL: clubs.imageL,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "club__bottom t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3 t-outline t-gold",
+  }, clubs.map(function (_ref, index) {
+    var name = _ref.name,
+        startYear = _ref.startYear;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: name,
+      className: "clubs__menu-item cta-hover".concat(index === activeClub ? ' active t-light' : ''),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      onClick: function onClick() {
+        return setActiveClub(index);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, startYear, " - ", name));
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    baseClase: "club-bg",
+    alt: "".concat(club.name, " Stadium"),
+    imageS: club.backgroundImageS,
+    imageM: club.backgroundImageM,
+    imageL: club.backgroundImageL,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 25
     },
     __self: this
-  }, clubs.startYear, "-", clubs.endYear), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3",
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club__copy t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 32
     },
     __self: this
-  }, clubs.position, " #", clubs.playerNumber))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club__name",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }, club.name), club.addition && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, club.addition), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, club.startYear, "-", club.endYear), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, club.position, " #", club.playerNumber))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club__bottom",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    className: "club__logo",
+    src: "/static/svgs/".concat(club.coatOfArmsKey, ".svg"),
+    alt: "".concat(club.name, " Coat of Arms"),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     baseClass: "club",
+    isVertical: true,
     items: [{
-      count: clubs.gamesCount,
+      count: club.gamesCount,
       labelTop: labels.games,
       labelBottom: labels.played
     }, {
-      count: clubs.goalsCount,
+      count: club.goalsCount,
       labelTop: labels.goals,
       labelBottom: labels.scored
     }, {
-      count: clubs.assistsCount,
+      count: club.assistsCount,
       labelTop: labels.goal,
       labelBottom: labels.assists
     }],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 41
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    baseClase: "club-top",
+    alt: "Steven Zuber in ".concat(club.name),
+    imageS: club.playerImageS,
+    imageM: club.playerImageM,
+    imageL: club.playerImageL,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
     },
     __self: this
   }));
@@ -138,9 +193,10 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/CountBar.js";
 
 var CountBar = function CountBar(_ref) {
   var baseClass = _ref.baseClass,
-      items = _ref.items;
+      items = _ref.items,
+      isVertical = _ref.isVertical;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "count-bar ".concat(baseClass, "__count-bar"),
+    className: "count-bar ".concat(baseClass, "__count-bar").concat(isVertical ? ' count-bar--vertical' : ''),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
@@ -631,7 +687,7 @@ var Navigation = function Navigation() {
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-    className: "nav-list".concat(isOpen ? ' open' : ''),
+    className: "menu".concat(isOpen ? ' open' : ''),
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
@@ -639,7 +695,7 @@ var Navigation = function Navigation() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--nav",
+    className: "section--menu",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
@@ -678,6 +734,7 @@ var Navigation = function Navigation() {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      className: "cta-hover",
       href: href,
       __source: {
         fileName: _jsxFileName,
@@ -745,7 +802,7 @@ var Section = function Section(_ref) {
     },
     __self: this
   }, title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "t-6 t-grey",
+    className: "section-title t-6 t-grey",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
@@ -964,7 +1021,7 @@ var Statistics = function Statistics() {
 /*! exports provided: labels, heroImage, footer, homepage, shop, default */
 /***/ (function(module) {
 
-module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"homepage":{"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"club":"Grasshopper Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"stadium-grashopper-img.jpg","backgroundImageM":"stadium-grashopper-img@2x.jpg","backgroundImageL":"stadium-grashopper-img@3x.jpg","playerImageS":"zuber-grashopper.png","playerImageM":"zuber-grashopper@2x.png","playerImageL":"zuber-grashopper@3x.png"},{"club":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"stadium-cska-moscow-img.jpg","backgroundImageM":"stadium-cska-moscow-img@2x.jpg","backgroundImageL":"stadium-cska-moscow-img@3x.jpg","playerImageS":"zuber-cska.png","playerImageM":"zuber-cska@2x.png","playerImageL":"zuber-cska@3x.png"},{"club":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"stadium-hoffenheim-img.jpg","backgroundImageM":"stadium-hoffenheim-img@2x.jpg","backgroundImageL":"stadium-hoffenheim-img@3x.jpg","playerImageS":"zuber-hoffenheim-img.png","playerImageM":"zuber-hoffenheim-img@2x.png","playerImageL":"zuber-hoffenheim-img@3x.png"},{"club":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"stadium-studttgart-img.jpg","backgroundImageM":"stadium-studttgart-img@2x.jpg","backgroundImageL":"stadium-studttgart-img@3x.jpg","playerImageS":"zuber-stuttgart-img.png","playerImageM":"zuber-stuttgart-img@2x.png","playerImageL":"zuber-stuttgart-img@3x.png"}],"video":"https://www.youtube.com/watch?v=d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","logoKey":"nike","productName":"NIKE MERCURIAL","productImageS":"image-1.png","productImageM":"image-1@2x.png","productImageL":"image-1@3x.png"}},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"homepage":{"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"video":"https://www.youtube.com/watch?v=d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","logoKey":"nike","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"}},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
 
 /***/ }),
 

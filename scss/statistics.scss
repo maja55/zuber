@@ -13,11 +13,9 @@
 .statistics__content {
     display: flex;
     justify-content: flex-end;
-    margin-top: 50px;
 
     @media screen and (max-width: $screen-xs - 1) {
         flex-direction: column;
-        margin-top: 20px;
     }
 }
 
@@ -82,14 +80,26 @@
     margin-right: 40px;
 }
 
+.count-bar--vertical {
+    flex-direction: column;
+}
+
 @media screen and (max-width: $screen-md - 1) { 
     .count-bar__label { font-size: 2.5vw; margin-right: 30px; }
     .count-bar__count { font-size: 6.3vw; }
+}
+
+.count-bar--vertical {
+    display: inline-flex;
+    flex-direction: column;
+    
+    .count-bar__item { margin: 3px 0; }
+    .count-bar__count { flex-basis: 20vw; text-align: right; }
 }
 
 @media screen and (max-width: $screen-xs - 1) { 
     .count-bar { flex-direction: column; }
     .count-bar__item { margin: 3px 0; }
     .count-bar__label { font-size: 3vw; }
-    .count-bar__count { font-size: 7.5vw; flex-basis: 15vw; text-align: right; }
+    .count-bar__count { font-size: 7.5vw; flex-basis: 20vw; text-align: right; }
 }

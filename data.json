@@ -65,7 +65,8 @@
     },
     "clubs": [
       {
-        "club": "Grasshopper Club",
+        "name": "Grasshopper",
+        "addition": "Club",
         "coatOfArmsKey": "grasshopper",
         "position": "midfield",
         "playerNumber": 13,
@@ -74,15 +75,15 @@
         "gamesCount": 119,
         "goalsCount": 21,
         "assistsCount": 0,
-        "backgroundImageS": "stadium-grashopper-img.jpg",
-        "backgroundImageM": "stadium-grashopper-img@2x.jpg",
-        "backgroundImageL": "stadium-grashopper-img@3x.jpg",
-        "playerImageS": "zuber-grashopper.png",
-        "playerImageM": "zuber-grashopper@2x.png",
-        "playerImageL": "zuber-grashopper@3x.png"
+        "backgroundImageS": "/static/images/stadium-grashopper-img.jpg",
+        "backgroundImageM": "/static/images/stadium-grashopper-img@2x.jpg",
+        "backgroundImageL": "/static/images/stadium-grashopper-img@3x.jpg",
+        "playerImageS": "/static/images/zuber-grashopper.png",
+        "playerImageM": "/static/images/zuber-grashopper@2x.png",
+        "playerImageL": "/static/images/zuber-grashopper@3x.png"
       },
       {
-        "club": "CSKA Moscow",
+        "name": "CSKA Moscow",
         "coatOfArmsKey": "moscow",
         "position": "midfield",
         "playerNumber": 8,
@@ -91,15 +92,15 @@
         "gamesCount": 29,
         "goalsCount": 7,
         "assistsCount": 0,
-        "backgroundImageS": "stadium-cska-moscow-img.jpg",
-        "backgroundImageM": "stadium-cska-moscow-img@2x.jpg",
-        "backgroundImageL": "stadium-cska-moscow-img@3x.jpg",
-        "playerImageS": "zuber-cska.png",
-        "playerImageM": "zuber-cska@2x.png",
-        "playerImageL": "zuber-cska@3x.png"
+        "backgroundImageS": "/static/images/stadium-cska-moscow-img.jpg",
+        "backgroundImageM": "/static/images/stadium-cska-moscow-img@2x.jpg",
+        "backgroundImageL": "/static/images/stadium-cska-moscow-img@3x.jpg",
+        "playerImageS": "/static/images/zuber-cska.png",
+        "playerImageM": "/static/images/zuber-cska@2x.png",
+        "playerImageL": "/static/images/zuber-cska@3x.png"
       },
       {
-        "club": "TSG Hoffenheim",
+        "name": "TSG Hoffenheim",
         "coatOfArmsKey": "hoffenheim",
         "position": "midfield",
         "playerNumber": 17,
@@ -108,15 +109,15 @@
         "gamesCount": 82,
         "goalsCount": 7,
         "assistsCount": 4,
-        "backgroundImageS": "stadium-hoffenheim-img.jpg",
-        "backgroundImageM": "stadium-hoffenheim-img@2x.jpg",
-        "backgroundImageL": "stadium-hoffenheim-img@3x.jpg",
-        "playerImageS": "zuber-hoffenheim-img.png",
-        "playerImageM": "zuber-hoffenheim-img@2x.png",
-        "playerImageL": "zuber-hoffenheim-img@3x.png"
+        "backgroundImageS": "/static/images/stadium-hoffenheim-img.jpg",
+        "backgroundImageM": "/static/images/stadium-hoffenheim-img@2x.jpg",
+        "backgroundImageL": "/static/images/stadium-hoffenheim-img@3x.jpg",
+        "playerImageS": "/static/images/zuber-hoffenheim-img.png",
+        "playerImageM": "/static/images/zuber-hoffenheim-img@2x.png",
+        "playerImageL": "/static/images/zuber-hoffenheim-img@3x.png"
       },
       {
-        "club": "VFB STUTTGART",
+        "name": "VFB STUTTGART",
         "coatOfArmsKey": "stuttgart",
         "position": "midfield",
         "playerNumber": 9,
@@ -125,12 +126,12 @@
         "gamesCount": 15,
         "goalsCount": 6,
         "assistsCount": 0,
-        "backgroundImageS": "stadium-studttgart-img.jpg",
-        "backgroundImageM": "stadium-studttgart-img@2x.jpg",
-        "backgroundImageL": "stadium-studttgart-img@3x.jpg",
-        "playerImageS": "zuber-stuttgart-img.png",
-        "playerImageM": "zuber-stuttgart-img@2x.png",
-        "playerImageL": "zuber-stuttgart-img@3x.png"
+        "backgroundImageS": "/static/images/stadium-studttgart-img.jpg",
+        "backgroundImageM": "/static/images/stadium-studttgart-img@2x.jpg",
+        "backgroundImageL": "/static/images/stadium-studttgart-img@3x.jpg",
+        "playerImageS": "/static/images/zuber-stuttgart-img.png",
+        "playerImageM": "/static/images/zuber-stuttgart-img@2x.png",
+        "playerImageL": "/static/images/zuber-stuttgart-img@3x.png"
       }
     ],
     "video": "https://www.youtube.com/watch?v=d7ytbHNzOXI",
@@ -139,9 +140,9 @@
       "description": "STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019",
       "logoKey": "nike",
       "productName": "NIKE MERCURIAL",
-      "productImageS": "image-1.png",
-      "productImageM": "image-1@2x.png",
-      "productImageL": "image-1@3x.png"
+      "productImageS": "/static/images/image-1.png",
+      "productImageM": "/static/images/image-1@2x.png",
+      "productImageL": "/static/images/image-1@3x.png"
     }
   },
   "shop": [

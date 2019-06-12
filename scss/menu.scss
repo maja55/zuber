@@ -31,7 +31,8 @@
 
 .menu-btn {
   position: relative;
-  width: 30px;
+  width: 3vw;
+  min-width: 25px;
   height: 26px;
   transition: 0.5s ease-in-out;
   cursor: pointer;
@@ -40,7 +41,7 @@
   span {
     display: block;
     position: absolute;
-    height: 3px;
+    height: 2.5px;
     width: 100%;
     background: $light;
     opacity: 1;
@@ -78,7 +79,7 @@
   }
 }
 
-.nav-list {
+.menu {
   position: absolute;
   top: 0;
   right: 0;
@@ -102,10 +103,10 @@
     margin: 10vh auto auto 50%;
     position: relative;
     z-index: 101;
-    line-height: 84px;
+    line-height: 1.6;
 
-    @media screen and (max-width: $screen-sm) {
-      line-height: 44px;
+    .t-8 {
+        margin-top: 40px;
     }
 
     @media screen and (max-width: $screen-xs) {
@@ -128,15 +129,6 @@
         max-height: 85%;
         transform: translateX(-90vw);
       }
-    }
-  }
-
-  a {
-    padding-left: 0;
-    transition: all 0.2s ease-out;
-
-    &:hover {
-      padding-left: 30px;
     }
   }
 }

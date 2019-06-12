@@ -1,0 +1,91 @@
+.club__top, .club__bottom {
+    position: relative;
+    display: flex;
+}
+
+.club__copy {
+    position: relative;
+    margin-left: 2vw;
+    margin-bottom: 4vw;
+    width: 50%;
+}
+
+.club__name {
+    word-spacing: 50%;
+}
+
+.club-bg__image {
+    height: auto;
+    width: 100%;
+    margin: 4vw 0 -13vw;
+    
+    @media screen and (min-width: $screen-md) {
+        position: absolute;
+        height: 100%;
+        width: auto;
+        top: 6px;
+        bottom: 0;
+        left: 50%;
+        margin: 0;
+    }
+}
+
+.club-top__image {
+    position: absolute;
+    height: 78%;
+    top: 17%;
+    right: 2%;
+}
+
+.club__bottom {
+    align-items: flex-end;
+}
+
+.club__logo {
+    width: 11.5vw;
+}
+
+.club__count-bar {
+    margin-left: 20vw;
+}
+
+
+@media screen and (max-width: $screen-md - 1) {
+    .clubs__menu.t-7 {
+        font-size: 5vw;
+    }
+
+    .club__top {
+        flex-direction: column;
+    }
+
+    .club__copy {
+        margin-left: 0;
+        margin-bottom: 9vw;
+    }
+
+    .club-top__image {
+        height: 64vw;
+        top: 45vw;
+        right: 2%;
+    }
+
+    .club__bottom {
+        justify-content: space-between
+    }
+    
+    .club__logo {
+        width: 17vw;
+        order: 1;
+    }
+    
+    .club__count-bar {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: $screen-xs - 1) {
+    .club__copy {
+        width: 70%;
+    }
+}

@@ -25,9 +25,10 @@
   line-height: 0.9; }
 
 .t-3 {
-  font-size: 8.5vw;
+  font-size: 8.3vw;
   font-family: drukTextBold;
-  line-height: 0.9; }
+  line-height: 0.9;
+  letter-spacing: -1.5px; }
 
 .t-4 {
   font-size: 80px; }
@@ -37,11 +38,12 @@
   line-height: 0.9; }
 
 .t-6 {
-  font-size: 3.6vw;
+  font-size: 3.5vw;
   line-height: 1.1; }
 
 .t-7 {
-  font-size: 40px; }
+  font-size: 3.3vw;
+  font-family: drukTextBold; }
 
 .t-8 {
   font-size: 1.65vw;
@@ -50,11 +52,11 @@
 
 @media screen and (max-width: 480px) {
   .t-3 {
-    font-size: 45px; }
-  .t-6.t-outline {
-    font-size: 28px; }
+    font-size: 43px; }
   .t-6 {
     font-size: 18px; }
+  .t-6.t-outline {
+    font-size: 28px; }
   .t-8 {
     font-size: 15px; } }
 
@@ -126,6 +128,7 @@ button {
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
+  text-transform: uppercase;
   outline: none;
   cursor: pointer; }
 
@@ -133,7 +136,7 @@ section {
   width: 100vw;
   min-height: 100vh;
   padding: 6vh 7vw;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   margin-bottom: 6vw; }
   section p {
@@ -144,6 +147,17 @@ section {
       section p {
         font-size: 3vw;
         max-width: 60vw; } }
+
+.section-title {
+  margin-bottom: 4vw; }
+
+.cta-hover {
+  padding-left: 0;
+  padding-right: 30px;
+  transition: all 0.15s ease-out; }
+  .cta-hover.active, .cta-hover:focus, .cta-hover:hover {
+    padding-left: 30px;
+    padding-right: 0; }
 
 .header {
   position: absolute;
@@ -171,7 +185,8 @@ section {
 
 .menu-btn {
   position: relative;
-  width: 30px;
+  width: 3vw;
+  min-width: 25px;
   height: 26px;
   transition: 0.5s ease-in-out;
   cursor: pointer;
@@ -179,7 +194,7 @@ section {
   .menu-btn span {
     display: block;
     position: absolute;
-    height: 3px;
+    height: 2.5px;
     width: 100%;
     background: #dadbdb;
     opacity: 1;
@@ -204,7 +219,7 @@ section {
     top: 10px;
     transform: rotate(-140deg); }
 
-.nav-list {
+.menu {
   position: absolute;
   top: 0;
   right: 0;
@@ -214,40 +229,34 @@ section {
   background-color: transparent;
   transition: all 0.25s ease-in-out;
   z-index: 100; }
-  .nav-list img {
+  .menu img {
     position: absolute;
     bottom: 0;
     left: 100%;
     max-height: 95%;
     transform: scale(0.5);
     transition: 0.2s ease 0.2s; }
-  .nav-list ul {
+  .menu ul {
     margin: 10vh auto auto 50%;
     position: relative;
     z-index: 101;
-    line-height: 84px; }
-    @media screen and (max-width: 768px) {
-      .nav-list ul {
-        line-height: 44px; } }
+    line-height: 1.6; }
+    .menu ul .t-8 {
+      margin-top: 40px; }
     @media screen and (max-width: 480px) {
-      .nav-list ul {
+      .menu ul {
         margin: 5vh 5vw; }
-        .nav-list ul .t-8 {
+        .menu ul .t-8 {
           margin-top: 15px; } }
-  .nav-list.open {
+  .menu.open {
     transform: translateX(0);
     background-color: #dadbdb; }
-    .nav-list.open img {
+    .menu.open img {
       transform: translateX(-95vw) scale(1); }
       @media screen and (max-width: 480px) {
-        .nav-list.open img {
+        .menu.open img {
           max-height: 85%;
           transform: translateX(-90vw); } }
-  .nav-list a {
-    padding-left: 0;
-    transition: all 0.2s ease-out; }
-    .nav-list a:hover {
-      padding-left: 30px; }
 
 .intro {
   position: relative;
@@ -286,12 +295,10 @@ section {
 
 .statistics__content {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 50px; }
+  justify-content: flex-end; }
   @media screen and (max-width: 479px) {
     .statistics__content {
-      flex-direction: column;
-      margin-top: 20px; } }
+      flex-direction: column; } }
 
 .statistics__image {
   position: absolute;
@@ -342,12 +349,24 @@ section {
   margin-left: 10px;
   margin-right: 40px; }
 
+.count-bar--vertical {
+  flex-direction: column; }
+
 @media screen and (max-width: 959px) {
   .count-bar__label {
     font-size: 2.5vw;
     margin-right: 30px; }
   .count-bar__count {
     font-size: 6.3vw; } }
+
+.count-bar--vertical {
+  display: inline-flex;
+  flex-direction: column; }
+  .count-bar--vertical .count-bar__item {
+    margin: 3px 0; }
+  .count-bar--vertical .count-bar__count {
+    flex-basis: 20vw;
+    text-align: right; }
 
 @media screen and (max-width: 479px) {
   .count-bar {
@@ -358,15 +377,15 @@ section {
     font-size: 3vw; }
   .count-bar__count {
     font-size: 7.5vw;
-    flex-basis: 15vw;
+    flex-basis: 20vw;
     text-align: right; } }
 
 .national-team__content {
   position: relative;
-  margin: 30px 0 50px; }
+  margin-bottom: 50px; }
   @media screen and (min-width: 480px) {
     .national-team__content {
-      margin: 50px 0 60px; } }
+      margin-bottom: 60px; } }
 
 .national-team__top {
   position: relative;
@@ -407,7 +426,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 82vh;
+  height: 87vh;
   position: relative; }
 
 .fifa__top {
@@ -422,11 +441,11 @@ section {
   right: -20%;
   height: auto;
   margin-top: -50px; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 480px) {
     .fifa__image {
-      position: absolute;
       height: auto;
       width: 90%;
+      position: absolute;
       top: 0;
       bottom: 0;
       right: -7vw;
@@ -442,6 +461,72 @@ section {
 .fifa__top, .fifa__copy, .fifa__count-bar {
   position: relative;
   z-index: 1; }
+
+.club__top, .club__bottom {
+  position: relative;
+  display: flex; }
+
+.club__copy {
+  position: relative;
+  margin-left: 2vw;
+  margin-bottom: 4vw;
+  width: 50%; }
+
+.club__name {
+  word-spacing: 50%; }
+
+.club-bg__image {
+  height: auto;
+  width: 100%;
+  margin: 4vw 0 -13vw; }
+  @media screen and (min-width: 960px) {
+    .club-bg__image {
+      position: absolute;
+      height: 100%;
+      width: auto;
+      top: 6px;
+      bottom: 0;
+      left: 50%;
+      margin: 0; } }
+
+.club-top__image {
+  position: absolute;
+  height: 78%;
+  top: 17%;
+  right: 2%; }
+
+.club__bottom {
+  align-items: flex-end; }
+
+.club__logo {
+  width: 11.5vw; }
+
+.club__count-bar {
+  margin-left: 20vw; }
+
+@media screen and (max-width: 959px) {
+  .clubs__menu.t-7 {
+    font-size: 5vw; }
+  .club__top {
+    flex-direction: column; }
+  .club__copy {
+    margin-left: 0;
+    margin-bottom: 9vw; }
+  .club-top__image {
+    height: 64vw;
+    top: 45vw;
+    right: 2%; }
+  .club__bottom {
+    justify-content: space-between; }
+  .club__logo {
+    width: 17vw;
+    order: 1; }
+  .club__count-bar {
+    margin-left: 0; } }
+
+@media screen and (max-width: 479px) {
+  .club__copy {
+    width: 70%; } }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
