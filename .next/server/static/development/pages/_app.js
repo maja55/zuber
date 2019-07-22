@@ -115,21 +115,19 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Footer.js";
 var Footer = function Footer() {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
       labels = _useContext.labels,
-      footer = _useContext.footer,
-      page = _useContext.page;
+      footer = _useContext.footer;
 
   var socials = footer.socials,
       email = footer.email,
       copyright = footer.copyright;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
-    className: page === 'Homepage' ? 't-grey' : '',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--flex site-footer",
+    className: "section section--flex site-footer t-grey",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -157,6 +155,7 @@ var Footer = function Footer() {
     __self: this
   }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(socials).map(function (label, index, array) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: label,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -265,6 +264,57 @@ var Head = function Head(_ref) {
 
 /***/ }),
 
+/***/ "./components/Image.js":
+/*!*****************************!*\
+  !*** ./components/Image.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/maja/code/ZuberSite/components/Image.js";
+
+
+
+var Image = function Image(_ref) {
+  var baseClass = _ref.baseClass,
+      classAddition = _ref.classAddition,
+      _ref$image = _ref.image,
+      image = _ref$image === void 0 ? {} : _ref$image,
+      alt = _ref.alt;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "".concat(baseClass, "__image ").concat(classAddition),
+    srcSet: "\n            ".concat(image.imageS, " 768w,\n            ").concat(image.imageM, " 1200w,\n            ").concat(image.imageL, " 1440w,\n        "),
+    sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
+    src: image.imageL,
+    alt: alt,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  });
+};
+
+Image.defaultProps = {
+  image: {},
+  alt: '',
+  baseClass: ''
+};
+Image.propTypes = {
+  image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({}),
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  baseClass: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+/* harmony default export */ __webpack_exports__["default"] = (Image);
+
+/***/ }),
+
 /***/ "./components/Navigation.js":
 /*!**********************************!*\
   !*** ./components/Navigation.js ***!
@@ -280,8 +330,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Navigation.js";
+
 
 
 
@@ -292,7 +344,7 @@ var navLinks = [{
   href: '/#career',
   labelKey: 'career'
 }, {
-  href: '/life',
+  href: '/about',
   labelKey: 'life'
 }, {
   href: '/shop',
@@ -316,7 +368,11 @@ var Navigation = function Navigation() {
       toggleMenu = _useState2[1];
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
-      labels = _useContext.labels;
+      labels = _useContext.labels,
+      heroImage = _useContext.heroImage,
+      page = _useContext.page;
+
+  var isShop = page === 'shop';
 
   var onClick = function onClick() {
     if (isOpen) {
@@ -331,33 +387,37 @@ var Navigation = function Navigation() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 37
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 38
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    src: "/static/svgs/steven_zuber.svg",
-    alt: "Stefan Zuber logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "menu-btn".concat(isOpen ? ' open' : ''),
-    onClick: onClick,
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "menu-btn".concat(isOpen ? ' open' : '').concat(isShop ? ' dark' : ''),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    onClick: onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
@@ -369,13 +429,7 @@ var Navigation = function Navigation() {
       lineNumber: 43
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
     className: "menu".concat(isOpen ? ' open' : ''),
     onClick: onClick,
     __source: {
@@ -384,14 +438,15 @@ var Navigation = function Navigation() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--menu",
+    className: "section section--menu",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    src: "/static/images/zuber-hero-page@2x.png",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    image: heroImage,
+    baseClass: "menu",
     alt: "Stefan Zuber",
     __source: {
       fileName: _jsxFileName,
@@ -410,24 +465,24 @@ var Navigation = function Navigation() {
         labelKey = _ref.labelKey;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: labelKey,
+      className: "cta-hover",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 52
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 53
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-      className: "cta-hover",
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 53
       },
       __self: this
     }, labels[labelKey])));
@@ -435,30 +490,59 @@ var Navigation = function Navigation() {
     className: "t-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 57
     },
     __self: this
   }, "EN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 58
     },
     __self: this
   }, " | "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 59
     },
     __self: this
-  }, "DE"))))));
+  }, "DE"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "page-heading",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, isShop ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "t-6 t-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }, labels.shop) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "/static/svgs/steven_zuber.svg",
+    alt: "Stefan Zuber logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navigation);
@@ -469,10 +553,10 @@ var Navigation = function Navigation() {
 /*!*******************!*\
   !*** ./data.json ***!
   \*******************/
-/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, shop, default */
+/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, products, about, default */
 /***/ (function(module) {
 
-module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","shopNow":"shop now","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"imageS":"/static/images/zuber-hero-page.png","imageM":"/static/images/zuber-hero-page@2x.png","imageL":"/static/images/zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"image":{"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"}},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"image":{"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"imageBw":{"imageS":"/static/images/swiss-national-team-bw-img.jpg","imageM":"/static/images/swiss-national-team-bw-img@2x.jpg","imageL":"/static/images/swiss-national-team-bw-img@3x.jpg"}},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","gamesCount":3,"goalsCount":1,"minutesCount":253,"image":{"imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"}},"clubs":[{"name":"Grasshopper Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-grashopper-img.jpg","imageM":"/static/images/stadium-grashopper-img@2x.jpg","imageL":"/static/images/stadium-grashopper-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-grashopper.png","imageM":"/static/images/zuber-grashopper@2x.png","imageL":"/static/images/zuber-grashopper@3x.png"}},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-cska-moscow-img.jpg","imageM":"/static/images/stadium-cska-moscow-img@2x.jpg","imageL":"/static/images/stadium-cska-moscow-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-cska.png","imageM":"/static/images/zuber-cska@2x.png","imageL":"/static/images/zuber-cska@3x.png"}},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImage":{"imageS":"/static/images/stadium-hoffenheim-img.jpg","imageM":"/static/images/stadium-hoffenheim-img@2x.jpg","imageL":"/static/images/stadium-hoffenheim-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-hoffenheim-img.png","imageM":"/static/images/zuber-hoffenheim-img@2x.png","imageL":"/static/images/zuber-hoffenheim-img@3x.png"}},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-studttgart-img.jpg","imageM":"/static/images/stadium-studttgart-img@2x.jpg","imageL":"/static/images/stadium-studttgart-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-stuttgart-img.png","imageM":"/static/images/zuber-stuttgart-img@2x.png","imageL":"/static/images/zuber-stuttgart-img@3x.png"}}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","image":{"imageS":"/static/images/image-1.png","imageM":"/static/images/image-1@2x.png","imageL":"/static/images/image-1@3x.png"}},"products":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","image":{"imageS":"/static/images/zuber-sleave-shirt.jpg","imageM":"/static/images/zuber-sleave-shirt@2x.jpg","imageL":"/static/images/zuber-sleave-shirt@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","image":{"imageS":"/static/images/wristband.jpg","imageM":"/static/images/wristband@2x.jpg","imageL":"/static/images/wristband@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","image":{"imageS":"/static/images/shorts.jpg","imageM":"/static/images/shorts@2x.jpg","imageL":"/static/images/shorts@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","image":{"imageS":"/static/images/zuber-ball.jpg","imageM":"/static/images/zuber-ball@2x.jpg","imageL":"/static/images/zuber-ball@3x.jpg"},"payPalLink":"https:paypal/1234677"}],"about":{"life":{"title":"My life","posts":[{"headings":["BORN TO BE FOOTBALLER"],"description":["STEVEN ZUBER WAS BORN ON 17 AUGUST 1991 TO WALTER AND SUSANNE ZUBER. HE HAS FIVE SIBLINGS: MELANIE, KEVIN, SEVERIN, DAVID, AND MARVIN. ON 26 MAY 2015, HE MARRIED HIS LONG -TIME GIRLFRIEND, MIRJANA VASOVIC."],"quotes":[],"image":{"imageS":"/static/images/zuber-biography.jpg","imageM":"/static/images/zuber-biography@2x.jpg","imageL":"/static/images/zuber-biography@3x.jpg"}},{"headings":["STEVEN WAS BORN IN WINTERTHUR"],"description":["A SERVICE AND HIGH-TECH INDUSTRIAL SATELLITE CITY WITHIN GREATER ZÜRICH WHERE STEVEN MADE HIS FIRST FOOTBALL STEPS"],"quotes":[],"vectorImage":"/static/svgs/mapa.svg"},{"headings":["I started playing football with my bigger brother at early age"],"description":["I always wanted to do exactly that as a younger brother like the older one :)"],"quotes":["After a few broken windows and pictures in the apartment I finally went to my first club FC Wiesendangen.","We moved a lot as a family and so I didn't stay long at FC Wiesendangen, but changed to FC Kollbrun-Rikon (picture) and FC Turbenthal before I went to FC Winterthur at the age of 11.","At FC Winterthur I went through all junior selections without any problems and improved myself physically and technically very fast."],"image":{"imageS":"/static/images/baby-zuber.jpg","imageM":"/static/images/baby-zuber@2x.jpg","imageL":"/static/images/baby-zuber@3x.jpg"}},{"headings":[],"description":["Due to the good development at FC Winterthur, the big Grasshopper-Club Zurich became aware of me."],"quotes":["I didn't have to think long and took the chance with the constant support of my parents and was able to wear the GCZ jersey for the first time at the age of 14.","The strategy of the whole club has shaped me very much the years up to my first employment in the 1st team.","I have profited from the daily additional trainings and could train together with the older players already early and have asserted myself also against you.","But I always knew what I wanted and have always worked more than everyone else next to me. I always wanted to play for the 1st team and the national team. For that I sacrificed a lot and when the call came from the assistant of the 1st team that I can train a few days in the 1st team, I have directly everything stopped and left lying and knew this is my chance and I now seize it!"],"image":{"imageS":"/static/images/zuber-training.jpg","imageM":"/static/images/zuber-training@2x.jpg","imageL":"/static/images/zuber-training@3x.jpg"}},{"headings":["My first game followed a short time later."],"description":["I debuted with 16 years in the 1st team in the UI CUP and also scored my first goal"],"quotes":[],"image":{"imageS":"/static/images/zuber-young-grashopper.jpg","imageM":"/static/images/zuber-young-grashopper@2x.jpg","imageL":"/static/images/zuber-young-grashopper@3x.jpg"}}]},"love":{"title":"My love","posts":[{"headings":["From the first second, I saw in her eyes that she is the one for my life!"],"description":["I am so happy and thankful now that i meet Mirjana in this small Club in Zurich.","We get married after 7 Years relationship and she is my wife and of course also my best friend!"],"quotes":[],"footnote":"I love you","image":{"imageS":"/static/images/wedding.jpg","imageM":"/static/images/wedding@2x.jpg","imageL":"/static/images/wedding@3x.jpg"}}]},"passion":{"title":"My passion","posts":[{"headings":["My passion is of course football!","My second passion is football!"],"description":["I love to speak about football. I could speak every time about this amazing sport were you can play all around the world and you can bring every culture together.","But there's a few other things that I love to do…"],"quotes":[]}]},"hobby":{"title":"","posts":[{"headings":["When i have some time free for myself i like to drink coffee :)"],"description":["So you will always find me in a good coffee shop in the town with a even better book to read.","I like also to do something for my brain. Reading helps me to be calm and relax."],"quotes":[],"image":{"imageS":"/static/images/coffe.jpg","imageM":"/static/images/coffe@2x.jpg","imageL":"/static/images/coffe@3x.jpg"}},{"headings":["I take my look seriusly so I’m trying to dress well and always look stylish."],"description":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"],"quotes":[],"image":{"imageS":"/static/images/zuber-style.jpg","imageM":"/static/images/zuber-style@2x.jpg","imageL":"/static/images/zuber-style@3x.jpg"}},{"headings":["We are living in a beautiful world!"],"description":["When we have holiday, my wife and always some friends, we like to see everything and everyplace in our world. We try to go all the time to some new destination."],"quotes":[],"image":{"imageS":"/static/images/travel.jpg","imageM":"/static/images/travel@2x.jpg","imageL":"/static/images/travel@3x.jpg"}},{"headings":["As you can see i like to get inked :)"],"description":["It started with one small footballshoe and a prayer hand on my back. I continued with some pictures and phrases about my life and how i think about it. But i am not finished yet!"],"quotes":[],"image":{"imageS":"/static/images/tattoo.jpg","imageM":"/static/images/tattoo@2x.jpg","imageL":"/static/images/tattoo@3x.jpg"}},{"headings":["I WANT TO THANK"],"description":["I am Thankful for every minute on the pitch. Its a honor to play football and to make people celebrate, happy and crying on one second."],"quotes":[],"image":{"imageS":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg","imageM":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg","imageL":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg"}},{"headings":[],"description":["A big thanks goes to my family. You are always behind me. Every minute in the car while we were driving to the training ground or to the games, was so special for me. Every hard time i had, you were always there and were pushing me to my goal !I will never forget this."],"quotes":[],"image":{"imageS":"/static/images/family.jpg","imageM":"/static/images/family@2x.jpg","imageL":"/static/images/family@3x.jpg"}},{"headings":[],"description":["I remember our first conversation together. You opend my eyes for a new way of living the football.","I am thankful for all what you did for me and i am happy to be around you!"],"quotes":[],"image":{"imageS":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0","imageM":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0","imageL":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0"}},{"headings":[],"description":["You are simply amazing and you are my daily inspiration to be a better person! Thank you for beeing always on my side. I love you"],"quotes":[],"image":{"imageS":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230","imageM":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230","imageL":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230"}},{"headings":["Thank you to every great club i was playing for and still playing.","Also a hughe thanks goes to my coaches, managers, teammates and fans. Without you i would be never here."],"description":[],"quotes":[]}]}}};
 
 /***/ }),
 
@@ -1805,13 +1889,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
-/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_14___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
+/* harmony import */ var react_reveal_globals__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-reveal/globals */ "react-reveal/globals");
+/* harmony import */ var react_reveal_globals__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_reveal_globals__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-scroll-parallax */ "react-scroll-parallax");
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
+/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_16___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
 
 
 
@@ -1828,6 +1916,15 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_app.js";
 
 
 
+
+
+react_reveal_globals__WEBPACK_IMPORTED_MODULE_10___default()({
+  ssrFadeout: true,
+  forever: true,
+  fraction: 1,
+  distance: '400px',
+  duration: 300
+});
 var DataContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
 
 var MyApp =
@@ -1846,55 +1943,61 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
+          page = _this$props.page,
           data = _this$props.data;
-      var bgClass = Component.name === 'Homepage' ? 'bg-dark' : 'bg-light';
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
-        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
-          page: Component.name
-        }),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
-        className: "page page--".concat(Component.name, " ").concat(bgClass),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
+        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
+          page: page
+        }),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 35
         },
         __self: this
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "page page--".concat(page),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      })))));
     }
   }], [{
     key: "getInitialProps",
@@ -1909,7 +2012,8 @@ function (_App) {
               case 0:
                 Component = _ref.Component, ctx = _ref.ctx;
                 return _context.abrupt("return", {
-                  data: _data_json__WEBPACK_IMPORTED_MODULE_14__
+                  data: _data_json__WEBPACK_IMPORTED_MODULE_16__,
+                  page: Component.name.toLowerCase()
                 });
 
               case 2:
@@ -1931,9 +2035,9 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_9___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get("https://api-football-v1.p.rapidapi.com/v2/players/team/172")
-// .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
-// .header("X-RapidAPI-Key", "d828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453")
+/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get('https://api-football-v1.p.rapidapi.com/v2/players/team/172')
+// .header('X-RapidAPI-Host', 'api-football-v1.p.rapidapi.com')
+// .header('X-RapidAPI-Key', 'd828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453')
 // .end(function (result) {
 //   console.log(result.status, result.headers, result.body);
 // });
@@ -2180,6 +2284,28 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-reveal/globals":
+/*!***************************************!*\
+  !*** external "react-reveal/globals" ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-reveal/globals");
+
+/***/ }),
+
+/***/ "react-scroll-parallax":
+/*!****************************************!*\
+  !*** external "react-scroll-parallax" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-scroll-parallax");
 
 /***/ }),
 

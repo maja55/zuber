@@ -1,134 +1,173 @@
 .header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
-  padding: 2vh 7vw;
+  z-index: 101;
+  max-height: 0;
+  overflow: visible;
+}
 
-  @media screen and (min-width: $screen-sm) {
-    padding: 3vh 7vw;
-  }
+.page-heading {
+    position: absolute;
+    z-index: 80;
+    top: 2vh;
+    left: 7vw;
 
-  img {
-    width: 100px;
-    z-index: 99;
-
-    @media screen and (min-width: $screen-xs) {
-      width: 120px;
+    @media screen and (min-width: $screen-sm) {
+        top: 4vh;
     }
 
-    @media screen and (min-width: $screen-md) {
-      width: 135px;
+    img {
+        width: 100px;
+        cursor: pointer;
+    
+        @media screen and (min-width: $screen-xs) {
+            width: 120px;
+        }
+    
+        @media screen and (min-width: $screen-md) {
+            width: 135px;
+        }
+    
+        @media screen and (min-width: $screen-xl) {
+            width: 146px;
+        }
     }
-
-    @media screen and (min-width: $screen-xl) {
-      width: 146px;
-    }
-  }
 }
 
 .menu-btn {
-  position: relative;
-  width: 3vw;
-  min-width: 25px;
-  height: 26px;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-  z-index: 101;
+    margin: 0 7vw 0 auto;
+    padding-top: 1.5vh;
+    transition: 0.5s ease-in-out;
+    z-index: 101;
+    margin-left: auto;
 
-  span {
-    display: block;
-    position: absolute;
-    height: 2.5px;
-    width: 100%;
-    background: $light;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    @media screen and (min-width: $screen-sm) {
+      padding-top: 4.5vh;
+      cursor: pointer;
+    }
 
-    &:nth-child(1) {
-      top: 3px;
+    > div {
+        position: relative;
+        height: 26px;
+        width: 3vw;
+        min-width: 25px;
     }
-    &:nth-child(2) {
-      top: 10px;
-    }
-    &:nth-child(3) {
-      top: 17px;
-    }
-  }
 
-  &.open {
     span {
-      background: $dark;
+        display: block;
+        position: absolute;
+        height: 2.5px;
+        width: 100%;
+        background: $light;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+        box-shadow: 0 0 2px rgba(0,0,0,0.2);
+
+        &:nth-child(1) {
+            top: 3px;
+        }
+
+        &:nth-child(2) {
+            top: 10px;
+        }
+
+        &:nth-child(3) {
+            top: 17px;
+        }
     }
-    span:nth-child(1) {
-      top: 10px;
-      transform: rotate(140deg);
+
+    &.open span,
+    &.dark span { 
+        background: $dark;
+        box-shadow: none;
     }
-    span:nth-child(2) {
-      opacity: 0;
-      left: -30px;
+
+    &.open {
+        span:nth-child(1) {
+            top: 10px;
+            transform: rotate(140deg);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+
+        span:nth-child(3) {
+            top: 10px;
+            transform: rotate(-140deg);
+        }
     }
-    span:nth-child(3) {
-      top: 10px;
-      transform: rotate(-140deg);
-    }
-  }
+}
+
+.page--shop .menu-btn span {
+    background: $dark;
+    box-shadow: none;
 }
 
 .menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  overflow: hidden;
-  transform: translateX(100vw);
-  background-color: transparent;
-  transition: all 0.25s ease-in-out;
-  z-index: 100;
-
-  img {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    max-height: 95%;
-    transform: scale(0.5);
-    transition: 0.2s ease 0.2s;
-  }
-
-  ul {
-    margin: 10vh auto auto 50%;
-    position: relative;
-    z-index: 101;
-    line-height: 1.6;
-
-    .t-8 {
-        margin-top: 40px;
-    }
-
-    @media screen and (max-width: $screen-xs) {
-      margin: 5vh 5vw;
-
-      .t-8 {
-        margin-top: 15px;
-      }
-    }
-  }
-
-  &.open {
-    transform: translateX(0);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    transform: translateX(100vw);
     background-color: $light;
+    transition: all 0.25s ease-in-out;
+    z-index: 100;
 
     img {
-      transform: translateX(-95vw) scale(1);
-
-      @media screen and (max-width: $screen-xs) {
-        max-height: 85%;
-        transform: translateX(-90vw);
-      }
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        max-height: 95%;
+        max-width: 90%;
+        transform: scale(0.5);
+        transition: 0.2s ease 0.2s;
     }
+
+    ul {
+        margin: 10vh auto auto 50%;
+        position: relative;
+        z-index: 101;
+        line-height: 1.6;
+
+        .t-8 {
+            margin-top: 40px;
+
+            @media screen and (max-width: $screen-xs) {
+                margin-top: 15px;
+            }
+        }
+
+        @media screen and (max-width: $screen-md) {
+            margin-left: 60%;
+        }
+
+        @media screen and (max-width: $screen-xs) {
+            margin: 5vh 5vw;
+        }
+    }
+
+  &.open {
+        transform: translateX(0);
+
+        img {
+            transform: translateX(-95vw) scale(1);
+
+            @media screen and (max-width: $screen-lg - 1) {
+                max-height: 85%;
+                transform: translateX(-100vw);
+            }
+
+            @media screen and (max-width: $screen-xs) {
+                transform: translateX(-90vw);
+            }
+        }
   }
 }

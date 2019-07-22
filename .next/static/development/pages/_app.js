@@ -22,21 +22,19 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Footer.js";
 var Footer = function Footer() {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
       labels = _useContext.labels,
-      footer = _useContext.footer,
-      page = _useContext.page;
+      footer = _useContext.footer;
 
   var socials = footer.socials,
       email = footer.email,
       copyright = footer.copyright;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
-    className: page === 'Homepage' ? 't-grey' : '',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--flex site-footer",
+    className: "section section--flex site-footer t-grey",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -64,6 +62,7 @@ var Footer = function Footer() {
     __self: this
   }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(socials).map(function (label, index, array) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: label,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -172,6 +171,57 @@ var Head = function Head(_ref) {
 
 /***/ }),
 
+/***/ "./components/Image.js":
+/*!*****************************!*\
+  !*** ./components/Image.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/maja/code/ZuberSite/components/Image.js";
+
+
+
+var Image = function Image(_ref) {
+  var baseClass = _ref.baseClass,
+      classAddition = _ref.classAddition,
+      _ref$image = _ref.image,
+      image = _ref$image === void 0 ? {} : _ref$image,
+      alt = _ref.alt;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "".concat(baseClass, "__image ").concat(classAddition),
+    srcSet: "\n            ".concat(image.imageS, " 768w,\n            ").concat(image.imageM, " 1200w,\n            ").concat(image.imageL, " 1440w,\n        "),
+    sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
+    src: image.imageL,
+    alt: alt,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  });
+};
+
+Image.defaultProps = {
+  image: {},
+  alt: '',
+  baseClass: ''
+};
+Image.propTypes = {
+  image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({}),
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  baseClass: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
+/* harmony default export */ __webpack_exports__["default"] = (Image);
+
+/***/ }),
+
 /***/ "./components/Navigation.js":
 /*!**********************************!*\
   !*** ./components/Navigation.js ***!
@@ -187,8 +237,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Navigation.js";
+
 
 
 
@@ -199,7 +251,7 @@ var navLinks = [{
   href: '/#career',
   labelKey: 'career'
 }, {
-  href: '/life',
+  href: '/about',
   labelKey: 'life'
 }, {
   href: '/shop',
@@ -223,7 +275,11 @@ var Navigation = function Navigation() {
       toggleMenu = _useState2[1];
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
-      labels = _useContext.labels;
+      labels = _useContext.labels,
+      heroImage = _useContext.heroImage,
+      page = _useContext.page;
+
+  var isShop = page === 'shop';
 
   var onClick = function onClick() {
     if (isOpen) {
@@ -238,33 +294,37 @@ var Navigation = function Navigation() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 37
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 38
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    src: "/static/svgs/steven_zuber.svg",
-    alt: "Stefan Zuber logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "menu-btn".concat(isOpen ? ' open' : ''),
-    onClick: onClick,
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "menu-btn".concat(isOpen ? ' open' : '').concat(isShop ? ' dark' : ''),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    onClick: onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
@@ -276,13 +336,7 @@ var Navigation = function Navigation() {
       lineNumber: 43
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
     className: "menu".concat(isOpen ? ' open' : ''),
     onClick: onClick,
     __source: {
@@ -291,14 +345,15 @@ var Navigation = function Navigation() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--menu",
+    className: "section section--menu",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    src: "/static/images/zuber-hero-page@2x.png",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    image: heroImage,
+    baseClass: "menu",
     alt: "Stefan Zuber",
     __source: {
       fileName: _jsxFileName,
@@ -317,24 +372,24 @@ var Navigation = function Navigation() {
         labelKey = _ref.labelKey;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: labelKey,
+      className: "cta-hover",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 52
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 53
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-      className: "cta-hover",
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 53
       },
       __self: this
     }, labels[labelKey])));
@@ -342,30 +397,59 @@ var Navigation = function Navigation() {
     className: "t-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 57
     },
     __self: this
   }, "EN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 58
     },
     __self: this
   }, " | "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 59
     },
     __self: this
-  }, "DE"))))));
+  }, "DE"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "page-heading",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, isShop ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "t-6 t-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }, labels.shop) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "/static/svgs/steven_zuber.svg",
+    alt: "Stefan Zuber logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navigation);
@@ -376,10 +460,10 @@ var Navigation = function Navigation() {
 /*!*******************!*\
   !*** ./data.json ***!
   \*******************/
-/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, shop, default */
+/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, products, about, default */
 /***/ (function(module) {
 
-module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","shopNow":"shop now","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"imageS":"/static/images/zuber-hero-page.png","imageM":"/static/images/zuber-hero-page@2x.png","imageL":"/static/images/zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"image":{"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"}},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"image":{"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"imageBw":{"imageS":"/static/images/swiss-national-team-bw-img.jpg","imageM":"/static/images/swiss-national-team-bw-img@2x.jpg","imageL":"/static/images/swiss-national-team-bw-img@3x.jpg"}},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","gamesCount":3,"goalsCount":1,"minutesCount":253,"image":{"imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"}},"clubs":[{"name":"Grasshopper Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-grashopper-img.jpg","imageM":"/static/images/stadium-grashopper-img@2x.jpg","imageL":"/static/images/stadium-grashopper-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-grashopper.png","imageM":"/static/images/zuber-grashopper@2x.png","imageL":"/static/images/zuber-grashopper@3x.png"}},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-cska-moscow-img.jpg","imageM":"/static/images/stadium-cska-moscow-img@2x.jpg","imageL":"/static/images/stadium-cska-moscow-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-cska.png","imageM":"/static/images/zuber-cska@2x.png","imageL":"/static/images/zuber-cska@3x.png"}},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImage":{"imageS":"/static/images/stadium-hoffenheim-img.jpg","imageM":"/static/images/stadium-hoffenheim-img@2x.jpg","imageL":"/static/images/stadium-hoffenheim-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-hoffenheim-img.png","imageM":"/static/images/zuber-hoffenheim-img@2x.png","imageL":"/static/images/zuber-hoffenheim-img@3x.png"}},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-studttgart-img.jpg","imageM":"/static/images/stadium-studttgart-img@2x.jpg","imageL":"/static/images/stadium-studttgart-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-stuttgart-img.png","imageM":"/static/images/zuber-stuttgart-img@2x.png","imageL":"/static/images/zuber-stuttgart-img@3x.png"}}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","image":{"imageS":"/static/images/image-1.png","imageM":"/static/images/image-1@2x.png","imageL":"/static/images/image-1@3x.png"}},"products":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","image":{"imageS":"/static/images/zuber-sleave-shirt.jpg","imageM":"/static/images/zuber-sleave-shirt@2x.jpg","imageL":"/static/images/zuber-sleave-shirt@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","image":{"imageS":"/static/images/wristband.jpg","imageM":"/static/images/wristband@2x.jpg","imageL":"/static/images/wristband@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","image":{"imageS":"/static/images/shorts.jpg","imageM":"/static/images/shorts@2x.jpg","imageL":"/static/images/shorts@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","image":{"imageS":"/static/images/zuber-ball.jpg","imageM":"/static/images/zuber-ball@2x.jpg","imageL":"/static/images/zuber-ball@3x.jpg"},"payPalLink":"https:paypal/1234677"}],"about":{"life":{"title":"My life","posts":[{"headings":["BORN TO BE FOOTBALLER"],"description":["STEVEN ZUBER WAS BORN ON 17 AUGUST 1991 TO WALTER AND SUSANNE ZUBER. HE HAS FIVE SIBLINGS: MELANIE, KEVIN, SEVERIN, DAVID, AND MARVIN. ON 26 MAY 2015, HE MARRIED HIS LONG -TIME GIRLFRIEND, MIRJANA VASOVIC."],"quotes":[],"image":{"imageS":"/static/images/zuber-biography.jpg","imageM":"/static/images/zuber-biography@2x.jpg","imageL":"/static/images/zuber-biography@3x.jpg"}},{"headings":["STEVEN WAS BORN IN WINTERTHUR"],"description":["A SERVICE AND HIGH-TECH INDUSTRIAL SATELLITE CITY WITHIN GREATER ZÜRICH WHERE STEVEN MADE HIS FIRST FOOTBALL STEPS"],"quotes":[],"vectorImage":"/static/svgs/mapa.svg"},{"headings":["I started playing football with my bigger brother at early age"],"description":["I always wanted to do exactly that as a younger brother like the older one :)"],"quotes":["After a few broken windows and pictures in the apartment I finally went to my first club FC Wiesendangen.","We moved a lot as a family and so I didn't stay long at FC Wiesendangen, but changed to FC Kollbrun-Rikon (picture) and FC Turbenthal before I went to FC Winterthur at the age of 11.","At FC Winterthur I went through all junior selections without any problems and improved myself physically and technically very fast."],"image":{"imageS":"/static/images/baby-zuber.jpg","imageM":"/static/images/baby-zuber@2x.jpg","imageL":"/static/images/baby-zuber@3x.jpg"}},{"headings":[],"description":["Due to the good development at FC Winterthur, the big Grasshopper-Club Zurich became aware of me."],"quotes":["I didn't have to think long and took the chance with the constant support of my parents and was able to wear the GCZ jersey for the first time at the age of 14.","The strategy of the whole club has shaped me very much the years up to my first employment in the 1st team.","I have profited from the daily additional trainings and could train together with the older players already early and have asserted myself also against you.","But I always knew what I wanted and have always worked more than everyone else next to me. I always wanted to play for the 1st team and the national team. For that I sacrificed a lot and when the call came from the assistant of the 1st team that I can train a few days in the 1st team, I have directly everything stopped and left lying and knew this is my chance and I now seize it!"],"image":{"imageS":"/static/images/zuber-training.jpg","imageM":"/static/images/zuber-training@2x.jpg","imageL":"/static/images/zuber-training@3x.jpg"}},{"headings":["My first game followed a short time later."],"description":["I debuted with 16 years in the 1st team in the UI CUP and also scored my first goal"],"quotes":[],"image":{"imageS":"/static/images/zuber-young-grashopper.jpg","imageM":"/static/images/zuber-young-grashopper@2x.jpg","imageL":"/static/images/zuber-young-grashopper@3x.jpg"}}]},"love":{"title":"My love","posts":[{"headings":["From the first second, I saw in her eyes that she is the one for my life!"],"description":["I am so happy and thankful now that i meet Mirjana in this small Club in Zurich.","We get married after 7 Years relationship and she is my wife and of course also my best friend!"],"quotes":[],"footnote":"I love you","image":{"imageS":"/static/images/wedding.jpg","imageM":"/static/images/wedding@2x.jpg","imageL":"/static/images/wedding@3x.jpg"}}]},"passion":{"title":"My passion","posts":[{"headings":["My passion is of course football!","My second passion is football!"],"description":["I love to speak about football. I could speak every time about this amazing sport were you can play all around the world and you can bring every culture together.","But there's a few other things that I love to do…"],"quotes":[]}]},"hobby":{"title":"","posts":[{"headings":["When i have some time free for myself i like to drink coffee :)"],"description":["So you will always find me in a good coffee shop in the town with a even better book to read.","I like also to do something for my brain. Reading helps me to be calm and relax."],"quotes":[],"image":{"imageS":"/static/images/coffe.jpg","imageM":"/static/images/coffe@2x.jpg","imageL":"/static/images/coffe@3x.jpg"}},{"headings":["I take my look seriusly so I’m trying to dress well and always look stylish."],"description":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"],"quotes":[],"image":{"imageS":"/static/images/zuber-style.jpg","imageM":"/static/images/zuber-style@2x.jpg","imageL":"/static/images/zuber-style@3x.jpg"}},{"headings":["We are living in a beautiful world!"],"description":["When we have holiday, my wife and always some friends, we like to see everything and everyplace in our world. We try to go all the time to some new destination."],"quotes":[],"image":{"imageS":"/static/images/travel.jpg","imageM":"/static/images/travel@2x.jpg","imageL":"/static/images/travel@3x.jpg"}},{"headings":["As you can see i like to get inked :)"],"description":["It started with one small footballshoe and a prayer hand on my back. I continued with some pictures and phrases about my life and how i think about it. But i am not finished yet!"],"quotes":[],"image":{"imageS":"/static/images/tattoo.jpg","imageM":"/static/images/tattoo@2x.jpg","imageL":"/static/images/tattoo@3x.jpg"}},{"headings":["I WANT TO THANK"],"description":["I am Thankful for every minute on the pitch. Its a honor to play football and to make people celebrate, happy and crying on one second."],"quotes":[],"image":{"imageS":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg","imageM":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg","imageL":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg"}},{"headings":[],"description":["A big thanks goes to my family. You are always behind me. Every minute in the car while we were driving to the training ground or to the games, was so special for me. Every hard time i had, you were always there and were pushing me to my goal !I will never forget this."],"quotes":[],"image":{"imageS":"/static/images/family.jpg","imageM":"/static/images/family@2x.jpg","imageL":"/static/images/family@3x.jpg"}},{"headings":[],"description":["I remember our first conversation together. You opend my eyes for a new way of living the football.","I am thankful for all what you did for me and i am happy to be around you!"],"quotes":[],"image":{"imageS":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0","imageM":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0","imageL":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0"}},{"headings":[],"description":["You are simply amazing and you are my daily inspiration to be a better person! Thank you for beeing always on my side. I love you"],"quotes":[],"image":{"imageS":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230","imageM":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230","imageL":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230"}},{"headings":["Thank you to every great club i was playing for and still playing.","Also a hughe thanks goes to my coaches, managers, teammates and fans. Without you i would be never here."],"description":[],"quotes":[]}]}}};
 
 /***/ }),
 
@@ -8685,6 +8769,657 @@ module.exports = exports['default'];
 
 /***/ }),
 
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!*********************************************************************************************************!*\
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_7aff549c98b978433226 ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_7aff549c98b978433226 */ "dll-reference dll_7aff549c98b978433226"))("./node_modules/prop-types/checkPropTypes.js");
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
+var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
+
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+var printWarning = function() {};
+
+if (true) {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ( true && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!ReactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (true) {
+        if (arguments.length > 1) {
+          printWarning(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : undefined;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(ReactIs.isElement, throwOnDirectAccess);
+} else {}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*******************************************************************************************************************!*\
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_7aff549c98b978433226 ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference dll_7aff549c98b978433226 */ "dll-reference dll_7aff549c98b978433226"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+
+/***/ }),
+
 /***/ "./node_modules/punycode/punycode.js":
 /*!*******************************************!*\
   !*** ./node_modules/punycode/punycode.js ***!
@@ -9678,6 +10413,1743 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-reveal/globals.js":
+/*!**********************************************!*\
+  !*** ./node_modules/react-reveal/globals.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function insertRule(e){try{return sheet.insertRule(e,sheet.cssRules.length)}catch(e){console.warn("react-reveal - animation failed")}}function cascade(e,n,t,o,r){var s=Math.log(o),i=Math.log(r),a=(i-s)/(t-n);return Math.exp(s+a*(e-n))}function animation(e){if(!sheet)return"";var n="@keyframes "+(name+counter)+"{"+e+"}",t=effectMap[e];return t?""+name+t:(sheet.insertRule(n,sheet.cssRules.length),effectMap[e]=counter,""+name+counter++)}function hideAll(){globalHide||(exports.globalHide=globalHide=!0,window.removeEventListener("scroll",hideAll,!0),insertRule("."+namespace+" { opacity: 0; }"),window.removeEventListener("orientationchange",hideAll,!0),window.document.removeEventListener("visibilitychange",hideAll))}function config(e){var n=e.ssrFadeout;exports.fadeOutEnabled=fadeOutEnabled=n}Object.defineProperty(exports,"__esModule",{value:!0}),exports.insertRule=insertRule,exports.cascade=cascade,exports.animation=animation,exports.hideAll=hideAll,exports.default=config;var namespace=exports.namespace="react-reveal",defaults=exports.defaults={duration:1e3,delay:0,count:1},ssr=exports.ssr=!0,observerMode=exports.observerMode=!1,raf=exports.raf=function(e){return window.setTimeout(e,66)},disableSsr=exports.disableSsr=function(){return exports.ssr=ssr=!1},fadeOutEnabled=exports.fadeOutEnabled=!1,ssrFadeout=exports.ssrFadeout=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0];return exports.fadeOutEnabled=fadeOutEnabled=e},globalHide=exports.globalHide=!1,ie10=exports.ie10=!1,collapseend=exports.collapseend=void 0,counter=1,effectMap={},sheet=!1,name=namespace+"-"+Math.floor(1e15*Math.random())+"-";if("undefined"!=typeof window&&"nodejs"!==window.name&&window.document&&"undefined"!=typeof navigator){exports.observerMode=observerMode="IntersectionObserver"in window&&"IntersectionObserverEntry"in window&&"intersectionRatio"in window.IntersectionObserverEntry.prototype&&/\{\s*\[native code\]\s*\}/.test(""+IntersectionObserver),exports.raf=raf=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||raf,exports.ssr=ssr=window.document.querySelectorAll("div[data-reactroot]").length>0,-1!==navigator.appVersion.indexOf("MSIE 10")&&(exports.ie10=ie10=!0),ssr&&"performance"in window&&"timing"in window.performance&&"domContentLoadedEventEnd"in window.performance.timing&&window.performance.timing.domLoading&&Date.now()-window.performance.timing.domLoading<300&&(exports.ssr=ssr=!1),ssr&&window.setTimeout(disableSsr,1500),observerMode||(exports.collapseend=collapseend=document.createEvent("Event"),collapseend.initEvent("collapseend",!0,!0));var element=document.createElement("style");document.head.appendChild(element),element.sheet&&element.sheet.cssRules&&element.sheet.insertRule&&(sheet=element.sheet,window.addEventListener("scroll",hideAll,!0),window.addEventListener("orientationchange",hideAll,!0),window.document.addEventListener("visibilitychange",hideAll))}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/classes/Bounds.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/classes/Bounds.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bounds = function Bounds(rect, offsets, view) {
+  _classCallCheck(this, Bounds);
+
+  var y0 = offsets.y0,
+      y1 = offsets.y1,
+      x1 = offsets.x1,
+      x0 = offsets.x0; // Y offsets
+
+  var yPercent = y1.unit === '%' && y0.unit === '%';
+  var y0Px = y0.value;
+  var y1Px = y1.value;
+
+  if (yPercent) {
+    var h100 = rect.height / 100;
+    y0Px = y0.value * h100;
+    y1Px = y1.value * h100;
+  } // X offsets
+
+
+  var xPercent = x1.unit === '%' && x0.unit === '%';
+  var x0Px = x0.value;
+  var x1Px = x1.value;
+
+  if (xPercent) {
+    var _h = rect.width / 100;
+
+    x0Px = x0.value * _h;
+    x1Px = x1.value * _h;
+  }
+
+  var totalAbsOffY = Math.abs(y0Px) + Math.abs(y1Px);
+  this.totalDistY = view.height + rect.height + totalAbsOffY;
+  var totalDistTrueY = view.height + rect.height + (y1Px > y0Px ? totalAbsOffY * -1 : totalAbsOffY);
+  var totalAbsOffX = Math.abs(x0Px) + Math.abs(x1Px);
+  this.totalDistX = view.width + rect.width + totalAbsOffX;
+  var totalDistTrueX = view.width + rect.width + (x1Px > x0Px ? totalAbsOffX * -1 : totalAbsOffX); // const speed = totalDistTrueY / originTotalDistY;
+
+  var multiplierY = rect.originTotalDistY / totalDistTrueY;
+  var multiplierX = rect.originTotalDistX / totalDistTrueX;
+  this.top = rect.top;
+  this.bottom = rect.bottom;
+
+  if (y0Px < 0) {
+    this.top = this.top + y0Px * multiplierY;
+  }
+
+  if (y1Px > 0) {
+    this.bottom = this.bottom + y1Px * multiplierY;
+  }
+
+  this.left = rect.left;
+  this.right = rect.right;
+
+  if (x0Px < 0) {
+    this.left = this.left + x0Px * multiplierX;
+  }
+
+  if (x1Px > 0) {
+    this.right = this.right + x1Px * multiplierX;
+  }
+};
+
+var _default = Bounds;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/classes/Element.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/classes/Element.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Element = void 0;
+
+var _index = __webpack_require__(/*! ../utils/index */ "./node_modules/react-scroll-parallax/cjs/utils/index.js");
+
+var _index2 = __webpack_require__(/*! ../helpers/index */ "./node_modules/react-scroll-parallax/cjs/helpers/index.js");
+
+var _constants = __webpack_require__(/*! ../constants */ "./node_modules/react-scroll-parallax/cjs/constants.js");
+
+var _Bounds = _interopRequireDefault(__webpack_require__(/*! ./Bounds */ "./node_modules/react-scroll-parallax/cjs/classes/Bounds.js"));
+
+var _Rect = _interopRequireDefault(__webpack_require__(/*! ./Rect */ "./node_modules/react-scroll-parallax/cjs/classes/Rect.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Element =
+/*#__PURE__*/
+function () {
+  function Element(options) {
+    _classCallCheck(this, Element);
+
+    this.elInner = options.elInner;
+    this.elOuter = options.elOuter;
+    this.props = options.props;
+    this.scrollAxis = options.scrollAxis;
+    this.id = (0, _index.createId)();
+    this.offsets = (0, _index2.getOffsets)(this.props);
+    this.isInView = null;
+    this.percent = 0;
+    this.updatePosition = options.scrollAxis === _constants.VERTICAL ? this._updatePositionVertical : this._updatePositionHorizontal;
+  }
+
+  _createClass(Element, [{
+    key: "updateProps",
+    value: function updateProps(nextProps) {
+      this.props = _objectSpread({}, this.props, nextProps);
+      this.offsets = (0, _index2.getOffsets)(nextProps);
+      return this;
+    }
+  }, {
+    key: "setCachedAttributes",
+    value: function setCachedAttributes(view, scroll) {
+      this.rect = new _Rect.default(this.elOuter, view, scroll);
+      this.bounds = new _Bounds.default(this.rect, this.offsets, view);
+      return this;
+    }
+  }, {
+    key: "_updatePositionHorizontal",
+    value: function _updatePositionHorizontal(view, scroll) {
+      this.isInView = (0, _index2.isElementInView)(this.bounds.left, this.bounds.right, view.width, scroll.x);
+      if (!this.isInView) return this;
+      this.percent = (0, _index2.percentMoved)(this.rect.left, this.rect.originTotalDistX, view.width, scroll.x);
+      (0, _index2.setParallaxStyles)(this.elInner, this.offsets, this.percent);
+      return this;
+    }
+  }, {
+    key: "_updatePositionVertical",
+    value: function _updatePositionVertical(view, scroll) {
+      this.isInView = (0, _index2.isElementInView)(this.bounds.top, this.bounds.bottom, view.height, scroll.y);
+      if (!this.isInView) return this;
+      this.percent = (0, _index2.percentMoved)(this.rect.top, this.rect.originTotalDistY, view.height, scroll.y);
+      (0, _index2.setParallaxStyles)(this.elInner, this.offsets, this.percent);
+      return this;
+    }
+  }]);
+
+  return Element;
+}();
+
+exports.Element = Element;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/classes/ParallaxController.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/classes/ParallaxController.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _utils = __webpack_require__(/*! ../utils */ "./node_modules/react-scroll-parallax/cjs/utils/index.js");
+
+var _helpers = __webpack_require__(/*! ../helpers */ "./node_modules/react-scroll-parallax/cjs/helpers/index.js");
+
+var _View = __webpack_require__(/*! ./View */ "./node_modules/react-scroll-parallax/cjs/classes/View.js");
+
+var _Scroll = __webpack_require__(/*! ./Scroll */ "./node_modules/react-scroll-parallax/cjs/classes/Scroll.js");
+
+var _Element = __webpack_require__(/*! ./Element */ "./node_modules/react-scroll-parallax/cjs/classes/Element.js");
+
+var _constants = __webpack_require__(/*! ../constants */ "./node_modules/react-scroll-parallax/cjs/constants.js");
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * -------------------------------------------------------
+ * Parallax Controller
+ * -------------------------------------------------------
+ *
+ * The global controller for setting up window scroll/resize
+ * listeners, managing and caching parallax element positions,
+ * determining which elements are inside the viewport based on
+ * scroll position, and then updating parallax element styles
+ * based on x/y offsets and current scroll position.
+ *
+ */
+function ParallaxController(_ref) {
+  var _ref$scrollAxis = _ref.scrollAxis,
+      scrollAxis = _ref$scrollAxis === void 0 ? _constants.VERTICAL : _ref$scrollAxis,
+      scrollContainer = _ref.scrollContainer;
+  // All parallax elements to be updated
+  var elements = [];
+  var hasScrollContainer = !!scrollContainer;
+  var viewEl = scrollContainer || window; // Scroll and View
+
+  var x = hasScrollContainer ? viewEl.scrollLeft : window.pageXOffset;
+  var y = hasScrollContainer ? viewEl.scrollTop : window.pageYOffset;
+  var scroll = new _Scroll.Scroll(x, y);
+  var view = new _View.View({
+    width: 0,
+    height: 0,
+    scrollContainer: scrollContainer
+  }); // Ticking
+
+  var ticking = false; // Passive support
+
+  var supportsPassive = (0, _utils.testForPassiveScroll)();
+
+  function _addListeners(el) {
+    el.addEventListener('scroll', _handleScroll, supportsPassive ? {
+      passive: true
+    } : false);
+    window.addEventListener('resize', _handleResize, false);
+  }
+
+  function _removeListeners(el) {
+    el.removeEventListener('scroll', _handleScroll, supportsPassive ? {
+      passive: true
+    } : false);
+    window.removeEventListener('resize', _handleResize, false);
+  }
+
+  _addListeners(viewEl);
+
+  _setViewSize();
+  /**
+   * Window scroll handler sets scroll position
+   * and then calls '_updateAllElements()'.
+   */
+
+
+  function _handleScroll() {
+    // Save current scroll
+    // Supports IE 9 and up.
+    var nx = hasScrollContainer ? viewEl.scrollLeft : window.pageXOffset;
+    var ny = hasScrollContainer ? viewEl.scrollTop : window.pageYOffset;
+    scroll.setScroll(nx, ny); // Only called if the last animation request has been
+    // completed and there are parallax elements to update
+
+    if (!ticking && elements.length > 0) {
+      ticking = true;
+      window.requestAnimationFrame(_updateAllElements);
+    }
+  }
+  /**
+   * Window resize handler. Sets the new window inner height
+   * then updates parallax element attributes and positions.
+   */
+
+
+  function _handleResize() {
+    _setViewSize();
+
+    _updateAllElements({
+      updateCache: true
+    });
+  }
+  /**
+   * Update element positions.
+   * Determines if the element is in view based on the cached
+   * attributes, if so set the elements parallax styles.
+   */
+
+
+  function _updateAllElements() {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        updateCache = _ref2.updateCache;
+
+    elements.forEach(function (element) {
+      _updateElementPosition(element);
+
+      if (updateCache) {
+        element.setCachedAttributes(view, scroll);
+      }
+    }); // reset ticking so more animations can be called
+
+    ticking = false;
+  }
+  /**
+   * Update element positions.
+   * Determines if the element is in view based on the cached
+   * attributes, if so set the elements parallax styles.
+   */
+
+
+  function _updateElementPosition(element) {
+    if (element.props.disabled) return;
+    element.updatePosition(view, scroll);
+  }
+  /**
+   * Cache the window height.
+   */
+
+
+  function _setViewSize() {
+    if (hasScrollContainer) {
+      var _width = viewEl.offsetWidth;
+      var _height = viewEl.offsetHeight;
+      return view.setSize(_width, _height);
+    }
+
+    var html = document.documentElement;
+    var width = window.innerWidth || html.clientWidth;
+    var height = window.innerHeight || html.clientHeight;
+    return view.setSize(width, height);
+  }
+  /**
+   * -------------------------------------------------------
+   * Public methods
+   * -------------------------------------------------------
+   */
+
+  /**
+   * Gets the parallax elements in the controller
+   * @return {array} parallax elements
+   */
+
+
+  this.getElements = function () {
+    return elements;
+  };
+  /**
+   * Creates a new parallax element object with new id
+   * and options to store in the 'elements' array.
+   * @param {object} options
+   * @return {object} element
+   */
+
+
+  this.createElement = function (options) {
+    var newElement = new _Element.Element(_objectSpread({}, options, {
+      scrollAxis: scrollAxis
+    }));
+    newElement.setCachedAttributes(view, scroll);
+    elements = [].concat(_toConsumableArray(elements), [newElement]);
+
+    _updateElementPosition(newElement);
+
+    return newElement;
+  };
+  /**
+   * Remove an element by id
+   * @param {object} element
+   */
+
+
+  this.removeElementById = function (id) {
+    if (!elements) return;
+    elements = elements.filter(function (el) {
+      return el.id !== id;
+    });
+  };
+  /**
+   * Updates an existing parallax element object with new options.
+   * @param {object} element
+   * @param {object} options
+   */
+
+
+  this.updateElementPropsById = function (id, props) {
+    elements = elements.map(function (el) {
+      if (el.id === id) {
+        return el.updateProps(props);
+      }
+
+      return el;
+    });
+    this.update();
+  };
+  /**
+   * Remove element styles.
+   * @param {object} element
+   */
+
+
+  this.resetElementStyles = function (element) {
+    (0, _helpers.resetStyles)(element);
+  };
+  /**
+   * Updates all parallax element attributes and positions.
+   */
+
+
+  this.update = function () {
+    _setViewSize();
+
+    _updateAllElements({
+      updateCache: true
+    });
+  };
+
+  this.updateScrollContainer = function (el) {
+    // remove existing listeners with current el first
+    _removeListeners(viewEl);
+
+    viewEl = el;
+    hasScrollContainer = !!el;
+    view = new _View.View({
+      width: 0,
+      height: 0,
+      scrollContainer: el
+    });
+
+    _setViewSize();
+
+    _addListeners(viewEl);
+
+    _updateAllElements({
+      updateCache: true
+    });
+  };
+  /**
+   * Removes listeners, reset all styles then nullifies the global ParallaxController.
+   */
+
+
+  this.destroy = function () {
+    _removeListeners(viewEl);
+
+    elements.forEach(function (element) {
+      return (0, _helpers.resetStyles)(element);
+    });
+    elements = undefined;
+  };
+}
+/**
+ * Static method to instantiate the ParallaxController.
+ * @returns {Object} ParallaxController
+ */
+
+
+ParallaxController.init = function (options) {
+  var hasWindow = typeof window !== 'undefined';
+
+  if (!hasWindow) {
+    throw new Error('Looks like ParallaxController.init() was called on the server. This method must be called on the client.');
+  }
+
+  return new ParallaxController(options);
+};
+
+var _default = ParallaxController;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/classes/Rect.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/classes/Rect.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Rect = function Rect(el, view, scroll) {
+  _classCallCheck(this, Rect);
+
+  var rect = el.getBoundingClientRect(); // rect is based on viewport -- must adjust for relative scroll container
+
+  if (view.scrollContainer) {
+    var scrollRect = view.scrollContainer.getBoundingClientRect();
+    rect = {
+      top: rect.top - scrollRect.top,
+      right: rect.right - scrollRect.left,
+      bottom: rect.bottom - scrollRect.top,
+      left: rect.left - scrollRect.left
+    };
+  }
+
+  this.height = el.offsetHeight;
+  this.width = el.offsetWidth;
+  this.left = rect.left + scroll.x;
+  this.right = rect.right + scroll.x;
+  this.top = rect.top + scroll.y;
+  this.bottom = rect.bottom + scroll.y;
+  this.originTotalDistY = view.height + this.height;
+  this.originTotalDistX = view.width + this.width;
+};
+
+var _default = Rect;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/classes/Scroll.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/classes/Scroll.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Scroll = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Scroll =
+/*#__PURE__*/
+function () {
+  function Scroll() {
+    _classCallCheck(this, Scroll);
+
+    this.setScroll.apply(this, arguments);
+  }
+
+  _createClass(Scroll, [{
+    key: "setScroll",
+    value: function setScroll(x, y) {
+      this.x = x;
+      this.y = y;
+      return this;
+    }
+  }]);
+
+  return Scroll;
+}();
+
+exports.Scroll = Scroll;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/classes/View.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/classes/View.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.View = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var View =
+/*#__PURE__*/
+function () {
+  function View(_ref) {
+    var width = _ref.width,
+        height = _ref.height,
+        scrollContainer = _ref.scrollContainer;
+
+    _classCallCheck(this, View);
+
+    this.scrollContainer = scrollContainer;
+    this.setSize(width, height);
+  }
+
+  _createClass(View, [{
+    key: "setSize",
+    value: function setSize(width, height) {
+      this.width = width;
+      this.height = height;
+      return this;
+    }
+  }]);
+
+  return View;
+}();
+
+exports.View = View;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/components/Parallax.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/components/Parallax.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _ParallaxController = _interopRequireDefault(__webpack_require__(/*! ../classes/ParallaxController */ "./node_modules/react-scroll-parallax/cjs/classes/ParallaxController.js"));
+
+var _withController = _interopRequireDefault(__webpack_require__(/*! ./withController */ "./node_modules/react-scroll-parallax/cjs/components/withController.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Parallax =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Parallax, _Component);
+
+  function Parallax() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Parallax);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Parallax)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "mapRefOuter", function (ref) {
+      _this._outer = ref;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "mapRefInner", function (ref) {
+      _this._inner = ref;
+    });
+
+    return _this;
+  }
+
+  _createClass(Parallax, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // Make sure the provided controller is an instance of the Parallax Controller
+      var isInstance = this.controller instanceof _ParallaxController.default; // Throw if neither context or global is available
+
+      if (!this.controller && !isInstance) {
+        throw new Error("Must wrap your application's <Parallax /> components in a <ParallaxProvider />.");
+      } // create a new parallax element and save the reference
+
+
+      this.element = this.controller.createElement(this._getElementOptions());
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.disabled !== prevProps.disabled || this.props.x[0] !== prevProps.x[0] || this.props.x[1] !== prevProps.x[1] || this.props.y[0] !== prevProps.y[0] || this.props.y[1] !== prevProps.y[1]) {
+        this.controller.updateElementPropsById(this.element.id, this._getElementOptions().props);
+      } // resets element styles when disabled
+
+
+      if (this.props.disabled !== prevProps.disabled && this.props.disabled) {
+        this.controller.resetElementStyles(this.element);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.controller.removeElementById(this.element.id);
+    }
+  }, {
+    key: "_getElementOptions",
+    value: function _getElementOptions() {
+      return {
+        elInner: this._inner,
+        elOuter: this._outer,
+        props: {
+          disabled: this.props.disabled,
+          x0: this.props.x[0],
+          x1: this.props.x[1],
+          y0: this.props.y[0],
+          y1: this.props.y[1]
+        }
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          children = _this$props.children,
+          className = _this$props.className,
+          Outer = _this$props.tagOuter,
+          Inner = _this$props.tagInner,
+          styleOuter = _this$props.styleOuter,
+          styleInner = _this$props.styleInner;
+      var rootClass = 'parallax-outer' + (className ? " ".concat(className) : '');
+      return _react.default.createElement(Outer, {
+        className: rootClass,
+        ref: this.mapRefOuter,
+        style: styleOuter
+      }, _react.default.createElement(Inner, {
+        className: "parallax-inner",
+        ref: this.mapRefInner,
+        style: styleInner
+      }, children));
+    }
+  }, {
+    key: "controller",
+    get: function get() {
+      return this.props.parallaxController;
+    }
+  }]);
+
+  return Parallax;
+}(_react.Component);
+
+_defineProperty(Parallax, "defaultProps", {
+  disabled: false,
+  tagInner: 'div',
+  tagOuter: 'div',
+  x: [0, 0],
+  y: [0, 0]
+});
+
+_defineProperty(Parallax, "propTypes", {
+  children: _propTypes.default.node,
+  className: _propTypes.default.string,
+  disabled: _propTypes.default.bool.isRequired,
+  parallaxController: _propTypes.default.object,
+  styleInner: _propTypes.default.object,
+  styleOuter: _propTypes.default.object,
+  tagInner: _propTypes.default.string.isRequired,
+  tagOuter: _propTypes.default.string.isRequired,
+  x: _propTypes.default.arrayOf(_propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number])),
+  y: _propTypes.default.arrayOf(_propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]))
+});
+
+var _default = (0, _withController.default)(Parallax);
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/components/ParallaxBanner.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/components/ParallaxBanner.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _Parallax = _interopRequireDefault(__webpack_require__(/*! ./Parallax */ "./node_modules/react-scroll-parallax/cjs/components/Parallax.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var containerStyle = {
+  position: 'relative',
+  overflow: 'hidden',
+  width: '100%',
+  height: '50vh'
+};
+var absoluteStyle = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0
+};
+
+var ParallaxBanner = function ParallaxBanner(_ref) {
+  var children = _ref.children,
+      className = _ref.className,
+      layers = _ref.layers,
+      style = _ref.style,
+      disabled = _ref.disabled;
+  return _react.default.createElement("div", {
+    style: _objectSpread({}, containerStyle, style),
+    className: 'parallax-banner' + (className ? " ".concat(className) : '')
+  }, layers.map(function (_ref2, i) {
+    var image = _ref2.image,
+        amount = _ref2.amount,
+        layerChildren = _ref2.children,
+        _ref2$expanded = _ref2.expanded,
+        expanded = _ref2$expanded === void 0 ? true : _ref2$expanded;
+    // if this is an expanded layer overwrite the top/bottom styles with negative margins
+    var expandedStyle = expanded ? {
+      top: Math.abs(amount) * 100 * -1 + '%',
+      bottom: Math.abs(amount) * 100 * -1 + '%'
+    } : {};
+    return _react.default.createElement(_Parallax.default, {
+      key: "layer-".concat(i),
+      y: [amount * -1 * 100 + '%', amount * 100 + '%'],
+      styleInner: absoluteStyle,
+      styleOuter: absoluteStyle,
+      disabled: disabled
+    }, image ? _react.default.createElement("div", {
+      className: "parallax-banner-layer-".concat(i),
+      style: _objectSpread({
+        backgroundImage: "url(".concat(image, ")"),
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+      }, absoluteStyle, expandedStyle)
+    }) : _react.default.createElement("div", {
+      className: "parallax-banner-layer-".concat(i),
+      style: _objectSpread({}, absoluteStyle, expandedStyle)
+    }, layerChildren));
+  }), children);
+};
+
+ParallaxBanner.defaultProps = {
+  disabled: false
+};
+ParallaxBanner.propTypes = {
+  children: _propTypes.default.node,
+  className: _propTypes.default.string,
+  disabled: _propTypes.default.bool.isRequired,
+  layers: _propTypes.default.arrayOf(_propTypes.default.shape({
+    amount: _propTypes.default.number.isRequired,
+    children: _propTypes.default.oneOfType([_propTypes.default.node, _propTypes.default.func]),
+    expanded: _propTypes.default.bool,
+    image: _propTypes.default.string
+  })),
+  style: _propTypes.default.object
+};
+var _default = ParallaxBanner;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/components/ParallaxProvider.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/components/ParallaxProvider.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _ParallaxContext = _interopRequireDefault(__webpack_require__(/*! ../helpers/ParallaxContext */ "./node_modules/react-scroll-parallax/cjs/helpers/ParallaxContext.js"));
+
+var _ParallaxController = _interopRequireDefault(__webpack_require__(/*! ../classes/ParallaxController */ "./node_modules/react-scroll-parallax/cjs/classes/ParallaxController.js"));
+
+var _constants = __webpack_require__(/*! ../constants */ "./node_modules/react-scroll-parallax/cjs/constants.js");
+
+var _validHTMLElement = _interopRequireDefault(__webpack_require__(/*! ../utils/validHTMLElement */ "./node_modules/react-scroll-parallax/cjs/utils/validHTMLElement.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var createController = function createController(options) {
+  // Don't initialize on the server
+  var isServer = typeof window === 'undefined';
+
+  if (!isServer) {
+    // Must not be the server so kick it off...
+    return _ParallaxController.default.init(options);
+  }
+
+  return null;
+};
+
+var ParallaxProvider =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ParallaxProvider, _Component);
+
+  function ParallaxProvider(props) {
+    var _this;
+
+    _classCallCheck(this, ParallaxProvider);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ParallaxProvider).call(this, props));
+    _this.controller = createController({
+      scrollAxis: props.scrollAxis,
+      scrollContainer: props.scrollContainer
+    });
+    return _this;
+  }
+
+  _createClass(ParallaxProvider, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.scrollContainer !== this.props.scrollContainer) {
+        this.controller.updateScrollContainer(this.props.scrollContainer);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.controller = this.controller.destroy();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var children = this.props.children;
+      return _react.default.createElement(_ParallaxContext.default.Provider, {
+        value: this.controller
+      }, children);
+    }
+  }]);
+
+  return ParallaxProvider;
+}(_react.Component);
+
+exports.default = ParallaxProvider;
+
+_defineProperty(ParallaxProvider, "defaultProps", {
+  scrollAxis: _constants.VERTICAL
+});
+
+_defineProperty(ParallaxProvider, "propTypes", {
+  children: _propTypes.default.node.isRequired,
+  scrollAxis: _propTypes.default.oneOf([_constants.VERTICAL, _constants.HORIZONTAL]),
+  scrollContainer: _validHTMLElement.default
+});
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/components/withController.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/components/withController.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _ParallaxContext = _interopRequireDefault(__webpack_require__(/*! ../helpers/ParallaxContext */ "./node_modules/react-scroll-parallax/cjs/helpers/ParallaxContext.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _default = function _default(WrappedComponent) {
+  var WithController =
+  /*#__PURE__*/
+  function (_Component) {
+    _inherits(WithController, _Component);
+
+    function WithController() {
+      _classCallCheck(this, WithController);
+
+      return _possibleConstructorReturn(this, _getPrototypeOf(WithController).apply(this, arguments));
+    }
+
+    _createClass(WithController, [{
+      key: "render",
+      value: function render() {
+        var _this = this;
+
+        return _react.default.createElement(_ParallaxContext.default.Consumer, null, function (controller) {
+          return _react.default.createElement(WrappedComponent, _extends({
+            parallaxController: controller
+          }, _this.props));
+        });
+      }
+    }]);
+
+    return WithController;
+  }(_react.Component);
+
+  _defineProperty(WithController, "propTypes", {
+    parallaxController: _propTypes.default.object
+  });
+
+  return WithController;
+};
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/constants.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/constants.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.HORIZONTAL = exports.VERTICAL = void 0;
+var VERTICAL = 'vertical';
+exports.VERTICAL = VERTICAL;
+var HORIZONTAL = 'horizontal';
+exports.HORIZONTAL = HORIZONTAL;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/ParallaxContext.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/ParallaxContext.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ParallaxContext = _react.default.createContext(null);
+
+var _default = ParallaxContext;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/elementStyles.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/elementStyles.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setParallaxStyles = setParallaxStyles;
+exports.resetStyles = resetStyles;
+
+var _getParallaxOffsets2 = __webpack_require__(/*! ./getParallaxOffsets */ "./node_modules/react-scroll-parallax/cjs/helpers/getParallaxOffsets.js");
+
+/**
+ * Takes a parallax element and set the styles based on the
+ * offsets and percent the element has moved though the viewport.
+ * @param {object} element
+ * @param {number} percentMoved
+ */
+function setParallaxStyles(elInner, offsets, percentMoved) {
+  // Get the parallax X and Y offsets
+  var _getParallaxOffsets = (0, _getParallaxOffsets2.getParallaxOffsets)(offsets, percentMoved),
+      _getParallaxOffsets$x = _getParallaxOffsets.x,
+      xv = _getParallaxOffsets$x.value,
+      xu = _getParallaxOffsets$x.unit,
+      _getParallaxOffsets$y = _getParallaxOffsets.y,
+      yv = _getParallaxOffsets$y.value,
+      yu = _getParallaxOffsets$y.unit; // Apply styles
+
+
+  elInner.style.transform = "translate3d(".concat(xv).concat(xu, ", ").concat(yv).concat(yu, ", 0)");
+}
+/**
+ * Takes a parallax element and removes parallax offset styles.
+ * @param {object} element
+ */
+
+
+function resetStyles(element) {
+  var el = element.elInner;
+  el.style.transform = '';
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/getOffsets.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/getOffsets.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getOffsets;
+
+var _index = __webpack_require__(/*! ../utils/index */ "./node_modules/react-scroll-parallax/cjs/utils/index.js");
+
+/**
+ * Takes a parallax element and parses the offset props to get the value
+ * and unit. Sets these values as offset object accessible on the element.
+ * @param {object} element
+ */
+function getOffsets(props) {
+  var y0Prop = props.y0,
+      y1Prop = props.y1,
+      x1Prop = props.x1,
+      x0Prop = props.x0;
+  var y0 = (0, _index.parseValueAndUnit)(y0Prop);
+  var y1 = (0, _index.parseValueAndUnit)(y1Prop);
+  var x0 = (0, _index.parseValueAndUnit)(x0Prop);
+  var x1 = (0, _index.parseValueAndUnit)(x1Prop);
+
+  if (x0.unit !== x1.unit || y0.unit !== y1.unit) {
+    throw new Error('Must provide matching units for the min and max offset values of each axis.');
+  }
+
+  var xUnit = x0.unit || '%';
+  var yUnit = y0.unit || '%';
+  return {
+    xUnit: xUnit,
+    yUnit: yUnit,
+    y0: y0,
+    y1: y1,
+    x0: x0,
+    x1: x1
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/getParallaxOffsets.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/getParallaxOffsets.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getParallaxOffsets = getParallaxOffsets;
+
+var _index = __webpack_require__(/*! ../utils/index */ "./node_modules/react-scroll-parallax/cjs/utils/index.js");
+
+/**
+ * Gets the parallax X and Y offsets to be applied to an element
+ * based upon the percent the element has moved in the viewport
+ * and the min/max offsets
+ * @returns {Object}
+ */
+function getParallaxOffsets(offsets, percentMoved) {
+  var y0 = offsets.y0,
+      y1 = offsets.y1,
+      x0 = offsets.x0,
+      x1 = offsets.x1;
+  var yUnit = y1.unit;
+  var xUnit = x1.unit;
+  var x = (0, _index.scaleBetween)(percentMoved, x0.value, x1.value, 0, 100);
+  var y = (0, _index.scaleBetween)(percentMoved, y0.value, y1.value, 0, 100);
+  return {
+    x: {
+      value: x,
+      unit: xUnit
+    },
+    y: {
+      value: y,
+      unit: yUnit
+    }
+  };
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/index.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "ParallaxContext", {
+  enumerable: true,
+  get: function get() {
+    return _ParallaxContext2.default;
+  }
+});
+Object.defineProperty(exports, "percentMoved", {
+  enumerable: true,
+  get: function get() {
+    return _percentMoved.percentMoved;
+  }
+});
+Object.defineProperty(exports, "setParallaxStyles", {
+  enumerable: true,
+  get: function get() {
+    return _elementStyles.setParallaxStyles;
+  }
+});
+Object.defineProperty(exports, "resetStyles", {
+  enumerable: true,
+  get: function get() {
+    return _elementStyles.resetStyles;
+  }
+});
+Object.defineProperty(exports, "getParallaxOffsets", {
+  enumerable: true,
+  get: function get() {
+    return _getParallaxOffsets.getParallaxOffsets;
+  }
+});
+Object.defineProperty(exports, "isElementInView", {
+  enumerable: true,
+  get: function get() {
+    return _isElementInView.isElementInView;
+  }
+});
+Object.defineProperty(exports, "getOffsets", {
+  enumerable: true,
+  get: function get() {
+    return _getOffsets2.default;
+  }
+});
+
+var _ParallaxContext2 = _interopRequireDefault(__webpack_require__(/*! ./ParallaxContext */ "./node_modules/react-scroll-parallax/cjs/helpers/ParallaxContext.js"));
+
+var _percentMoved = __webpack_require__(/*! ./percentMoved */ "./node_modules/react-scroll-parallax/cjs/helpers/percentMoved.js");
+
+var _elementStyles = __webpack_require__(/*! ./elementStyles */ "./node_modules/react-scroll-parallax/cjs/helpers/elementStyles.js");
+
+var _getParallaxOffsets = __webpack_require__(/*! ./getParallaxOffsets */ "./node_modules/react-scroll-parallax/cjs/helpers/getParallaxOffsets.js");
+
+var _isElementInView = __webpack_require__(/*! ./isElementInView */ "./node_modules/react-scroll-parallax/cjs/helpers/isElementInView.js");
+
+var _getOffsets2 = _interopRequireDefault(__webpack_require__(/*! ./getOffsets */ "./node_modules/react-scroll-parallax/cjs/helpers/getOffsets.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/isElementInView.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/isElementInView.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isElementInView = isElementInView;
+
+/**
+ * Takes two values (start, end) and returns whether it is within
+ * the view size based on the cached position adjusted for current scroll.
+ * Only along a single dimension <--- [ --- a --- b --- ] -->
+ * @param {number} a - top/left
+ * @param {number} b - bottom/right
+ * @param {number} size - width/height
+ * @param {number} scroll - x/y
+ * @return {boolean} isInView
+ */
+function isElementInView(a, b, size, scroll) {
+  var ax = a - scroll;
+  var bx = b - scroll;
+  var aView = ax >= 0 && ax <= size;
+  var bInView = bx >= 0 && bx <= size;
+  var abCovering = ax <= 0 && bx >= size;
+  var isInView = aView || bInView || abCovering;
+  return isInView;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/helpers/percentMoved.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/helpers/percentMoved.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.percentMoved = percentMoved;
+
+/**
+ * Returns the percent (0 - 100) moved based on position in the viewport
+ * @param {number} a - the start value from cache
+ * @param {number} totalDist - total dist the element has to move to be 100% complete (view width/height + element width/height)
+ * @param {number} size - width/height of view
+ * @param {number} scroll - current scroll position x/y
+ * @return {number} percent moved
+ */
+function percentMoved(a, totalDist, size, scroll) {
+  // adjust cached value
+  var ax = a - scroll; // Percent the element has moved based on current and total distance to move
+
+  var percent = (ax * -1 + size) / totalDist * 100;
+  return percent;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/index.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "withController", {
+  enumerable: true,
+  get: function get() {
+    return _withController2.default;
+  }
+});
+Object.defineProperty(exports, "Parallax", {
+  enumerable: true,
+  get: function get() {
+    return _Parallax2.default;
+  }
+});
+Object.defineProperty(exports, "ParallaxProvider", {
+  enumerable: true,
+  get: function get() {
+    return _ParallaxProvider2.default;
+  }
+});
+Object.defineProperty(exports, "ParallaxBanner", {
+  enumerable: true,
+  get: function get() {
+    return _ParallaxBanner2.default;
+  }
+});
+
+var _withController2 = _interopRequireDefault(__webpack_require__(/*! ./components/withController */ "./node_modules/react-scroll-parallax/cjs/components/withController.js"));
+
+var _Parallax2 = _interopRequireDefault(__webpack_require__(/*! ./components/Parallax */ "./node_modules/react-scroll-parallax/cjs/components/Parallax.js"));
+
+var _ParallaxProvider2 = _interopRequireDefault(__webpack_require__(/*! ./components/ParallaxProvider */ "./node_modules/react-scroll-parallax/cjs/components/ParallaxProvider.js"));
+
+var _ParallaxBanner2 = _interopRequireDefault(__webpack_require__(/*! ./components/ParallaxBanner */ "./node_modules/react-scroll-parallax/cjs/components/ParallaxBanner.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/utils/createId.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/utils/createId.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createId = createId;
+
+/**
+ * Creates a unique id to distinguish parallax elements.
+ * @return {Number}
+ */
+var id = 0;
+
+function createId() {
+  ++id;
+  return id;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/utils/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/utils/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "parseValueAndUnit", {
+  enumerable: true,
+  get: function get() {
+    return _parseValueAndUnit2.default;
+  }
+});
+Object.defineProperty(exports, "scaleBetween", {
+  enumerable: true,
+  get: function get() {
+    return _scaleBetween2.default;
+  }
+});
+Object.defineProperty(exports, "testForPassiveScroll", {
+  enumerable: true,
+  get: function get() {
+    return _testForPassiveScroll2.default;
+  }
+});
+Object.defineProperty(exports, "createId", {
+  enumerable: true,
+  get: function get() {
+    return _createId.createId;
+  }
+});
+
+var _parseValueAndUnit2 = _interopRequireDefault(__webpack_require__(/*! ./parseValueAndUnit */ "./node_modules/react-scroll-parallax/cjs/utils/parseValueAndUnit.js"));
+
+var _scaleBetween2 = _interopRequireDefault(__webpack_require__(/*! ./scaleBetween */ "./node_modules/react-scroll-parallax/cjs/utils/scaleBetween.js"));
+
+var _testForPassiveScroll2 = _interopRequireDefault(__webpack_require__(/*! ./testForPassiveScroll */ "./node_modules/react-scroll-parallax/cjs/utils/testForPassiveScroll.js"));
+
+var _createId = __webpack_require__(/*! ./createId */ "./node_modules/react-scroll-parallax/cjs/utils/createId.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/utils/parseValueAndUnit.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/utils/parseValueAndUnit.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = parseValueAndUnit;
+
+/**
+ * Determines the unit of a string and parses the value
+ *
+ * @param {string} str
+ * @param {object} out
+ * @return {object} The parsed value and the unit if any
+ */
+function parseValueAndUnit(str) {
+  var out = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+    value: 0,
+    unit: 'px'
+  };
+  var isValid = typeof str === 'number' || typeof str === 'string';
+
+  if (!isValid) {
+    throw new Error('Invalid value provided. Must provide a value as a string or number');
+  }
+
+  str = String(str);
+  out.value = parseFloat(str, 10);
+  out.unit = str.match(/[\d.\-\+]*\s*(.*)/)[1] || '%'; // default to percent
+
+  var validUnits = ['px', '%'];
+  var isValidUnit = validUnits.find(function (unit) {
+    return unit === out.unit;
+  });
+
+  if (!isValidUnit) {
+    throw new Error('Invalid unit provided. Must provide a unit of px in or %');
+  }
+
+  return out;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/utils/scaleBetween.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/utils/scaleBetween.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = scaleBetween;
+
+// Scale between AKA normalize
+function scaleBetween(value, newMin, newMax, oldMin, oldMax) {
+  return (newMax - newMin) * (value - oldMin) / (oldMax - oldMin) + newMin;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/utils/testForPassiveScroll.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/utils/testForPassiveScroll.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = testForPassiveScroll;
+
+function testForPassiveScroll() {
+  var supportsPassiveOption = false;
+
+  try {
+    var opts = Object.defineProperty({}, 'passive', {
+      get: function get() {
+        supportsPassiveOption = true;
+      }
+    });
+    window.addEventListener('test', null, opts);
+    window.removeEventListener('test', null, opts);
+  } catch (e) {}
+
+  return supportsPassiveOption;
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-scroll-parallax/cjs/utils/validHTMLElement.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-scroll-parallax/cjs/utils/validHTMLElement.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = validHTMLElement;
+
+function validHTMLElement(props, propName) {
+  var componentName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'ANONYMOUS';
+
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  if (props[propName]) {
+    var value = props[propName];
+    var isValid = value instanceof window.Element;
+
+    if (!isValid) {
+      return new Error("Prop name \"".concat(propName, "\" in <").concat(componentName, "> must be an HTML DOM element."));
+    }
+  }
+
+  return null;
+}
 
 /***/ }),
 
@@ -11311,13 +13783,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
-/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_14___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
+/* harmony import */ var react_reveal_globals__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-reveal/globals */ "./node_modules/react-reveal/globals.js");
+/* harmony import */ var react_reveal_globals__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_reveal_globals__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-scroll-parallax */ "./node_modules/react-scroll-parallax/cjs/index.js");
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
+/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_16___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
 
 
 
@@ -11334,6 +13810,15 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_app.js";
 
 
 
+
+
+react_reveal_globals__WEBPACK_IMPORTED_MODULE_10___default()({
+  ssrFadeout: true,
+  forever: true,
+  fraction: 1,
+  distance: '400px',
+  duration: 300
+});
 var DataContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
 
 var MyApp =
@@ -11352,55 +13837,61 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
+          page = _this$props.page,
           data = _this$props.data;
-      var bgClass = Component.name === 'Homepage' ? 'bg-dark' : 'bg-light';
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
-        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
-          page: Component.name
-        }),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
-        className: "page page--".concat(Component.name, " ").concat(bgClass),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
+        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
+          page: page
+        }),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 35
         },
         __self: this
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "page page--".concat(page),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      })))));
     }
   }], [{
     key: "getInitialProps",
@@ -11415,7 +13906,8 @@ function (_App) {
               case 0:
                 Component = _ref.Component, ctx = _ref.ctx;
                 return _context.abrupt("return", {
-                  data: _data_json__WEBPACK_IMPORTED_MODULE_14__
+                  data: _data_json__WEBPACK_IMPORTED_MODULE_16__,
+                  page: Component.name.toLowerCase()
                 });
 
               case 2:
@@ -11437,9 +13929,9 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_9___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get("https://api-football-v1.p.rapidapi.com/v2/players/team/172")
-// .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
-// .header("X-RapidAPI-Key", "d828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453")
+/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get('https://api-football-v1.p.rapidapi.com/v2/players/team/172')
+// .header('X-RapidAPI-Host', 'api-football-v1.p.rapidapi.com')
+// .header('X-RapidAPI-Key', 'd828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453')
 // .end(function (result) {
 //   console.log(result.status, result.headers, result.body);
 // });

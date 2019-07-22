@@ -1,34 +1,80 @@
+@keyframes focus {
+    0% { filter: blur(50px); opacity: 0; }
+    20% { filter: blur(40px); opacity: 1; }
+    100% { filter: blur(0) }
+}
+
+@keyframes zoom-in-focus {
+    0% { filter: blur(50px); opacity: 0; max-height: 50%; }
+    20% { filter: blur(50px); opacity: 0; max-height: 50%; }
+    100% { filter: blur(0); opacity: 1; max-height: 93%; }
+}
+
+@keyframes zoom-in-focus-sm {
+    0% { filter: blur(50px); opacity: 0; max-height: 50%; }
+    20% { filter: blur(50px); opacity: 0; max-height: 50%; }
+    100% { filter: blur(0); opacity: 1; max-height: 77%; }
+}
+
 .intro {
+    overflow: hidden;
+    margin-bottom: 0;
     position: relative;
-    background: url('/static/svgs/zuber_desktop.svg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    max-height: 100vh;
+
+    .intro__bg-mobile {
+        position: absolute;
+        height: 100%;
+        width: 120%;
+        top: 3vh;
+        left: -10%;
+        animation: focus 3.5s ease-in;
+    }
+
+    .intro__bg-desktop {
+        display: none;
+    }
 
     .intro__image {
         position: absolute;
         bottom: 0;
         left: 50%;
-        max-height: 93%;
+        max-height: 77%;
         transform: translateX(-50%);
+        animation: zoom-in-focus-sm 4s ease-in;
     }
 
     .intro__logo {
-        width: 110px;
+        width: 55px;
         position: absolute;
         bottom: 6%;
         right: 5%;
     }
 
-    @media screen and (max-width: $screen-xs) {
-        background-size: 100% auto;
-        height: 95vh;
+    @media screen and (min-width: $screen-md) {
+        .intro__logo {
+            width: 110px;
+        }
+    }
 
-        .intro__image {
-            max-height: 75%;
+    @media screen and (min-width: $screen-md) and (orientation: landscape) {
+        .intro__bg-desktop {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 110%;
+            top: 0;
+            left: -5%;
+            animation: focus 3.5s ease-in;
+        }
+    
+        .intro__bg-mobile {
+            display: none;
         }
 
-        .intro__logo {
-            width: 55px;
+        .intro__image {
+            max-height: 93%;
+            animation: zoom-in-focus 4s ease-in;
         }
     }
 }

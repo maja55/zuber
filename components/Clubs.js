@@ -1,59 +1,80 @@
 import React, { useContext, useState } from 'react'
+import { Fade } from 'react-reveal';
 import { DataContext } from '../pages/_app'
-import Image from './Image'
 import Section from './Section'
 import CountBar from './CountBar'
+import { LazyFadeImage } from './LazyImage';
 
 const Clubs = () => {
     const { labels, clubs } = useContext(DataContext)
     const [activeClub, setActiveClub ] = useState(clubs.length - 1)
-    const club = clubs[activeClub]
+    const [fade, setFade ] = useState(true)
+    const [transitionClass, setTransitionClass ] = useState('')
+    const onClick = (index) => {
+        if (fade) setFade(false)
+        setTransitionClass('slide')
+        setTimeout(() => setTransitionClass(''), 500)
+        setActiveClub(index)
+    }
+    const { 
+        name, coatOfArmsKey, startYear, endYear, position,
+        playerNumber, gamesCount, goalsCount, assistsCount,
+        backgroundImage, playerImage
+    } = clubs[activeClub]
 
     return (
-        <Section title={ labels.clubCareer } baseClass="clubs">
+        <Section title={ labels.clubCareer } baseClass="clubs" flexHeight>
             <div className="club__top">
                 <ul className="clubs__menu t-7 t-grey">
                     { clubs.map(({ name, startYear }, index) => (
-                        <li key={ name } className={ `clubs__menu-item cta-hover${index === activeClub ? ' active t-light' : ''}` }>
-                            <button onClick={ () => setActiveClub(index) }>
-                                { startYear } - { name }
-                            </button>
-                        </li>
+                        <Fade key={ name } bottom opposite delay={ index * 200 } duration={ 200 }>
+                            <li className={ `clubs__menu-item cta-hover${index === activeClub ? ' active t-light' : ''}` }>
+                                <button onClick={ () => onClick(index) }>
+                                    { startYear } - { name }
+                                </button>
+                            </li>
+                        </Fade>
                     )) }
                 </ul>
-                <Image
-                    baseClase="club-bg"
-                    alt={ `${club.name} Stadium` }
-                    imageS = { club.backgroundImageS }
-                    imageM = { club.backgroundImageM }
-                    imageL = { club.backgroundImageL }
-                />
-                <div className="club__copy t-3">
-                    <div className="club__name">{ club.name }</div>
-                    { club.addition && <div>{ club.addition }</div> }
-                    <div>{ club.startYear }-{ club.endYear }</div>
-                    <div>{ club.position } #{ club.playerNumber }</div>
+                <div className={ `club-bg ${transitionClass}${fade ? '' : ' hide'}` }>
+                    <LazyFadeImage
+                        baseClass='club-bg'
+                        alt={ `${name} Stadium` }
+                        image={ backgroundImage }
+                        revealProps={{ delay: 1000 }}
+                    />
                 </div>
+                <Fade bottom opposite cascade delay={ 500 }>
+                    <div className={`club__copy t-3 ${transitionClass}`}>
+                        <div className="club__name">{ name }</div>
+                        <div>{ startYear }-{ endYear }</div>
+                        <div>{ position } #{ playerNumber }</div>
+                    </div>
+                </Fade>
             </div>
-            <div className="club__bottom">
-                <img className="club__logo" src={ `/static/svgs/${club.coatOfArmsKey}.svg` } alt={ `${club.name} Coat of Arms` } />
+            <div className={`club__bottom ${transitionClass}`}>
+                <Fade bottom opposite delay={ 700 }>
+                    <img className="club__logo" src={ `/static/svgs/${coatOfArmsKey}.svg` } alt={ `${name} Coat of Arms` } />
+                </Fade>
                 <CountBar
                     baseClass="club"
+                    revealProps={{ delay: 700, disabled: !fade }}
                     isVertical
                     items={[
-                        { count: club.gamesCount, labelTop: labels.games, labelBottom: labels.played },
-                        { count: club.goalsCount, labelTop: labels.goals, labelBottom: labels.scored },
-                        { count: club.assistsCount, labelTop: labels.goal, labelBottom: labels.assists },
+                        { count: gamesCount, labelTop: labels.games, labelBottom: labels.played },
+                        { count: goalsCount, labelTop: labels.goals, labelBottom: labels.scored },
+                        { count: assistsCount, labelTop: labels.goal, labelBottom: labels.assists },
                     ]}
                 />
             </div>
-            <Image
-                baseClase="club-top"
-                alt={ `Steven Zuber in ${club.name}` }
-                imageS = { club.playerImageS }
-                imageM = { club.playerImageM }
-                imageL = { club.playerImageL }
-            />
+            <div className={`club-player ${transitionClass}`}>
+                <LazyFadeImage
+                    baseClass='club-top'
+                    alt={ `Steven Zuber in ${name}` }
+                    image={ playerImage }
+                    revealProps={{ delay: 700 }}
+                />
+            </div>
         </Section>
     )
 }

@@ -105,10 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
 /* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
 /* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+/* harmony import */ var _LazyImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LazyImage */ "./components/LazyImage.js");
 
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Clubs.js";
 
@@ -117,8 +119,9 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Clubs.js";
 
 
 
+
 var Clubs = function Clubs() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
       labels = _useContext.labels,
       clubs = _useContext.clubs;
 
@@ -127,142 +130,216 @@ var Clubs = function Clubs() {
       activeClub = _useState2[0],
       setActiveClub = _useState2[1];
 
-  var club = clubs[activeClub];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
+      fade = _useState4[0],
+      setFade = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
+      transitionClass = _useState6[0],
+      setTransitionClass = _useState6[1];
+
+  var _onClick = function onClick(index) {
+    if (fade) setFade(false);
+    setTransitionClass('slide');
+    setTimeout(function () {
+      return setTransitionClass('');
+    }, 500);
+    setActiveClub(index);
+  };
+
+  var _clubs$activeClub = clubs[activeClub],
+      name = _clubs$activeClub.name,
+      coatOfArmsKey = _clubs$activeClub.coatOfArmsKey,
+      startYear = _clubs$activeClub.startYear,
+      endYear = _clubs$activeClub.endYear,
+      position = _clubs$activeClub.position,
+      playerNumber = _clubs$activeClub.playerNumber,
+      gamesCount = _clubs$activeClub.gamesCount,
+      goalsCount = _clubs$activeClub.goalsCount,
+      assistsCount = _clubs$activeClub.assistsCount,
+      backgroundImage = _clubs$activeClub.backgroundImage,
+      playerImage = _clubs$activeClub.playerImage;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: labels.clubCareer,
     baseClass: "clubs",
+    flexHeight: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 26
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "club__top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 27
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "clubs__menu t-7 t-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 28
     },
     __self: this
   }, clubs.map(function (_ref, index) {
     var name = _ref.name,
         startYear = _ref.startYear;
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
       key: name,
+      bottom: true,
+      opposite: true,
+      delay: index * 200,
+      duration: 200,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       className: "clubs__menu-item cta-hover".concat(index === activeClub ? ' active t-light' : ''),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 31
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
       onClick: function onClick() {
-        return setActiveClub(index);
+        return _onClick(index);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 32
       },
       __self: this
-    }, startYear, " - ", name));
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    baseClase: "club-bg",
-    alt: "".concat(club.name, " Stadium"),
-    imageS: club.backgroundImageS,
-    imageM: club.backgroundImageM,
-    imageL: club.backgroundImageL,
+    }, startYear, " - ", name)));
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club-bg ".concat(transitionClass).concat(fade ? '' : ' hide'),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 39
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "club__copy t-3",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_6__["LazyFadeImage"], {
+    baseClass: "club-bg",
+    alt: "".concat(name, " Stadium"),
+    image: backgroundImage,
+    revealProps: {
+      delay: 1000
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 40
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+    bottom: true,
+    opposite: true,
+    cascade: true,
+    delay: 500,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club__copy t-3 ".concat(transitionClass),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "club__name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 49
     },
     __self: this
-  }, club.name), club.addition && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }, club.addition), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, club.startYear, "-", club.endYear), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, club.position, " #", club.playerNumber))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "club__bottom",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    className: "club__logo",
-    src: "/static/svgs/".concat(club.coatOfArmsKey, ".svg"),
-    alt: "".concat(club.name, " Coat of Arms"),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    baseClass: "club",
-    isVertical: true,
-    items: [{
-      count: club.gamesCount,
-      labelTop: labels.games,
-      labelBottom: labels.played
-    }, {
-      count: club.goalsCount,
-      labelTop: labels.goals,
-      labelBottom: labels.scored
-    }, {
-      count: club.assistsCount,
-      labelTop: labels.goal,
-      labelBottom: labels.assists
-    }],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    baseClase: "club-top",
-    alt: "Steven Zuber in ".concat(club.name),
-    imageS: club.playerImageS,
-    imageM: club.playerImageM,
-    imageL: club.playerImageL,
+  }, name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
     },
     __self: this
-  }));
+  }, startYear, "-", endYear), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, position, " #", playerNumber)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club__bottom ".concat(transitionClass),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+    bottom: true,
+    opposite: true,
+    delay: 700,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    className: "club__logo",
+    src: "/static/svgs/".concat(coatOfArmsKey, ".svg"),
+    alt: "".concat(name, " Coat of Arms"),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    baseClass: "club",
+    revealProps: {
+      delay: 700,
+      disabled: !fade
+    },
+    isVertical: true,
+    items: [{
+      count: gamesCount,
+      labelTop: labels.games,
+      labelBottom: labels.played
+    }, {
+      count: goalsCount,
+      labelTop: labels.goals,
+      labelBottom: labels.scored
+    }, {
+      count: assistsCount,
+      labelTop: labels.goal,
+      labelBottom: labels.assists
+    }],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "club-player ".concat(transitionClass),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_6__["LazyFadeImage"], {
+    baseClass: "club-top",
+    alt: "Steven Zuber in ".concat(name),
+    image: playerImage,
+    revealProps: {
+      delay: 700
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Clubs);
@@ -278,64 +355,124 @@ var Clubs = function Clubs() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_2__);
+
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/CountBar.js";
+
 
 
 var CountBar = function CountBar(_ref) {
   var baseClass = _ref.baseClass,
       items = _ref.items,
-      isVertical = _ref.isVertical;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      isVertical = _ref.isVertical,
+      revealProps = _ref.revealProps;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "count-bar ".concat(baseClass, "__count-bar").concat(isVertical ? ' count-bar--vertical' : ''),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 5
     },
     __self: this
-  }, items.map(function (_ref2) {
+  }, items.map(function (_ref2, index) {
     var count = _ref2.count,
         labelTop = _ref2.labelTop,
         labelBottom = _ref2.labelBottom;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       className: "count-bar__item",
       key: count,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "count-bar__count t-5",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 7
       },
       __self: this
-    }, count), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "count-bar__label",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    }, labelTop), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    }, revealProps.disabled ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "count-bar__count t-5",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 10
       },
       __self: this
-    }, labelBottom)));
+    }, count), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "count-bar__label",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, labelTop), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, labelBottom))) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      bottom: true,
+      opposite: true
+    }, revealProps, {
+      delay: revealProps.delay + index * 100,
+      duration: 200,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "count-bar__count t-5",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, count)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      bottom: true,
+      cascade: true,
+      opposite: true
+    }, revealProps, {
+      delay: revealProps.delay + index * 100,
+      duration: 200,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      className: "count-bar__label",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, labelTop), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, labelBottom)))));
   }));
 };
 
+CountBar.defaultProps = {
+  revealProps: {
+    delay: 50
+  }
+};
 /* harmony default export */ __webpack_exports__["default"] = (CountBar);
 
 /***/ }),
@@ -351,93 +488,117 @@ var CountBar = function CountBar(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
-/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
+/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+/* harmony import */ var _LazyImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LazyImage */ "./components/LazyImage.js");
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Fifa.js";
 
 
 
 
-var data = {
-  minutes: 253,
-  games: 3,
-  goals: 1
-};
+
+
 
 var Fifa = function Fifa() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
       labels = _useContext.labels,
       fifa = _useContext.fifa;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "fifa",
+  var copy = fifa.copy,
+      image = fifa.image,
+      minutesCount = fifa.minutesCount,
+      gamesCount = fifa.gamesCount,
+      goalsCount = fifa.goalsCount;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    baseClass: "fifa",
+    name: "fifa",
+    flexHeight: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "fifa__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 14
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+    bottom: true,
+    opposite: true,
+    cascade: true,
+    delay: 50,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "fifa__top t-gold t-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 17
     },
     __self: this
   }, labels.fifaWorldCup, " 2019"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 18
     },
     __self: this
-  }, labels.statistics)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    baseClase: "fifa",
-    imageS: fifa.imageS,
-    imageM: fifa.imageM,
-    imageL: fifa.imageL,
+  }, labels.statistics))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_5__["LazyFadeImage"], {
+    baseClass: "fifa",
+    image: image,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+    bottom: true,
+    opposite: true,
+    delay: 100,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "fifa__copy",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 23
     },
     __self: this
-  }, fifa.copy), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, copy)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     baseClass: "fifa",
     items: [{
-      count: data.minutes,
+      count: minutesCount,
       labelTop: labels.minutes,
       labelBottom: labels.played
     }, {
-      count: data.games,
+      count: gamesCount,
       labelTop: labels.games,
       labelBottom: labels.played
     }, {
-      count: data.goals,
+      count: goalsCount,
       labelTop: labels.goal,
       labelBottom: labels.scored
     }],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 25
     },
     __self: this
   })));
@@ -469,21 +630,19 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/Footer.js";
 var Footer = function Footer() {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
       labels = _useContext.labels,
-      footer = _useContext.footer,
-      page = _useContext.page;
+      footer = _useContext.footer;
 
   var socials = footer.socials,
       email = footer.email,
       copyright = footer.copyright;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
-    className: page === 'Homepage' ? 't-grey' : '',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--flex site-footer",
+    className: "section section--flex site-footer t-grey",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -511,6 +670,7 @@ var Footer = function Footer() {
     __self: this
   }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(socials).map(function (label, index, array) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      key: label,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -630,30 +790,206 @@ var Head = function Head(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Image.js";
 
 
+
 var Image = function Image(_ref) {
-  var baseClase = _ref.baseClase,
-      imageS = _ref.imageS,
-      imageM = _ref.imageM,
-      imageL = _ref.imageL,
+  var baseClass = _ref.baseClass,
+      classAddition = _ref.classAddition,
+      _ref$image = _ref.image,
+      image = _ref$image === void 0 ? {} : _ref$image,
       alt = _ref.alt;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "".concat(baseClase, "__image"),
-    srcSet: "\n            ".concat(imageS, " 768w,\n            ").concat(imageM, " 1200w,\n            ").concat(imageL, " 1440w,\n        "),
+    className: "".concat(baseClass, "__image ").concat(classAddition),
+    srcSet: "\n            ".concat(image.imageS, " 768w,\n            ").concat(image.imageM, " 1200w,\n            ").concat(image.imageL, " 1440w,\n        "),
     sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
-    src: imageL,
+    src: image.imageL,
     alt: alt,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 5
     },
     __self: this
   });
 };
 
+Image.defaultProps = {
+  image: {},
+  alt: '',
+  baseClass: ''
+};
+Image.propTypes = {
+  image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({}),
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  baseClass: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+};
 /* harmony default export */ __webpack_exports__["default"] = (Image);
+
+/***/ }),
+
+/***/ "./components/LazyImage.js":
+/*!*********************************!*\
+  !*** ./components/LazyImage.js ***!
+  \*********************************/
+/*! exports provided: LazyParalexImage, LazyFadeImage, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyParalexImage", function() { return LazyParalexImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyFadeImage", function() { return LazyFadeImage; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-lazyload */ "react-lazyload");
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_lazyload__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-scroll-parallax */ "react-scroll-parallax");
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+
+
+
+var _jsxFileName = "/Users/maja/code/ZuberSite/components/LazyImage.js";
+
+
+
+
+
+
+var defaulteImgRevealProps = {
+  bottom: true,
+  opposite: true,
+  delay: 100,
+  duration: 500,
+  distance: "1000px"
+};
+
+var LazyImage = function LazyImage(props) {
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    height: 200,
+    offset: 500,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_6__["Fade"], {
+    top: true,
+    distance: '20px',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_8__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }))));
+};
+
+var LazyParalexImage = function LazyParalexImage(_ref) {
+  var y = _ref.y,
+      props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["y"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    height: 200,
+    offset: 500,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_7__["Parallax"], {
+    y: y,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_6__["Fade"], {
+    top: true,
+    distance: '20px',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_8__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  })))));
+};
+var LazyFadeImage = function LazyFadeImage(_ref2) {
+  var revealProps = _ref2.revealProps,
+      image = _ref2.image,
+      baseClass = _ref2.baseClass,
+      alt = _ref2.alt,
+      classAddition = _ref2.classAddition;
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    height: 200,
+    offset: 500,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_6__["Fade"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaulteImgRevealProps, revealProps), {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
+    className: "".concat(baseClass, "__image ").concat(classAddition),
+    srcSet: "\n                    ".concat(image.imageS, " 768w,\n                    ").concat(image.imageM, " 1200w,\n                    ").concat(image.imageL, " 1440w,\n                "),
+    sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
+    src: image.imageL,
+    alt: alt,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  })));
+};
+LazyFadeImage.defaultProps = {
+  image: {},
+  alt: '',
+  baseClass: '',
+  revealProps: defaulteImgRevealProps
+};
+LazyFadeImage.propTypes = {
+  image: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
+    imageS: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+    imageM: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+    imageL: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string
+  }),
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  baseClass: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  revealProps: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
+    delay: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+    bottom: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+    left: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+    duration: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+    distance: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string
+  })
+};
+/* harmony default export */ __webpack_exports__["default"] = (LazyImage);
 
 /***/ }),
 
@@ -668,10 +1004,15 @@ var Image = function Image(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
-/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
-/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-lazyload */ "react-lazyload");
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_lazyload__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _LazyImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LazyImage */ "./components/LazyImage.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
+/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/NationalTeam.js";
 
 
@@ -679,99 +1020,150 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/components/NationalTeam.js";
 
 
 
+
+
+
 var NationalTeam = function NationalTeam() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
       nationalTeam = _useContext.nationalTeam,
       labels = _useContext.labels;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  var copy = nationalTeam.copy,
+      image = nationalTeam.image,
+      imageBw = nationalTeam.imageBw,
+      assistsCount = nationalTeam.assistsCount,
+      gamesCount = nationalTeam.gamesCount,
+      goalsCount = nationalTeam.goalsCount,
+      startYear = nationalTeam.startYear,
+      endYear = nationalTeam.endYear,
+      playerNumber = nationalTeam.playerNumber,
+      position = nationalTeam.position;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_6__["default"], {
     title: labels.internationalCareer,
     baseClass: "national-team",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "national-team__content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "national-team__top",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/static/svgs/swiss-national-team.svg",
-    alt: "Swiss National Team Logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    name: "career",
+    flexHeight: true,
+    observeIntersection: true,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, nationalTeam.copy)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    baseClase: "national-team",
-    imageS: nationalTeam.imageS,
-    imageM: nationalTeam.imageM,
-    imageL: nationalTeam.imageL,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "national-team__bottom t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3 t-outline t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, nationalTeam.startYear, "-", nationalTeam.endYear), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, nationalTeam.position, " #", nationalTeam.playerNumber))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    baseClass: "national-team",
-    items: [{
-      count: nationalTeam.gamesCount,
-      labelTop: labels.games,
-      labelBottom: labels.played
-    }, {
-      count: nationalTeam.goalsCount,
-      labelTop: labels.goals,
-      labelBottom: labels.scored
-    }, {
-      count: nationalTeam.assistsCount,
-      labelTop: labels.goal,
-      labelBottom: labels.assists
-    }],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }));
+  }, function (_ref) {
+    var reveal = _ref.reveal;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+      bottom: true,
+      opposite: true,
+      cascade: true,
+      delay: 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "national-team__content",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "national-team__top",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: "/static/svgs/swiss-national-team.svg",
+      alt: "Swiss National Team Logo",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, copy)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "national-team__image-wrapper",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      height: 200,
+      offset: 500,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      baseClass: "national-team",
+      image: image,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      baseClass: "national-team",
+      classAddition: "national-team__bw".concat(reveal ? ' fadeOut' : ''),
+      image: imageBw,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "national-team__bottom t-gold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-3 t-outline t-gold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }, startYear, "-", endYear), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }, position, " #", playerNumber)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      baseClass: "national-team",
+      items: [{
+        count: gamesCount,
+        labelTop: labels.games,
+        labelBottom: labels.played
+      }, {
+        count: goalsCount,
+        labelTop: labels.goals,
+        labelBottom: labels.scored
+      }, {
+        count: assistsCount,
+        labelTop: labels.goal,
+        labelBottom: labels.assists
+      }],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NationalTeam);
@@ -793,8 +1185,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Navigation.js";
+
 
 
 
@@ -805,7 +1199,7 @@ var navLinks = [{
   href: '/#career',
   labelKey: 'career'
 }, {
-  href: '/life',
+  href: '/about',
   labelKey: 'life'
 }, {
   href: '/shop',
@@ -829,7 +1223,11 @@ var Navigation = function Navigation() {
       toggleMenu = _useState2[1];
 
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
-      labels = _useContext.labels;
+      labels = _useContext.labels,
+      heroImage = _useContext.heroImage,
+      page = _useContext.page;
+
+  var isShop = page === 'shop';
 
   var onClick = function onClick() {
     if (isOpen) {
@@ -844,33 +1242,37 @@ var Navigation = function Navigation() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 37
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 38
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    src: "/static/svgs/steven_zuber.svg",
-    alt: "Stefan Zuber logo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "menu-btn".concat(isOpen ? ' open' : ''),
-    onClick: onClick,
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "menu-btn".concat(isOpen ? ' open' : '').concat(isShop ? ' dark' : ''),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    onClick: onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
@@ -882,13 +1284,7 @@ var Navigation = function Navigation() {
       lineNumber: 43
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
     className: "menu".concat(isOpen ? ' open' : ''),
     onClick: onClick,
     __source: {
@@ -897,14 +1293,15 @@ var Navigation = function Navigation() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
-    className: "section--menu",
+    className: "section section--menu",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    src: "/static/images/zuber-hero-page@2x.png",
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    image: heroImage,
+    baseClass: "menu",
     alt: "Stefan Zuber",
     __source: {
       fileName: _jsxFileName,
@@ -923,24 +1320,24 @@ var Navigation = function Navigation() {
         labelKey = _ref.labelKey;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       key: labelKey,
+      className: "cta-hover",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 52
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 53
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-      className: "cta-hover",
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 53
       },
       __self: this
     }, labels[labelKey])));
@@ -948,30 +1345,59 @@ var Navigation = function Navigation() {
     className: "t-8",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 57
     },
     __self: this
   }, "EN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 58
     },
     __self: this
   }, " | "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick() {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 59
     },
     __self: this
-  }, "DE"))))));
+  }, "DE"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "page-heading",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, isShop ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "t-6 t-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }, labels.shop) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "/static/svgs/steven_zuber.svg",
+    alt: "Stefan Zuber logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navigation);
@@ -987,31 +1413,105 @@ var Navigation = function Navigation() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_2__);
+
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Section.js";
 
 
+
+var createObserver = function createObserver(el, handleIntersect) {
+  var options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.8
+  };
+  var observer = new IntersectionObserver(handleIntersect, options);
+  observer.observe(el);
+};
+
 var Section = function Section(_ref) {
   var baseClass = _ref.baseClass,
+      titleClass = _ref.titleClass,
       title = _ref.title,
       children = _ref.children,
-      flexHeight = _ref.flexHeight;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "".concat(baseClass).concat(flexHeight ? 'section--flex' : ''),
+      flexHeight = _ref.flexHeight,
+      name = _ref.name,
+      observeIntersection = _ref.observeIntersection,
+      disableFade = _ref.disableFade;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+    reveal: false,
+    y: null,
+    scrollUp: false
+  }),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      state = _useState2[0],
+      setState = _useState2[1];
+
+  var sectionRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    if (sectionRef.current && observeIntersection) {
+      createObserver(sectionRef.current, function (entries) {
+        var _entries$ = entries[0],
+            isIntersecting = _entries$.isIntersecting,
+            boundingClientRect = _entries$.boundingClientRect;
+        var y = boundingClientRect.y;
+        setState(function (prevState) {
+          return {
+            y: y,
+            reveal: isIntersecting,
+            scrollUp: prevState.y && y !== prevState.y ? y > prevState.y : prevState.scrollUp
+          };
+        });
+      });
+    }
+  }, []);
+
+  if (name === 'statistics') {}
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+    className: "".concat(baseClass, " section").concat(flexHeight ? ' section--flex' : ''),
+    id: name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 37
     },
     __self: this
-  }, title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "section-title t-6 t-grey",
+  }, disableFade && title ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "section-title t-6 t-grey ".concat(titleClass),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 39
     },
     __self: this
-  }, title), children);
+  }, title) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+    bottom: true,
+    opposite: true,
+    delay: 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, title && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+    className: "section-title t-6 t-grey ".concat(titleClass),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, title)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    ref: sectionRef,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: this
+  }, typeof children === 'function' ? children(state) : children));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Section);
@@ -1029,22 +1529,37 @@ var Section = function Section(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Sponsor.js";
 
 
 
 
-var Sponsor = function Sponsor() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
-      sponsor = _useContext.sponsor;
 
+var Sponsor = function Sponsor() {
+  var _useContext$sponsor = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]).sponsor,
+      title = _useContext$sponsor.title,
+      productName = _useContext$sponsor.productName,
+      description = _useContext$sponsor.description,
+      image = _useContext$sponsor.image;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "sponsor section--flex",
+    className: "section sponsor section--flex",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+    bottom: true,
+    opposite: true,
+    delay: 250,
+    duration: 600,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1053,61 +1568,90 @@ var Sponsor = function Sponsor() {
     alt: "Nike Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sponsor__content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+    bottom: true,
+    opposite: true,
+    cascade: true,
+    delay: 0,
+    duration: 600,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sponsor__title t-3 t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "t-outline t-gold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, sponsor.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, sponsor.productName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "sponsor__copy-lg",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: this
-  }, sponsor.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    baseClase: "sponsor",
-    imageS: sponsor.productImageS,
-    imageM: sponsor.productImageM,
-    imageL: sponsor.productImageL,
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 19
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "sponsor__copy",
+  }, productName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+    bottom: true,
+    opposite: true,
+    delay: 200,
+    duration: 600,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "sponsor__copy-lg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
+    bottom: true,
+    opposite: true,
+    delay: 400,
+    duration: 600,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
-  }, sponsor.description));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    baseClass: "sponsor",
+    image: image,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "sponsor__copy",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  }, description));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Sponsor);
@@ -1126,8 +1670,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
 var _jsxFileName = "/Users/maja/code/ZuberSite/components/Statistics.js";
 
 
@@ -1139,173 +1684,239 @@ var Statistics = function Statistics() {
       labels = _useContext.labels,
       statistics = _useContext.statistics;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  var image = statistics.image,
+      totalGamesCount = statistics.totalGamesCount,
+      totalGoalsCount = statistics.totalGoalsCount,
+      totalAssistsCount = statistics.totalAssistsCount,
+      totalTrophiesCount = statistics.totalTrophiesCount;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_3__["default"], {
     title: labels.statistics,
     baseClass: "statistics",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    baseClase: "statistics",
-    imageS: statistics.imageS,
-    imageM: statistics.imageM,
-    imageL: statistics.imageL,
+    name: "statistics",
+    flexHeight: true,
+    observeIntersection: true,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "statistics__content",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-left t-center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-left__top t-6 t-outline t-light",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, labels.played), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-left__bottom",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-1",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }, statistics.totalGamesCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-2",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }, labels.games))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-right t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-right__row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-6 t-outline t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, labels.scored), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, statistics.totalGoalsCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, " ", labels.goals))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-right__row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-6 t-outline t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, labels.won), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, statistics.totalTrophiesCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }, " ", labels.trophies))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "stat-right__row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-6 t-outline t-gold",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }, labels.made), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "t-3",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, statistics.totalAssistsCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }, " ", labels.assists))))));
+  }, function (_ref) {
+    var reveal = _ref.reveal,
+        scrollUp = _ref.scrollUp;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+      left: true,
+      opposite: true,
+      when: reveal,
+      mirror: scrollUp,
+      duration: 500,
+      distance: "1000px",
+      delay: 0,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "statistics__image",
+      srcSet: "\n                                ".concat(image.imageS, " 768w,\n                                ").concat(image.imageM, " 1200w,\n                                ").concat(image.imageL, " 1440w,\n                            "),
+      sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
+      src: image.imageL,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "statistics__content",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-left t-center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+      bottom: true,
+      opposite: true,
+      delay: 50,
+      duration: 600,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-left__top t-6 t-outline t-light",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }, labels.played)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-left__bottom",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+      bottom: true,
+      opposite: true,
+      delay: 100,
+      duration: 600,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-1",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }, totalGamesCount)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+      bottom: true,
+      opposite: true,
+      delay: 300,
+      duration: 600,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }, labels.games)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-right t-gold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+      bottom: true,
+      opposite: true,
+      cascade: true,
+      delay: reveal ? 500 : 200,
+      duration: 600,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-right__row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-6 t-outline t-gold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, labels.scored), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, totalGoalsCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }, " ", labels.goals))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-right__row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-6 t-outline t-gold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, labels.won), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54
+      },
+      __self: this
+    }, totalTrophiesCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }, " ", labels.trophies))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "stat-right__row",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-6 t-outline t-gold",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, labels.made), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "t-3",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, totalAssistsCount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }, " ", labels.assists)))))));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Statistics);
@@ -1316,10 +1927,10 @@ var Statistics = function Statistics() {
 /*!*******************!*\
   !*** ./data.json ***!
   \*******************/
-/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, shop, default */
+/*! exports provided: labels, heroImage, footer, statistics, nationalTeam, fifa, clubs, videoId, sponsor, products, about, default */
 /***/ (function(module) {
 
-module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"sm":"zuber-hero-page.png","md":"zuber-hero-page@2x.png","lg":"zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"},"clubs":[{"name":"Grasshopper","addition":"Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImageS":"/static/images/stadium-grashopper-img.jpg","backgroundImageM":"/static/images/stadium-grashopper-img@2x.jpg","backgroundImageL":"/static/images/stadium-grashopper-img@3x.jpg","playerImageS":"/static/images/zuber-grashopper.png","playerImageM":"/static/images/zuber-grashopper@2x.png","playerImageL":"/static/images/zuber-grashopper@3x.png"},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImageS":"/static/images/stadium-cska-moscow-img.jpg","backgroundImageM":"/static/images/stadium-cska-moscow-img@2x.jpg","backgroundImageL":"/static/images/stadium-cska-moscow-img@3x.jpg","playerImageS":"/static/images/zuber-cska.png","playerImageM":"/static/images/zuber-cska@2x.png","playerImageL":"/static/images/zuber-cska@3x.png"},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImageS":"/static/images/stadium-hoffenheim-img.jpg","backgroundImageM":"/static/images/stadium-hoffenheim-img@2x.jpg","backgroundImageL":"/static/images/stadium-hoffenheim-img@3x.jpg","playerImageS":"/static/images/zuber-hoffenheim-img.png","playerImageM":"/static/images/zuber-hoffenheim-img@2x.png","playerImageL":"/static/images/zuber-hoffenheim-img@3x.png"},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImageS":"/static/images/stadium-studttgart-img.jpg","backgroundImageM":"/static/images/stadium-studttgart-img@2x.jpg","backgroundImageL":"/static/images/stadium-studttgart-img@3x.jpg","playerImageS":"/static/images/zuber-stuttgart-img.png","playerImageM":"/static/images/zuber-stuttgart-img@2x.png","playerImageL":"/static/images/zuber-stuttgart-img@3x.png"}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","productImageS":"/static/images/image-1.png","productImageM":"/static/images/image-1@2x.png","productImageL":"/static/images/image-1@3x.png"},"shop":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","imageS":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageM":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","imageL":"https://www.plutosport.nl/media/catalog/product/cache/image/1800x/040ec09b1e35df139433887a97daa66f/N/i/Nike_Pitch_Team_Football_3.jpg","payPalLink":"https:paypal/1234677"}]};
+module.exports = {"labels":{"assists":"assists","career":"career","clubCareer":"club career","fifaWorldCup":"FIFA World Cup","games":"games","goal":"goal","goals":"goals","internationalCareer":"international career","life":"life","made":"made","midfield":"midfield","minutes":"minutes","played":"played","scored":"scored","shop":"shop","shopNow":"shop now","socialLinks":"socials","statistics":"statistics","trophies":"trophies","won":"won"},"heroImage":{"imageS":"/static/images/zuber-hero-page.png","imageM":"/static/images/zuber-hero-page@2x.png","imageL":"/static/images/zuber-hero-page@3x.png"},"footer":{"socials":{"instagram":"/zuber-instagram","twitter":"/zuber-twitter","facebook":"/zuber-facebook"},"email":"INFO@ZUBER.COM","copyright":"©2019 STEVEN ZUBER"},"statistics":{"totalGamesCount":353,"totalGoalsCount":46,"totalTrophiesCount":3,"totalAssistsCount":73,"image":{"imageS":"/static/images/sliding-zuber-img.png","imageM":"/static/images/sliding-zuber-img@2x.png","imageL":"/static/images/sliding-zuber-img@3x.png"}},"nationalTeam":{"copy":"SWISS SENIOR NATIONAL TEAM ACHIEVEMENTS","position":"midfield","playerNumber":14,"startYear":2017,"endYear":2019,"gamesCount":23,"goalsCount":6,"assistsCount":4,"image":{"imageS":"/static/images/swiss-national-team-img.jpg","imageM":"/static/images/swiss-national-team-img@2x.jpg","imageL":"/static/images/swiss-national-team-img@3x.jpg"},"imageBw":{"imageS":"/static/images/swiss-national-team-bw-img.jpg","imageM":"/static/images/swiss-national-team-bw-img@2x.jpg","imageL":"/static/images/swiss-national-team-bw-img@3x.jpg"}},"fifa":{"copy":"LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELITEIUSMOD TEMPOR ADIPISCING","gamesCount":3,"goalsCount":1,"minutesCount":253,"image":{"imageS":"/static/images/zuber-vs-brazil-goal-img.jpg","imageM":"/static/images/zuber-vs-brazil-goal-img@2x.jpg","imageL":"/static/images/zuber-vs-brazil-goal-img@3x.jpg"}},"clubs":[{"name":"Grasshopper Club","coatOfArmsKey":"grasshopper","position":"midfield","playerNumber":13,"startYear":2008,"endYear":2013,"gamesCount":119,"goalsCount":21,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-grashopper-img.jpg","imageM":"/static/images/stadium-grashopper-img@2x.jpg","imageL":"/static/images/stadium-grashopper-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-grashopper.png","imageM":"/static/images/zuber-grashopper@2x.png","imageL":"/static/images/zuber-grashopper@3x.png"}},{"name":"CSKA Moscow","coatOfArmsKey":"moscow","position":"midfield","playerNumber":8,"startYear":2013,"endYear":2014,"gamesCount":29,"goalsCount":7,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-cska-moscow-img.jpg","imageM":"/static/images/stadium-cska-moscow-img@2x.jpg","imageL":"/static/images/stadium-cska-moscow-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-cska.png","imageM":"/static/images/zuber-cska@2x.png","imageL":"/static/images/zuber-cska@3x.png"}},{"name":"TSG Hoffenheim","coatOfArmsKey":"hoffenheim","position":"midfield","playerNumber":17,"startYear":2014,"endYear":2018,"gamesCount":82,"goalsCount":7,"assistsCount":4,"backgroundImage":{"imageS":"/static/images/stadium-hoffenheim-img.jpg","imageM":"/static/images/stadium-hoffenheim-img@2x.jpg","imageL":"/static/images/stadium-hoffenheim-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-hoffenheim-img.png","imageM":"/static/images/zuber-hoffenheim-img@2x.png","imageL":"/static/images/zuber-hoffenheim-img@3x.png"}},{"name":"VFB STUTTGART","coatOfArmsKey":"stuttgart","position":"midfield","playerNumber":9,"startYear":2019,"endYear":null,"gamesCount":15,"goalsCount":6,"assistsCount":0,"backgroundImage":{"imageS":"/static/images/stadium-studttgart-img.jpg","imageM":"/static/images/stadium-studttgart-img@2x.jpg","imageL":"/static/images/stadium-studttgart-img@3x.jpg"},"playerImage":{"imageS":"/static/images/zuber-stuttgart-img.png","imageM":"/static/images/zuber-stuttgart-img@2x.png","imageL":"/static/images/zuber-stuttgart-img@3x.png"}}],"videoId":"d7ytbHNzOXI","sponsor":{"title":"STEVEN ZUBER'S OFFICIAL BOOTS","description":"STEVEN ZUBER WEARS NIKE MERCURIAL VAPOR XII ELITE SOCCER CLEATS IN 2018-2019","productName":"NIKE MERCURIAL","image":{"imageS":"/static/images/image-1.png","imageM":"/static/images/image-1@2x.png","imageL":"/static/images/image-1@3x.png"}},"products":[{"name":"ZUBER LION T-SHIRT","description":"100% COTTON SHORT SLEVE SHIRT","price":"13 EUR","image":{"imageS":"/static/images/zuber-sleave-shirt.jpg","imageM":"/static/images/zuber-sleave-shirt@2x.jpg","imageL":"/static/images/zuber-sleave-shirt@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"Performance Wristband","description":"ONE SIZE FITS ALL","price":"8 EUR","image":{"imageS":"/static/images/wristband.jpg","imageM":"/static/images/wristband@2x.jpg","imageL":"/static/images/wristband@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"MEN’S SHORTS","description":"100% COTTON SHORT","price":"20 EUR","image":{"imageS":"/static/images/shorts.jpg","imageM":"/static/images/shorts@2x.jpg","imageL":"/static/images/shorts@3x.jpg"},"payPalLink":"https:paypal/1234677"},{"name":"ZUBER SOCCER BALL","description":"CHROMED METAL","price":"45 EUR","image":{"imageS":"/static/images/zuber-ball.jpg","imageM":"/static/images/zuber-ball@2x.jpg","imageL":"/static/images/zuber-ball@3x.jpg"},"payPalLink":"https:paypal/1234677"}],"about":{"life":{"title":"My life","posts":[{"headings":["BORN TO BE FOOTBALLER"],"description":["STEVEN ZUBER WAS BORN ON 17 AUGUST 1991 TO WALTER AND SUSANNE ZUBER. HE HAS FIVE SIBLINGS: MELANIE, KEVIN, SEVERIN, DAVID, AND MARVIN. ON 26 MAY 2015, HE MARRIED HIS LONG -TIME GIRLFRIEND, MIRJANA VASOVIC."],"quotes":[],"image":{"imageS":"/static/images/zuber-biography.jpg","imageM":"/static/images/zuber-biography@2x.jpg","imageL":"/static/images/zuber-biography@3x.jpg"}},{"headings":["STEVEN WAS BORN IN WINTERTHUR"],"description":["A SERVICE AND HIGH-TECH INDUSTRIAL SATELLITE CITY WITHIN GREATER ZÜRICH WHERE STEVEN MADE HIS FIRST FOOTBALL STEPS"],"quotes":[],"vectorImage":"/static/svgs/mapa.svg"},{"headings":["I started playing football with my bigger brother at early age"],"description":["I always wanted to do exactly that as a younger brother like the older one :)"],"quotes":["After a few broken windows and pictures in the apartment I finally went to my first club FC Wiesendangen.","We moved a lot as a family and so I didn't stay long at FC Wiesendangen, but changed to FC Kollbrun-Rikon (picture) and FC Turbenthal before I went to FC Winterthur at the age of 11.","At FC Winterthur I went through all junior selections without any problems and improved myself physically and technically very fast."],"image":{"imageS":"/static/images/baby-zuber.jpg","imageM":"/static/images/baby-zuber@2x.jpg","imageL":"/static/images/baby-zuber@3x.jpg"}},{"headings":[],"description":["Due to the good development at FC Winterthur, the big Grasshopper-Club Zurich became aware of me."],"quotes":["I didn't have to think long and took the chance with the constant support of my parents and was able to wear the GCZ jersey for the first time at the age of 14.","The strategy of the whole club has shaped me very much the years up to my first employment in the 1st team.","I have profited from the daily additional trainings and could train together with the older players already early and have asserted myself also against you.","But I always knew what I wanted and have always worked more than everyone else next to me. I always wanted to play for the 1st team and the national team. For that I sacrificed a lot and when the call came from the assistant of the 1st team that I can train a few days in the 1st team, I have directly everything stopped and left lying and knew this is my chance and I now seize it!"],"image":{"imageS":"/static/images/zuber-training.jpg","imageM":"/static/images/zuber-training@2x.jpg","imageL":"/static/images/zuber-training@3x.jpg"}},{"headings":["My first game followed a short time later."],"description":["I debuted with 16 years in the 1st team in the UI CUP and also scored my first goal"],"quotes":[],"image":{"imageS":"/static/images/zuber-young-grashopper.jpg","imageM":"/static/images/zuber-young-grashopper@2x.jpg","imageL":"/static/images/zuber-young-grashopper@3x.jpg"}}]},"love":{"title":"My love","posts":[{"headings":["From the first second, I saw in her eyes that she is the one for my life!"],"description":["I am so happy and thankful now that i meet Mirjana in this small Club in Zurich.","We get married after 7 Years relationship and she is my wife and of course also my best friend!"],"quotes":[],"footnote":"I love you","image":{"imageS":"/static/images/wedding.jpg","imageM":"/static/images/wedding@2x.jpg","imageL":"/static/images/wedding@3x.jpg"}}]},"passion":{"title":"My passion","posts":[{"headings":["My passion is of course football!","My second passion is football!"],"description":["I love to speak about football. I could speak every time about this amazing sport were you can play all around the world and you can bring every culture together.","But there's a few other things that I love to do…"],"quotes":[]}]},"hobby":{"title":"","posts":[{"headings":["When i have some time free for myself i like to drink coffee :)"],"description":["So you will always find me in a good coffee shop in the town with a even better book to read.","I like also to do something for my brain. Reading helps me to be calm and relax."],"quotes":[],"image":{"imageS":"/static/images/coffe.jpg","imageM":"/static/images/coffe@2x.jpg","imageL":"/static/images/coffe@3x.jpg"}},{"headings":["I take my look seriusly so I’m trying to dress well and always look stylish."],"description":["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.","Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"],"quotes":[],"image":{"imageS":"/static/images/zuber-style.jpg","imageM":"/static/images/zuber-style@2x.jpg","imageL":"/static/images/zuber-style@3x.jpg"}},{"headings":["We are living in a beautiful world!"],"description":["When we have holiday, my wife and always some friends, we like to see everything and everyplace in our world. We try to go all the time to some new destination."],"quotes":[],"image":{"imageS":"/static/images/travel.jpg","imageM":"/static/images/travel@2x.jpg","imageL":"/static/images/travel@3x.jpg"}},{"headings":["As you can see i like to get inked :)"],"description":["It started with one small footballshoe and a prayer hand on my back. I continued with some pictures and phrases about my life and how i think about it. But i am not finished yet!"],"quotes":[],"image":{"imageS":"/static/images/tattoo.jpg","imageM":"/static/images/tattoo@2x.jpg","imageL":"/static/images/tattoo@3x.jpg"}},{"headings":["I WANT TO THANK"],"description":["I am Thankful for every minute on the pitch. Its a honor to play football and to make people celebrate, happy and crying on one second."],"quotes":[],"image":{"imageS":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg","imageM":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg","imageL":"https://cdn.pixabay.com/photo/2014/11/30/14/11/kitty-551554__340.jpg"}},{"headings":[],"description":["A big thanks goes to my family. You are always behind me. Every minute in the car while we were driving to the training ground or to the games, was so special for me. Every hard time i had, you were always there and were pushing me to my goal !I will never forget this."],"quotes":[],"image":{"imageS":"/static/images/family.jpg","imageM":"/static/images/family@2x.jpg","imageL":"/static/images/family@3x.jpg"}},{"headings":[],"description":["I remember our first conversation together. You opend my eyes for a new way of living the football.","I am thankful for all what you did for me and i am happy to be around you!"],"quotes":[],"image":{"imageS":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0","imageM":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0","imageL":"https://assets.marthastewart.com/styles/wmax-570/d14/cat-getty-0419/cat-getty-0419_sq.jpg?itok=Tcwis6X0"}},{"headings":[],"description":["You are simply amazing and you are my daily inspiration to be a better person! Thank you for beeing always on my side. I love you"],"quotes":[],"image":{"imageS":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230","imageM":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230","imageL":"https://www.purina.com.au/-/media/Project/Purina/Article-Images/Cat/Mobile/Balinese-Mobile.jpg?h=392&la=en&w=640&hash=7BF7833F308ED3A563174FA0A68CA230"}},{"headings":["Thank you to every great club i was playing for and still playing.","Also a hughe thanks goes to my coaches, managers, teammates and fans. Without you i would be never here."],"description":[],"quotes":[]}]}}};
 
 /***/ }),
 
@@ -1715,6 +2326,39 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
+/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+
+function _extends() {
+  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js":
 /*!***************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js ***!
@@ -1865,6 +2509,74 @@ function _objectSpread(target) {
     ownKeys.forEach(function (key) {
       Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
     });
+  }
+
+  return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectWithoutProperties; });
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutPropertiesLoose.js");
+
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = Object(_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(source, excluded);
+  var key, i;
+
+  if (_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_0___default.a) {
+    var sourceSymbolKeys = _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_0___default()(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectWithoutPropertiesLoose; });
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+
+  var sourceKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(source);
+
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
   }
 
   return target;
@@ -2652,13 +3364,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
-/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_14___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
+/* harmony import */ var react_reveal_globals__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-reveal/globals */ "react-reveal/globals");
+/* harmony import */ var react_reveal_globals__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_reveal_globals__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-scroll-parallax */ "react-scroll-parallax");
+/* harmony import */ var react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_Head__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Head */ "./components/Head.js");
+/* harmony import */ var _components_Navigation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Navigation */ "./components/Navigation.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../data.json */ "./data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_16___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
 
 
 
@@ -2675,6 +3391,15 @@ var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_app.js";
 
 
 
+
+
+react_reveal_globals__WEBPACK_IMPORTED_MODULE_10___default()({
+  ssrFadeout: true,
+  forever: true,
+  fraction: 1,
+  distance: '400px',
+  duration: 300
+});
 var DataContext = Object(react__WEBPACK_IMPORTED_MODULE_8__["createContext"])();
 
 var MyApp =
@@ -2693,55 +3418,61 @@ function (_App) {
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
+          page = _this$props.page,
           data = _this$props.data;
-      var bgClass = Component.name === 'Homepage' ? 'bg-dark' : 'bg-light';
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
-        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
-          page: Component.name
-        }),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
-        className: "page page--".concat(Component.name, " ").concat(bgClass),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_11__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(DataContext.Provider, {
+        value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, data, {
+          page: page
+        }),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_11__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 35
         },
         __self: this
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: "page page--".concat(page),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      })))));
     }
   }], [{
     key: "getInitialProps",
@@ -2756,7 +3487,8 @@ function (_App) {
               case 0:
                 Component = _ref.Component, ctx = _ref.ctx;
                 return _context.abrupt("return", {
-                  data: _data_json__WEBPACK_IMPORTED_MODULE_14__
+                  data: _data_json__WEBPACK_IMPORTED_MODULE_16__,
+                  page: Component.name.toLowerCase()
                 });
 
               case 2:
@@ -2778,9 +3510,9 @@ function (_App) {
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_9___default.a);
 
-/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get("https://api-football-v1.p.rapidapi.com/v2/players/team/172")
-// .header("X-RapidAPI-Host", "api-football-v1.p.rapidapi.com")
-// .header("X-RapidAPI-Key", "d828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453")
+/* harmony default export */ __webpack_exports__["default"] = (MyApp); // unirest.get('https://api-football-v1.p.rapidapi.com/v2/players/team/172')
+// .header('X-RapidAPI-Host', 'api-football-v1.p.rapidapi.com')
+// .header('X-RapidAPI-Key', 'd828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453')
 // .end(function (result) {
 //   console.log(result.status, result.headers, result.body);
 // });
@@ -2798,19 +3530,16 @@ function (_App) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data.json */ "./data.json");
-var _data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data.json */ "./data.json", 1);
-/* harmony import */ var _components_Statistics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Statistics */ "./components/Statistics.js");
-/* harmony import */ var _components_NationalTeam__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/NationalTeam */ "./components/NationalTeam.js");
-/* harmony import */ var _components_Fifa__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Fifa */ "./components/Fifa.js");
-/* harmony import */ var _components_Clubs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Clubs */ "./components/Clubs.js");
-/* harmony import */ var _components_Sponsor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Sponsor */ "./components/Sponsor.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Statistics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Statistics */ "./components/Statistics.js");
+/* harmony import */ var _components_NationalTeam__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/NationalTeam */ "./components/NationalTeam.js");
+/* harmony import */ var _components_Fifa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Fifa */ "./components/Fifa.js");
+/* harmony import */ var _components_Clubs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Clubs */ "./components/Clubs.js");
+/* harmony import */ var _components_Sponsor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Sponsor */ "./components/Sponsor.js");
 var _jsxFileName = "/Users/maja/code/ZuberSite/pages/index.js";
-
 
 
 
@@ -2825,62 +3554,86 @@ var Homepage = function Homepage() {
     className: "bg-dark t-light",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "intro",
+    className: "section intro",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "intro__bg-desktop",
+    src: "/static/svgs/zuber_desktop.svg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "intro__image",
-    src: "/static/images/zuber-intro@2x.png",
-    alt: "Steven Zuber",
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "intro__bg-mobile",
+    src: "/static/svgs/zuber_mobile.svg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "intro__logo",
-    src: "/static/svgs/lion.svg",
-    alt: "Zuber Coat Of Arms",
+    className: "intro__image",
+    src: "/static/images/zuber-intro@2x.png",
+    alt: "Steven Zuber",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Statistics__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
+    bottom: true,
+    delay: 2000,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "intro__logo",
+    src: "/static/svgs/lion.svg",
+    alt: "Zuber Coat Of Arms",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NationalTeam__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Fifa__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Clubs__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Statistics__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Sponsor__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NationalTeam__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 23
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Fifa__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Clubs__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Sponsor__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
     },
     __self: this
   }));
@@ -3141,6 +3894,50 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-lazyload":
+/*!*********************************!*\
+  !*** external "react-lazyload" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-lazyload");
+
+/***/ }),
+
+/***/ "react-reveal":
+/*!*******************************!*\
+  !*** external "react-reveal" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-reveal");
+
+/***/ }),
+
+/***/ "react-reveal/globals":
+/*!***************************************!*\
+  !*** external "react-reveal/globals" ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-reveal/globals");
+
+/***/ }),
+
+/***/ "react-scroll-parallax":
+/*!****************************************!*\
+  !*** external "react-scroll-parallax" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-scroll-parallax");
 
 /***/ }),
 

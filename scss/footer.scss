@@ -22,3 +22,7 @@
 .site-footer__social-links {
     display: flex;
 }
+
+.page--shop {
+    .site-footer a:hover { color: $dark; }
+}

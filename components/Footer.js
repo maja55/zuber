@@ -2,17 +2,17 @@ import React, { useContext } from 'react'
 import { DataContext } from '../pages/_app';
 
 const Footer = () => {
-    const { labels, footer, page } = useContext(DataContext)
+    const { labels, footer } = useContext(DataContext)
     const { socials, email, copyright } = footer
 
     return (
-        <footer className={ page === 'Homepage' ? 't-grey' : '' }>
-            <section className='section--flex site-footer'>
+        <footer>
+            <section className='section section--flex site-footer t-grey'>
                 <div className="site-footer__social">
                     <div>{ labels.socialLinks }</div>
                     <ul className="site-footer__social-links">
                         { Object.keys(socials).map((label, index, array) => (
-                            <li>
+                            <li key={ label }>
                                 <a href={ socials[label] }>{ label }</a>
                                 { index !== array.length - 1 && <span className='divider'>|</span> }
                             </li>

@@ -4,9 +4,10 @@
     background-position: right 20px;
     margin-bottom: 40px;
 
-    @media screen and (max-width: $screen-xs - 1) {
+    @media screen and (max-width: $screen-md - 1) {
         background: none;
         margin-bottom: 0;
+        padding-bottom: 30vh; 
     }
 }
 
@@ -14,7 +15,7 @@
     display: flex;
     justify-content: flex-end;
 
-    @media screen and (max-width: $screen-xs - 1) {
+    @media screen and (max-width: $screen-md - 1) {
         flex-direction: column;
     }
 }
@@ -23,14 +24,19 @@
     position: absolute;
     height: 78%;
     top: 20%;
+    z-index: 1;
 
     @media screen and (max-width: $screen-lg - 1) {
         height: auto;
         max-height: 78%;
-        max-width: 75%;
+        max-width: 60%;
         bottom: 2%;
         left: 5vw;
         top: auto;
+    }
+
+    @media screen and (max-width: $screen-xs - 1) {
+        max-width: 75%;
     }
 }
 
@@ -42,7 +48,7 @@
     margin-bottom: 10px;
 }
 
-@media screen and (max-width: $screen-xs - 1) {
+@media screen and (max-width: $screen-md - 1) {
     .stat-left__top.t-6 { font-size: 15vw; }
 
     .stat-left__bottom {
@@ -62,13 +68,12 @@
     }
 }
 
-@media screen and (min-width: $screen-xs) {
+@media screen and (min-width: $screen-md) {
     .stat-left__bottom .t-1 { margin-top: 3px; }
 }
 
 
 // count-bar
-
 .count-bar, .count-bar__item , .count-bar__label {
     display: flex;
     font-family: drukWideBold;
@@ -89,17 +94,17 @@
     .count-bar__count { font-size: 6.3vw; }
 }
 
+@media screen and (max-width: $screen-xs - 1) { 
+    .count-bar { flex-direction: column; }
+    .count-bar__item { margin: 3px 0; }
+    .count-bar__label { font-size: 3vw; }
+    .count-bar__count { font-size: 7.5vw; flex-basis: 20vw; flex-shrink: 0; text-align: right; }
+}
+
 .count-bar--vertical {
     display: inline-flex;
     flex-direction: column;
     
     .count-bar__item { margin: 3px 0; }
-    .count-bar__count { flex-basis: 20vw; text-align: right; }
-}
-
-@media screen and (max-width: $screen-xs - 1) { 
-    .count-bar { flex-direction: column; }
-    .count-bar__item { margin: 3px 0; }
-    .count-bar__label { font-size: 3vw; }
-    .count-bar__count { font-size: 7.5vw; flex-basis: 20vw; text-align: right; }
+    .count-bar__count { flex-basis: 20vw; flex-shrink: 1; text-align: right; }
 }

@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react'
 import Link from 'next/link'
-import { DataContext } from '../pages/_app';
+import { DataContext } from '../pages/_app'
+import Image from './Image'
 
 const navLinks = [
     { href: '/#statistics', labelKey: 'statistics' },
     { href: '/#career', labelKey: 'career' },
-    { href: '/life', labelKey: 'life' },
+    { href: '/about', labelKey: 'life' },
     { href: '/shop', labelKey: 'shop' }
 ]
 
@@ -19,7 +20,8 @@ const enableScrolling = () => {
 
 const Navigation = () => {
     const [isOpen, toggleMenu] = useState(false)
-    const { labels } = useContext(DataContext)
+    const { labels, heroImage, page } = useContext(DataContext)
+    const isShop = page === 'shop'
 
     const onClick = () => {
         if (isOpen) { 
@@ -34,29 +36,23 @@ const Navigation = () => {
     return (
         <React.Fragment>
             <header className="header">
-                <img src="/static/svgs/steven_zuber.svg" alt="Stefan Zuber logo" />
-
-                <div
-                    className={ `menu-btn${isOpen ? ' open' : ''}` }
-                    onClick={ onClick }>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className={ `menu-btn${isOpen ? ' open' : ''}${isShop ? ' dark' : ''}` }>
+                    <div onClick={ onClick }>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </header>
             <nav className={ `menu${isOpen ? ' open' : ''}` } onClick={ onClick }>
-                <section className="section--menu">
-                    <img src="/static/images/zuber-hero-page@2x.png" alt="Stefan Zuber" />
+                <section className="section section--menu">
+                    <Image image={ heroImage } baseClass="menu" alt="Stefan Zuber" />
                     <ul className="t-6">
-                        {
-                            navLinks.map(({ href, labelKey }) => (
-                                <li key={ labelKey }>
-                                    <Link href={ href }>
-                                        <a className="cta-hover" href={ href }>{ labels[labelKey] }</a>
-                                    </Link>
-                                </li>
-                            ))
-                        }
+                        { navLinks.map(({ href, labelKey }) => (
+                            <li key={ labelKey } className="cta-hover">
+                                <Link href={ href }><a href={ href }>{ labels[labelKey] }</a></Link>
+                            </li>
+                        )) }
                         <li className="t-8">
                             <button onClick={() => {}}>EN</button>
                             <span> | </span>
@@ -65,6 +61,16 @@ const Navigation = () => {
                     </ul>
                 </section>
             </nav>
+            <div className="page-heading">
+                { 
+                    isShop ?
+                        <h3 className="t-6 t-grey">{ labels.shop }</h3>
+                    :
+                        <Link href="/">
+                            <img src="/static/svgs/steven_zuber.svg" alt="Stefan Zuber logo" />
+                        </Link>
+                }
+            </div>
         </React.Fragment>
     );
 }

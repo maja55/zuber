@@ -1,4 +1,6 @@
 // fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 @font-face {
     font-family: drukBold;
     src: url('/static/fonts/DrukBoldItalic.otf');
@@ -34,17 +36,18 @@ $grey: #58595b;
 $gold: #927c50;
 
 // font sizes
-$font-xxxs: 16px;
+$font-xxxs: 1.15vw; // 16px
 $font-xxs: 1.65vw; // 23px
 $font-xs: 3.3vw; // 40px
 $font-s: 3.5vw; // 46px
 $font-m: 4.3vw; // 59px
-$font-l: 80px;
+$font-l: 5.8vw; // 80px
 $font-xl: 8.3vw; // 120px
 $font-xxl: 11vw; // 140px
 $font-xxxl: 20vw; // 259px
 
-$min-font-xxs: 15px;
+$min-font-xxxs: 11px;
+$min-font-xxs: 14px;
 $min-font-s: 18px;
 $min-font-l: 28px;
 $min-font-xl: 43px;
@@ -58,18 +61,23 @@ $min-font-xl: 43px;
 .t-6 { font-size: $font-s; line-height: 1.1; }
 .t-7 { font-size: $font-xs; font-family: drukTextBold; }
 .t-8 { font-size: $font-xxs; font-family: drukWideSuper; line-height: 1.3; }
+.t-9 { font-size: $font-xxxs; font-family: 'Montserrat', Geneva, sans-serif; text-transform: none; }
+
+@media screen and (max-width: 870px) {
+    .t-8 { font-size: $min-font-xxs; }
+    .t-9 { font-size: $min-font-xxxs; }
+}
 
 @media screen and (max-width: $screen-xs) { 
     .t-3 { font-size: $min-font-xl; }
     .t-6 { font-size: $min-font-s; }
     .t-6.t-outline { font-size: $min-font-l; }
-    .t-8 { font-size: $min-font-xxs; }
 }
 
-.t-dark { color: $dark; }
-.t-grey { color: $grey; }
-.t-light { color: $light; }
-.t-gold { color: $gold; }
+.t-grey, .t-grey p { color: $grey; }
+.t-dark, .t-dark p { color: $dark; }
+.t-light, .t-light p { color: $light; }
+.t-gold, .t-gold p { color: $gold; }
 
 .t-outline {
     -webkit-text-stroke-width: 0.5px;
@@ -90,6 +98,11 @@ $min-font-xl: 43px;
 .bg-dark { background-color: $dark; }
 .bg-light { background-color: $light; }
 
+// utils
+.mb-0 { margin-bottom: 0; }
+.d-sm-none { @media screen and (min-width: $screen-sm) { display: none; } }
+.d-md-none { @media screen and (min-width: $screen-md) { display: none; } }
+.p-rel { position: realtive; }
 
 // global styles
 * {
@@ -132,13 +145,20 @@ button {
     cursor: pointer;
 }
 
-section {
+.page {
+    background-color: $dark;
+
+    &.page--shop {
+        background-color: $light;
+    }
+}
+
+.section {
     width: 100vw;
-    min-height: 100vh;
     padding: 6vh 7vw;
-    overflow-x: hidden;
     position: relative;
     margin-bottom: 6vw;
+    overflow: hidden;
 
     p { 
         max-width: 35vw;
@@ -150,6 +170,16 @@ section {
             max-width: 60vw;
         }
     }
+
+    &:not(.section--flex) {
+        height: 100vh;
+
+        &:not(.intro) {
+            @media screen and (min-width: $screen-md) and (orientation: portrait) {
+                max-height: 80vw;
+            }
+        }
+    }
 }
 
 .section--flex {
@@ -157,7 +187,11 @@ section {
 }
 
 .section-title {
-    margin-bottom: 4vw;
+    margin-bottom: 6vw;
+
+    @media screen and (min-width: $screen-sm) {
+        margin-bottom: 4vw;
+    }
 }
 
 .cta-hover {
@@ -187,3 +221,5 @@ section {
 @import './clubs.scss';
 @import './sponsor.scss';
 @import './footer.scss';
+@import './shop.scss';
+@import './about.scss';

@@ -1,31 +1,35 @@
 import React, { useContext } from 'react'
+import { Fade } from 'react-reveal';
 import { DataContext } from '../pages/_app'
 import Image from './Image'
 
 const Sponsor = () => {
-    const { sponsor } = useContext(DataContext);
+    const { title, productName, description, image } = useContext(DataContext).sponsor;
 
     return (
-        <section className="sponsor section--flex">
-            <img className="sponsor__logo" src="/static/svgs/nike.svg" alt="Nike Logo"/>
+        <section className="section sponsor section--flex">
+            <Fade bottom opposite delay={ 250 } duration={ 600 }>
+                <img className="sponsor__logo" src="/static/svgs/nike.svg" alt="Nike Logo"/>
+            </Fade>
 
             <div className="sponsor__content">
-                <div className="sponsor__title t-3 t-gold">
-                    <div className="t-outline t-gold">{ sponsor.title }</div>
-                    <div>{ sponsor.productName }</div>
-                </div>
+                <Fade bottom opposite cascade delay={ 0 } duration={ 600 }>
+                    <div className="sponsor__title t-3 t-gold">
+                        <div className="t-outline t-gold">{ title }</div>
+                        <div>{ productName }</div>
+                    </div>
+                </Fade>
 
-                <p className="sponsor__copy-lg">{ sponsor.description }</p>
+                <Fade bottom opposite delay={ 200 } duration={ 600 }>
+                    <p className="sponsor__copy-lg">{ description }</p>
+                </Fade>
             </div>
 
-            <Image
-                baseClase="sponsor"
-                imageS = { sponsor.productImageS }
-                imageM = { sponsor.productImageM }
-                imageL = { sponsor.productImageL }
-            />
+            <Fade bottom opposite delay={ 400 } duration={ 600 }>
+                <Image baseClass="sponsor" image = { image } />
+            </Fade>
 
-            <p className="sponsor__copy">{ sponsor.description }</p>
+            <p className="sponsor__copy">{ description }</p>
         </section>
     )
 }

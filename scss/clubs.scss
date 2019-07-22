@@ -1,3 +1,22 @@
+@keyframes slide-next {
+    0% { transform: translate3d(100vw, 0, 0); opacity: 1; }
+    100% { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+.clubs {
+    .slide {
+        animation: slide-next 0.3s ease-in;
+
+        &.club-bg {
+            animation-duration: 0.5s;
+        }
+
+        &.club__bottom {
+            animation-duration: 0.4s;
+        }
+    }
+}
+
 .club__top, .club__bottom {
     position: relative;
     display: flex;
