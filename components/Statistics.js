@@ -17,15 +17,9 @@ const Statistics = () => {
                     <Fade left opposite when={ reveal } mirror={ scrollUp } duration={ 500 } distance="1000px" delay={ 0 }>
                         <img
                             className="statistics__image"
-                            srcSet={ `
-                                ${image.imageS} 768w,
-                                ${image.imageM} 1200w,
-                                ${image.imageL} 1440w,
-                            ` }
-                            sizes="(max-width: 768px) 700px,
-                                (max-width: 1200px) 1000px,
-                                1440px"
                             src={ image.imageS }
+                            sizes="(max-width: 768px) 100vw, 75vw"
+                            srcset={ `${image.imageS} 960w, ${image.imageM} 1536w, ${image.imageL} 2400w` }
                         />
                     </Fade>
                     <div className="statistics__content">

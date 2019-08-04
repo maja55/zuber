@@ -11,7 +11,6 @@ const Intro = () => {
             <img className="intro__bg-desktop" src="/static/svgs/zuber_desktop.svg" />
             <img className="intro__bg-mobile" src="/static/svgs/zuber_mobile.svg" />
             <Image baseClass="intro" image={ introimage } />
-            <img className="intro__image" src="/static/images/zuber-intro@2x.png" alt="Steven Zuber" />
             <Fade bottom delay={ 2000 }>
                 <img className="intro__logo" src="/static/svgs/lion.svg" alt="Zuber Coat Of Arms" />
             </Fade>

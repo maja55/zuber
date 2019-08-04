@@ -31,22 +31,10 @@ export const LazyParalexImage = ({ y, ...props }) => (
     </LazyLoad>
 )
 
-export const LazyFadeImage = ({ revealProps, image, baseClass, alt, classAddition }) => (
+export const LazyFadeImage = ({ revealProps, ...props }) => (
     <LazyLoad height={ 200 } offset={ 500 }>
         <Fade {...{ ...defaulteImgRevealProps, ...revealProps }}>
-            <img
-                className={ `${baseClass}__image ${classAddition}` }
-                srcSet={ `
-                    ${image.imageS} 768w,
-                    ${image.imageM} 1200w,
-                    ${image.imageL} 1440w,
-                ` }
-                sizes="(max-width: 768px) 700px,
-                    (max-width: 1200px) 1000px,
-                    1440px"
-                src={ image.imageS }
-                alt={ alt }
-            />
+            <Image { ...props }/>
         </Fade>
     </LazyLoad>
 )

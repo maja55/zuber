@@ -739,9 +739,9 @@ var Image = function Image(_ref) {
       alt = _ref.alt;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "".concat(baseClass, "__image ").concat(classAddition ? classAddition : ''),
-    srcSet: "\n            ".concat(image.imageS, " 768w,\n            ").concat(image.imageM, " 1200w,\n            ").concat(image.imageL, " 1440w,\n        "),
-    sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
     src: image.imageS,
+    sizes: "(max-width: 768px) 100vw, 75vw",
+    srcset: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
     alt: alt,
     __source: {
       fileName: _jsxFileName,
@@ -821,21 +821,12 @@ var Intro = function Intro() {
       lineNumber: 13
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "intro__image",
-    src: "/static/images/zuber-intro@2x.png",
-    alt: "Steven Zuber",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
     bottom: true,
     delay: 2000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 14
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -844,7 +835,7 @@ var Intro = function Intro() {
     alt: "Zuber Coat Of Arms",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 15
     },
     __self: this
   })));
@@ -960,10 +951,8 @@ var LazyParalexImage = function LazyParalexImage(_ref) {
 };
 var LazyFadeImage = function LazyFadeImage(_ref2) {
   var revealProps = _ref2.revealProps,
-      image = _ref2.image,
-      baseClass = _ref2.baseClass,
-      alt = _ref2.alt,
-      classAddition = _ref2.classAddition;
+      props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref2, ["revealProps"]);
+
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
     height: 200,
     offset: 500,
@@ -978,18 +967,13 @@ var LazyFadeImage = function LazyFadeImage(_ref2) {
       lineNumber: 36
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("img", {
-    className: "".concat(baseClass, "__image ").concat(classAddition),
-    srcSet: "\n                    ".concat(image.imageS, " 768w,\n                    ").concat(image.imageM, " 1200w,\n                    ").concat(image.imageL, " 1440w,\n                "),
-    sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
-    src: image.imageS,
-    alt: alt,
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_8__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
     },
     __self: this
-  })));
+  }))));
 };
 LazyFadeImage.defaultProps = {
   image: {},
@@ -1774,9 +1758,9 @@ var Statistics = function Statistics() {
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
       className: "statistics__image",
-      srcSet: "\n                                ".concat(image.imageS, " 768w,\n                                ").concat(image.imageM, " 1200w,\n                                ").concat(image.imageL, " 1440w,\n                            "),
-      sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
       src: image.imageS,
+      sizes: "(max-width: 768px) 100vw, 75vw",
+      srcset: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
@@ -1786,14 +1770,14 @@ var Statistics = function Statistics() {
       className: "statistics__content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 25
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-left t-center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 26
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
@@ -1803,21 +1787,21 @@ var Statistics = function Statistics() {
       duration: 600,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 27
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-left__top t-6 t-outline t-light",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 28
       },
       __self: this
     }, labels.played)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-left__bottom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 30
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
@@ -1827,14 +1811,14 @@ var Statistics = function Statistics() {
       duration: 600,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 31
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 32
       },
       __self: this
     }, totalGamesCount)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
@@ -1844,21 +1828,21 @@ var Statistics = function Statistics() {
       duration: 600,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 34
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 35
       },
       __self: this
     }, labels.games)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-right t-gold",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 39
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
@@ -1869,106 +1853,106 @@ var Statistics = function Statistics() {
       duration: 600,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 40
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-right__row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 41
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-6 t-outline t-gold",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 42
       },
       __self: this
     }, labels.scored), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 43
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 44
       },
       __self: this
     }, totalGoalsCount), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 45
       },
       __self: this
     }, " ", labels.goals))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-right__row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 48
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-6 t-outline t-gold",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 49
       },
       __self: this
     }, labels.won), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 50
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 51
       },
       __self: this
     }, totalTrophiesCount), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 52
       },
       __self: this
     }, " ", labels.trophies))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "stat-right__row",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 55
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-6 t-outline t-gold",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 56
       },
       __self: this
     }, labels.made), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 57
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 58
       },
       __self: this
     }, totalAssistsCount), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 59
       },
       __self: this
     }, " ", labels.assists)))))));

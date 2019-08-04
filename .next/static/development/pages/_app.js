@@ -204,9 +204,9 @@ var Image = function Image(_ref) {
       alt = _ref.alt;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "".concat(baseClass, "__image ").concat(classAddition ? classAddition : ''),
-    srcSet: "\n            ".concat(image.imageS, " 768w,\n            ").concat(image.imageM, " 1200w,\n            ").concat(image.imageL, " 1440w,\n        "),
-    sizes: "(max-width: 768px) 700px, (max-width: 1200px) 1000px, 1440px",
     src: image.imageS,
+    sizes: "(max-width: 768px) 100vw, 75vw",
+    srcset: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
     alt: alt,
     __source: {
       fileName: _jsxFileName,
