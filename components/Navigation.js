@@ -20,7 +20,7 @@ const enableScrolling = () => {
 
 const Navigation = () => {
     const [isOpen, toggleMenu] = useState(false)
-    const { labels, heroImage, page } = useContext(DataContext)
+    const { labels, heroimage, page, changeLanguage } = useContext(DataContext)
     const isShop = page === 'shop'
 
     const onClick = () => {
@@ -32,6 +32,13 @@ const Navigation = () => {
 
         toggleMenu(!isOpen)
     }
+
+    const onLanguageChange = (e, lang) => {
+        e.stopPropagation()
+        changeLanguage(lang)
+    }
+
+    if (!labels) return null;
 
     return (
         <React.Fragment>
@@ -46,7 +53,7 @@ const Navigation = () => {
             </header>
             <nav className={ `menu${isOpen ? ' open' : ''}` } onClick={ onClick }>
                 <section className="section section--menu">
-                    <Image image={ heroImage } baseClass="menu" alt="Stefan Zuber" />
+                    <Image image={ heroimage } baseClass="menu" alt="Stefan Zuber" />
                     <ul className="t-6">
                         { navLinks.map(({ href, labelKey }) => (
                             <li key={ labelKey } className="cta-hover">
@@ -54,9 +61,9 @@ const Navigation = () => {
                             </li>
                         )) }
                         <li className="t-8">
-                            <button onClick={() => {}}>EN</button>
+                            <button onClick={(e) => onLanguageChange(e, 'en')}>EN</button>
                             <span> | </span>
-                            <button onClick={() => {}}>DE</button>
+                            <button onClick={(e) => onLanguageChange(e, 'de')}>DE</button>
                         </li>
                     </ul>
                 </section>

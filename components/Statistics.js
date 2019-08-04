@@ -5,7 +5,10 @@ import Section from './Section';
 
 const Statistics = () => {
     const { labels, statistics } = useContext(DataContext);
-    const { image, totalGamesCount, totalGoalsCount, totalAssistsCount, totalTrophiesCount } = statistics
+
+    if (!statistics) return null;
+
+    const { totalGamesCount, totalGoalsCount, totalAssistsCount, totalTrophiesCount, ...image } = statistics
 
     return (
         <Section title={ labels.statistics } baseClass="statistics" name="statistics" flexHeight observeIntersection>
@@ -22,7 +25,7 @@ const Statistics = () => {
                             sizes="(max-width: 768px) 700px,
                                 (max-width: 1200px) 1000px,
                                 1440px"
-                            src={ image.imageL }
+                            src={ image.imageS }
                         />
                     </Fade>
                     <div className="statistics__content">

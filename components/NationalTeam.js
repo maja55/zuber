@@ -8,8 +8,8 @@ import Section from './Section'
 import CountBar from './CountBar'
 
 const NationalTeam = () => {
-    const { nationalTeam, labels } = useContext(DataContext)
-    const { copy, image, imageBw, assistsCount, gamesCount, goalsCount, startYear, endYear, playerNumber, position } = nationalTeam
+    const { nationalteam, labels } = useContext(DataContext)
+    const { copy, assistsCount, gamesCount, goalsCount, startYear, endYear, playerNumber, position, imageBwS, imageBwM, imageBwL, ...image } = nationalteam
 
     return (
         <Section title={ labels.internationalCareer } baseClass="national-team" name="career" flexHeight observeIntersection>
@@ -24,7 +24,11 @@ const NationalTeam = () => {
                             <div className="national-team__image-wrapper">
                                 <LazyLoad height={ 200 } offset={ 500 }>
                                     <Image baseClass="national-team" image={ image } />
-                                    <Image baseClass="national-team" classAddition={ `national-team__bw${reveal ? ' fadeOut' : ''}` } image={ imageBw } />
+                                    <Image
+                                      baseClass="national-team"
+                                      classAddition={ `national-team__bw${reveal ? ' fadeOut' : ''}` }
+                                      image={ { imageS: imageBwS, imageM: imageBwM, imageL: imageBwL } }
+                                    />
                                 </LazyLoad>
                             </div>
                             <div className="national-team__bottom t-gold">

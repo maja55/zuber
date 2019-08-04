@@ -7,7 +7,11 @@ import { LazyFadeImage } from './LazyImage';
 
 const Clubs = () => {
     const { labels, clubs } = useContext(DataContext)
-    const [activeClub, setActiveClub ] = useState(clubs.length - 1)
+
+    if (!clubs || !clubs.length) return null;
+
+    const sortedClubs = clubs.sort((a, b) => (a.startYear > b.startYear) ? 1 : -1)
+    const [activeClub, setActiveClub ] = useState(sortedClubs.length - 1)
     const [fade, setFade ] = useState(true)
     const [transitionClass, setTransitionClass ] = useState('')
     const onClick = (index) => {
@@ -19,14 +23,14 @@ const Clubs = () => {
     const { 
         name, coatOfArmsKey, startYear, endYear, position,
         playerNumber, gamesCount, goalsCount, assistsCount,
-        backgroundImage, playerImage
-    } = clubs[activeClub]
+        backgroundImage, imageBgS, imageBgM, imageBgL, ...image
+    } = sortedClubs[activeClub]
 
     return (
         <Section title={ labels.clubCareer } baseClass="clubs" flexHeight>
             <div className="club__top">
                 <ul className="clubs__menu t-7 t-grey">
-                    { clubs.map(({ name, startYear }, index) => (
+                    { sortedClubs.map(({ name, startYear }, index) => (
                         <Fade key={ name } bottom opposite delay={ index * 200 } duration={ 200 }>
                             <li className={ `clubs__menu-item cta-hover${index === activeClub ? ' active t-light' : ''}` }>
                                 <button onClick={ () => onClick(index) }>
@@ -40,7 +44,7 @@ const Clubs = () => {
                     <LazyFadeImage
                         baseClass='club-bg'
                         alt={ `${name} Stadium` }
-                        image={ backgroundImage }
+                        image={ { imageS: imageBgS, imageM: imageBgM, imageL: imageBgL } }
                         revealProps={{ delay: 1000 }}
                     />
                 </div>
@@ -71,7 +75,7 @@ const Clubs = () => {
                 <LazyFadeImage
                     baseClass='club-top'
                     alt={ `Steven Zuber in ${name}` }
-                    image={ playerImage }
+                    image={ image }
                     revealProps={{ delay: 700 }}
                 />
             </div>

@@ -1,5 +1,6 @@
 import React, { createContext } from 'react';
 import App, { Container } from 'next/app';
+import fetch from 'node-fetch';
 import config from 'react-reveal/globals';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -7,31 +8,87 @@ import Head from '../components/Head';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import '../scss/style.scss';
-import data from '../data.json'
 
 config({ ssrFadeout: true, forever: true, fraction: 1, distance: '400px', duration: 300 });
 
+const MULTIPOST_CATEGORIES = ['clubs', 'life', 'love', 'passion', 'hobby', 'products']
+
 export const DataContext = createContext();
+
+const fetchContent = async (lang, categoriesMap) => {
+    const res = await fetch(`http://35.228.27.202/index.php/wp-json/wp/v2/posts?per_page=50&lang=${lang}`)
+    const jsonResponse = await res.json()
+    const data = {}
+
+    if (jsonResponse && jsonResponse.length) {
+        jsonResponse.map(({ slug, acf, categories }) => {
+            if (!categories || !categories.length) return data[slug] = acf
+
+            const categoryId = categories[0]
+            const categoryName = categoriesMap[categoryId]
+
+            if (!MULTIPOST_CATEGORIES.includes(categoryName)) return data[slug] = acf
+
+            const prevArray = data[categoryName] || []
+            const orderNumber = slug.split('-')[1]
+            acf.order = orderNumber ? orderNumber : 0
+
+            return data[categoryName] = [ ...prevArray, acf ]
+        })
+    }
+
+    return { [lang]: data }
+} 
+
 class MyApp extends App {
-    static async getInitialProps({ Component, ctx }) {
-        // const pageProps = await Component.getInitialProps(ctx);
-        // return { pageProps };
+    static async getInitialProps({ Component }) {
+        const cat = await fetch('http://35.228.27.202/index.php/wp-json/wp/v2/categories')
+        const jsonCategories = await cat.json()
+        const categories = {}
+    
+        if (jsonCategories && jsonCategories.length) {
+            jsonCategories.map(({ id, name }) => categories[id] = name)
+        }
+    
+        return { data: await fetchContent('en', categories), categories, page: Component.name.toLowerCase() }
+    }
 
-        // const res = await fetch('http://localhost:8888/wordpress/wp-json/wp/v2/posts?category=home', {
-        //   method: 'get',
-        //   mode: 'no-cors',
-        // })
-        // const json = await res.json()
+    constructor(props) {
+        super(props)
 
-        return { data, page: Component.name.toLowerCase() }
+        this.state = {
+            lang: 'en',
+            data: this.props.data,
+        }
+    }
+
+    changeLanguage = async (lang) => {
+        if (lang !== this.state.lang) {
+            const localizedData = this.state.data[lang]
+
+            if (!!localizedData) {
+                this.setState({ lang })
+            } else {
+                this.setState({
+                    lang,
+                    data: {
+                        ...this.state.data,
+                        ...await fetchContent(lang, this.props.categories)
+                    }
+                })
+            }
+        }
     }
 
     render() {
-        const { Component, page, data } = this.props;
+        const { Component, page, } = this.props;
+        const { data, lang } = this.state;
+
+        if (!data || !data[lang] || !data[lang].labels) return null;
 
         return (
             <Container>
-                <DataContext.Provider value={ { ...data, page } }>
+                <DataContext.Provider value={ { ...data[lang], changeLanguage: this.changeLanguage } }>
                     <ParallaxProvider>
                         <div className={ `page page--${page}` }>
                             <Head />
@@ -49,9 +106,4 @@ class MyApp extends App {
 export default MyApp;
 
 
-// unirest.get('https://api-football-v1.p.rapidapi.com/v2/players/team/172')
-// .header('X-RapidAPI-Host', 'api-football-v1.p.rapidapi.com')
-// .header('X-RapidAPI-Key', 'd828e39e4fmsh455212f83b68e3fp10010fjsnb96876cf0453')
-// .end(function (result) {
-//   console.log(result.status, result.headers, result.body);
-// });
+// https://api-football-v1.p.rapidapi.com/v2/players/team/172

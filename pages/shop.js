@@ -1,15 +1,22 @@
 import React, { useContext } from 'react'
+import { Fade } from 'react-reveal';
 import { DataContext } from './_app'
 import Section from '../components/Section'
 import ProductItem from '../components/ProductItem'
 
 const Shop = () => {
-    const { products } = useContext(DataContext)
+    const { products, labels } = useContext(DataContext)
+    const hasProducts = products && products.length
 
     return (
         <Section baseClass="shop" flexHeight disableFade>
             <div className="product-list">
-                { products.map((product) => <ProductItem product={ product } key={ product.name } />) }
+                { hasProducts ?
+                    products.map((product) => <ProductItem product={ product } key={ product.name } />) :
+                    <Fade right opposite duration={ 500 } distance="1000px" delay={ 200 }>
+                        <h1 className="t-center" style={{ height: '45vh', paddingTop: '20vh' }}>{labels.comingSoon || 'Coming soon'}</h1>
+                    </Fade>
+                }
             </div>
         </Section>
     )

@@ -44,7 +44,7 @@ export const LazyFadeImage = ({ revealProps, image, baseClass, alt, classAdditio
                 sizes="(max-width: 768px) 700px,
                     (max-width: 1200px) 1000px,
                     1440px"
-                src={ image.imageL }
+                src={ image.imageS }
                 alt={ alt }
             />
         </Fade>

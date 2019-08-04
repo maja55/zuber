@@ -7,7 +7,7 @@
 
     a:hover { color: $light; }
 
-    @media screen and (max-width: $screen-xs) {
+    @media screen and (max-width: $screen-sm) {
         text-align: center;
         flex-direction: column;
         font-size: 3vw;

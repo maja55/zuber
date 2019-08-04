@@ -3,7 +3,9 @@ import { DataContext } from '../pages/_app';
 
 const Footer = () => {
     const { labels, footer } = useContext(DataContext)
-    const { socials, email, copyright } = footer
+    if (!footer) return null;
+    const { instagram, twitter, facebook, email, copyright } = footer
+    const socials = { instagram, twitter, facebook }
 
     return (
         <footer>

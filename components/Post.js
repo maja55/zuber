@@ -4,14 +4,20 @@ import { DataContext } from '../pages/_app'
 import { Parallax } from 'react-scroll-parallax';
 import LazyImage, { LazyParalexImage } from './LazyImage';
 
-const Post = ({ type, textColor, headings, description, quotes, footnote, vectorImage, image }) => {
-    const { heroImage } = useContext(DataContext)
+const splitStringOnSlash = (string) => string ? string.split('/') : []
+
+const Post = ({ type, textColor, heading, description, quotes, footnote, vectorImage, ...image }) => {
+    const { heroimage } = useContext(DataContext)
+    const headings = splitStringOnSlash(heading)
+    const descriptions = splitStringOnSlash(description)
+    const quotesArray = splitStringOnSlash(quotes)
+
     const renderHeadings = () => headings.map((h, i) =>
         <Parallax y={[10, -10]} key={ `post-h-${type}-${i}` }>
             <h3 className={ `t-6 ${textColor || 't-gold'}` }>{ h }</h3>
         </Parallax>
     )
-    const renderDescriptions = () => description.map((d, i) =>
+    const renderDescriptions = () => descriptions.map((d, i) =>
         <p key={ `post-p-${type}-${i}` } className="t-8">{ d }</p>
     )
 
@@ -25,7 +31,7 @@ const Post = ({ type, textColor, headings, description, quotes, footnote, vector
                     <div className="post__text">
                         { type !== 'hobby' && renderHeadings() }
                         { renderDescriptions() }
-                        { quotes.map((q, i) => 
+                        { quotesArray.map((q, i) => 
                             <p key={ `post-q-${type}-${i}` } className="t-9">{ q }</p>
                         )}
                     </div>
@@ -36,7 +42,7 @@ const Post = ({ type, textColor, headings, description, quotes, footnote, vector
                                 <img className="post__image" src={ vectorImage } />
                             </Parallax>
                         : type === 'passion' ?
-                            <LazyImage image={ heroImage } baseClass="post" />
+                            <LazyImage image={ heroimage } baseClass="post" />
                         : image && image.imageS ?
                             <LazyParalexImage 
                                 y={[-5, 10]}
@@ -52,15 +58,15 @@ const Post = ({ type, textColor, headings, description, quotes, footnote, vector
 }
 
 Post.defaultProps = {
-    headings: [],
-    description: [],
-    quotes: [],
+    headings: '',
+    description: '',
+    quotes: '',
 }
 
 Post.propTypes = {
-    headings: PropTypes.arrayOf(PropTypes.string),
-    description: PropTypes.arrayOf(PropTypes.string),
-    quotes: PropTypes.arrayOf(PropTypes.string),
+    headings: PropTypes.string,
+    description: PropTypes.string,
+    quotes: PropTypes.string,
 }
 
 export default Post

@@ -2258,7 +2258,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/maja/code/ZuberSite/pages/_document.js";
+var _jsxFileName = "/Users/maja/code/zuber/pages/_document.js";
 
 
 
@@ -2289,30 +2289,100 @@ function (_Document) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/_next/static/style.css",
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "static/favicon.ico/apple-touch-icon.png",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 13
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "static/favicon.ico/favicon-32x32.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "static/favicon.ico/favicon-16x16.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "manifest",
+        href: "static/favicon.ico/site.webmanifest",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "mask-icon",
+        href: "static/favicon.ico/safari-pinned-tab.svg",
+        color: "#927c50",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "shortcut icon",
+        href: "static/favicon.ico/favicon.ico",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
+        name: "msapplication-TileColor",
+        content: "#927c50",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
+        name: "msapplication-config",
+        content: "static/favicon.ico/browserconfig.xml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
+        name: "theme-color",
+        content: "#927c50",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("body", {
         className: "t-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["Main"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 24
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_9__["NextScript"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 25
         },
         __self: this
       })));

@@ -7,7 +7,8 @@ import { LazyFadeImage } from './LazyImage';
 
 const Fifa = () => {
     const { labels, fifa } = useContext(DataContext);
-    const { copy, image, minutesCount, gamesCount, goalsCount } = fifa
+    if (!fifa) return null;
+    const { copy, minutesCount, gamesCount, goalsCount, ...image } = fifa
 
     return (
         <Section baseClass="fifa" name="fifa" flexHeight>

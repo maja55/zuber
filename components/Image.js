@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Image = ({ baseClass, classAddition, image={}, alt }) => (
     <img
-        className={ `${baseClass}__image ${classAddition}` }
+        className={ `${baseClass}__image ${classAddition ? classAddition : ''}` }
         srcSet={ `
             ${image.imageS} 768w,
             ${image.imageM} 1200w,
@@ -12,7 +12,7 @@ const Image = ({ baseClass, classAddition, image={}, alt }) => (
         sizes="(max-width: 768px) 700px,
             (max-width: 1200px) 1000px,
             1440px"
-        src={ image.imageL }
+        src={ image.imageS }
         alt={ alt }
     />
 )

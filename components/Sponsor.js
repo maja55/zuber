@@ -4,7 +4,9 @@ import { DataContext } from '../pages/_app'
 import Image from './Image'
 
 const Sponsor = () => {
-    const { title, productName, description, image } = useContext(DataContext).sponsor;
+    const { sponsor } = useContext(DataContext)
+    if (!sponsor) return null;
+    const { title, productName, description, ...image } = sponsor;
 
     return (
         <section className="section sponsor section--flex">

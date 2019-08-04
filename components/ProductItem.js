@@ -4,7 +4,7 @@ import Image from './Image'
 
 const ProductItem = ({ product }) => {
     const { labels } = useContext(DataContext)
-    const { image, name, description, price, payPalLink } = product
+    const { name, description, price, payPalLink, ...image } = product
 
     return (
         <div className="product-item">

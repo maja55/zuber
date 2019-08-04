@@ -157,7 +157,8 @@ button {
   cursor: pointer; }
 
 .page {
-  background-color: #232425; }
+  background-color: #232425;
+  min-height: 100vh; }
   .page.page--shop {
     background-color: #dadbdb; }
 
@@ -760,7 +761,7 @@ button {
   padding-bottom: 15vh; }
   .site-footer a:hover {
     color: #dadbdb; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     .site-footer {
       text-align: center;
       flex-direction: column;
@@ -802,7 +803,7 @@ button {
           width: 60%; }
       .product-item .product-item__image {
         width: 57%;
-        margin-bottom: 0;
+        margin-bottom: auto;
         padding-right: 5vw; }
       .product-item:nth-child(odd) .product-item__image {
         order: 1;
