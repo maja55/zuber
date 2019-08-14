@@ -9,17 +9,17 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-lazyload */ "./node_modules/react-lazyload/lib/index.js");
+/* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_lazyload__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal */ "./node_modules/react-reveal/index.js");
 /* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
 /* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
 /* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
-/* harmony import */ var _LazyImage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LazyImage */ "./components/LazyImage.js");
-
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
 var _jsxFileName = "/Users/maja/code/zuber/components/Clubs.js";
 
@@ -29,8 +29,9 @@ var _jsxFileName = "/Users/maja/code/zuber/components/Clubs.js";
 
 
 
+
 var Clubs = function Clubs() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_4__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_4__["DataContext"]),
       labels = _useContext.labels,
       clubs = _useContext.clubs;
 
@@ -39,18 +40,18 @@ var Clubs = function Clubs() {
     return a.startYear > b.startYear ? 1 : -1;
   });
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(sortedClubs.length - 1),
-      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState, 2),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(sortedClubs.length - 1),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
       activeClub = _useState2[0],
       setActiveClub = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(true),
-      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState3, 2),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
       fade = _useState4[0],
       setFade = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(''),
-      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState5, 2),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
       transitionClass = _useState6[0],
       setTransitionClass = _useState6[1];
 
@@ -65,203 +66,233 @@ var Clubs = function Clubs() {
 
   var _sortedClubs$activeCl = sortedClubs[activeClub],
       name = _sortedClubs$activeCl.name,
-      coatOfArmsKey = _sortedClubs$activeCl.coatOfArmsKey,
+      logo = _sortedClubs$activeCl.logo,
       startYear = _sortedClubs$activeCl.startYear,
       endYear = _sortedClubs$activeCl.endYear,
       position = _sortedClubs$activeCl.position,
       playerNumber = _sortedClubs$activeCl.playerNumber,
       gamesCount = _sortedClubs$activeCl.gamesCount,
       goalsCount = _sortedClubs$activeCl.goalsCount,
-      assistsCount = _sortedClubs$activeCl.assistsCount,
-      backgroundImage = _sortedClubs$activeCl.backgroundImage,
-      imageBgS = _sortedClubs$activeCl.imageBgS,
-      imageBgM = _sortedClubs$activeCl.imageBgM,
-      imageBgL = _sortedClubs$activeCl.imageBgL,
-      image = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_sortedClubs$activeCl, ["name", "coatOfArmsKey", "startYear", "endYear", "position", "playerNumber", "gamesCount", "goalsCount", "assistsCount", "backgroundImage", "imageBgS", "imageBgM", "imageBgL"]);
-
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      assistsCount = _sortedClubs$activeCl.assistsCount;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_5__["default"], {
     title: labels.clubCareer,
     baseClass: "clubs",
+    name: "clubs",
     flexHeight: true,
+    observeIntersection: true,
+    threshold: 0.4,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: "club__top",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
-    className: "clubs__menu t-7 t-grey",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, sortedClubs.map(function (_ref, index) {
-    var name = _ref.name,
-        startYear = _ref.startYear;
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
-      key: name,
-      bottom: true,
-      opposite: true,
-      delay: index * 200,
-      duration: 200,
+  }, function (_ref) {
+    var reveal = _ref.reveal;
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      height: 500,
+      offset: 1000,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "club__top",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 34
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("li", {
-      className: "clubs__menu-item cta-hover".concat(index === activeClub ? ' active t-light' : ''),
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+      className: "clubs__menu t-7 t-grey",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 35
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
-      onClick: function onClick() {
-        return _onClick(index);
+    }, sortedClubs.map(function (_ref2, index) {
+      var name = _ref2.name,
+          startYear = _ref2.startYear;
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
+        key: name,
+        bottom: true,
+        opposite: true,
+        delay: index * 200,
+        duration: 200,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "clubs__menu-item cta-hover".concat(index === activeClub ? ' active t-light' : ''),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _onClick(index);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }, startYear, " - ", name)));
+    })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "club-bg__wrapper d-flex",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }, sortedClubs.map(function (_ref3, index) {
+      var name = _ref3.name,
+          imageBgS = _ref3.imageBgS,
+          imageBgM = _ref3.imageBgM,
+          imageBgL = _ref3.imageBgL;
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        key: "".concat(name, " Stadium"),
+        className: "club-bg".concat((reveal || !fade) && index === activeClub ? ' active' : ''),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        baseClass: "club-bg",
+        alt: "".concat(name, " Stadium"),
+        image: {
+          imageS: imageBgS,
+          imageM: imageBgM,
+          imageL: imageBgL
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }));
+    })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
+      bottom: true,
+      opposite: true,
+      cascade: true,
+      delay: 500,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "club__copy t-3 ".concat(transitionClass),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "club__name",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }, startYear, "-", endYear), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, position, " #", playerNumber)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "club__bottom ".concat(transitionClass),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
+      bottom: true,
+      opposite: true,
+      delay: 500,
+      onReveal: function onReveal() {
+        return setFade(false);
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 66
       },
       __self: this
-    }, startYear, " - ", name)));
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: "club-bg ".concat(transitionClass).concat(fade ? '' : ' hide'),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_7__["LazyFadeImage"], {
-    baseClass: "club-bg",
-    alt: "".concat(name, " Stadium"),
-    image: {
-      imageS: imageBgS,
-      imageM: imageBgM,
-      imageL: imageBgL
-    },
-    revealProps: {
-      delay: 1000
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
-    bottom: true,
-    opposite: true,
-    cascade: true,
-    delay: 500,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: "club__copy t-3 ".concat(transitionClass),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: "club__name",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: this
-  }, name), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: this
-  }, startYear, "-", endYear), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: this
-  }, position, " #", playerNumber)))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: "club__bottom ".concat(transitionClass),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
-    bottom: true,
-    opposite: true,
-    delay: 700,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
-    className: "club__logo",
-    src: "/static/svgs/".concat(coatOfArmsKey, ".svg"),
-    alt: "".concat(name, " Coat of Arms"),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    baseClass: "club",
-    revealProps: {
-      delay: 700,
-      disabled: !fade
-    },
-    isVertical: true,
-    items: [{
-      count: gamesCount,
-      labelTop: labels.games,
-      labelBottom: labels.played
-    }, {
-      count: goalsCount,
-      labelTop: labels.goals,
-      labelBottom: labels.scored
-    }, {
-      count: assistsCount,
-      labelTop: labels.goal,
-      labelBottom: labels.assists
-    }],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: "club-player ".concat(transitionClass),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_7__["LazyFadeImage"], {
-    baseClass: "club-top",
-    alt: "Steven Zuber in ".concat(name),
-    image: image,
-    revealProps: {
-      delay: 700
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75
-    },
-    __self: this
-  })));
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      className: "club__logo",
+      src: logo,
+      alt: "".concat(name, " Coat of Arms"),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 67
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      key: name,
+      baseClass: "club",
+      revealProps: {
+        delay: 500
+      },
+      isVertical: true,
+      items: [{
+        count: gamesCount,
+        labelTop: labels.games,
+        labelBottom: labels.played
+      }, {
+        count: goalsCount,
+        labelTop: labels.goals,
+        labelBottom: labels.scored
+      }, {
+        count: assistsCount,
+        labelTop: labels.goal,
+        labelBottom: labels.assists
+      }],
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    })), sortedClubs.map(function (_ref4, index) {
+      var name = _ref4.name,
+          imageS = _ref4.imageS,
+          imageM = _ref4.imageM,
+          imageL = _ref4.imageL;
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        key: "".concat(name, " player"),
+        className: "club-player ".concat((reveal || !fade) && index === activeClub ? ' active' : ''),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        baseClass: "club-top",
+        alt: "Steven Zuber in ".concat(name),
+        image: {
+          imageS: imageS,
+          imageM: imageM,
+          imageL: imageL
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        },
+        __self: this
+      }));
+    })));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Clubs);
@@ -433,11 +464,12 @@ var Fifa = function Fifa() {
 
   if (!fifa) return null;
 
-  var copy = fifa.copy,
+  var heading = fifa.heading,
+      copy = fifa.copy,
       minutesCount = fifa.minutesCount,
       gamesCount = fifa.gamesCount,
       goalsCount = fifa.goalsCount,
-      image = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(fifa, ["copy", "minutesCount", "gamesCount", "goalsCount"]);
+      image = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(fifa, ["heading", "copy", "minutesCount", "gamesCount", "goalsCount"]);
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_4__["default"], {
     baseClass: "fifa",
@@ -457,8 +489,6 @@ var Fifa = function Fifa() {
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
     bottom: true,
-    opposite: true,
-    cascade: true,
     delay: 50,
     __source: {
       fileName: _jsxFileName,
@@ -472,24 +502,12 @@ var Fifa = function Fifa() {
       lineNumber: 17
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, labels.fifaWorldCup, " 2019"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, labels.statistics))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_6__["LazyFadeImage"], {
+  }, heading)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LazyImage__WEBPACK_IMPORTED_MODULE_6__["LazyFadeImage"], {
     baseClass: "fifa",
     image: image,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
@@ -498,14 +516,14 @@ var Fifa = function Fifa() {
     delay: 100,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "fifa__copy",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   }, copy)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -525,7 +543,7 @@ var Fifa = function Fifa() {
     }],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   })));
@@ -561,13 +579,11 @@ var Footer = function Footer() {
 
   if (!footer) return null;
   var instagram = footer.instagram,
-      twitter = footer.twitter,
       facebook = footer.facebook,
       email = footer.email,
       copyright = footer.copyright;
   var socials = {
     instagram: instagram,
-    twitter: twitter,
     facebook: facebook
   };
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
@@ -613,6 +629,8 @@ var Footer = function Footer() {
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
       href: socials[label],
+      target: "_blank",
+      rel: "nofollow",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
@@ -741,7 +759,7 @@ var Image = function Image(_ref) {
     className: "".concat(baseClass, "__image ").concat(classAddition ? classAddition : ''),
     src: image.imageS,
     sizes: "(max-width: 768px) 100vw, 75vw",
-    srcset: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
+    srcSet: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
     alt: alt,
     __source: {
       fileName: _jsxFileName,
@@ -776,10 +794,9 @@ Image.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-reveal */ "./node_modules/react-reveal/index.js");
-/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _components_Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Image */ "./components/Image.js");
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var _Loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Loader */ "./components/Loader.js");
 var _jsxFileName = "/Users/maja/code/zuber/components/Intro.js";
 
 
@@ -787,14 +804,16 @@ var _jsxFileName = "/Users/maja/code/zuber/components/Intro.js";
 
 
 var Intro = function Intro() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_2__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_1__["DataContext"]),
       introimage = _useContext.introimage;
 
+  if (!introimage) return null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "section intro",
+    id: "home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -802,7 +821,7 @@ var Intro = function Intro() {
     src: "/static/svgs/zuber_desktop.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -810,35 +829,25 @@ var Intro = function Intro() {
     src: "/static/svgs/zuber_mobile.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    baseClass: "intro",
-    image: introimage,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_1__["Fade"], {
-    bottom: true,
-    delay: 2000,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "intro__logo",
-    src: "/static/svgs/lion.svg",
-    alt: "Zuber Coat Of Arms",
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    baseClass: "intro",
+    image: introimage,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  })));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Loader__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    classAdditions: "intro__logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Intro);
@@ -849,13 +858,14 @@ var Intro = function Intro() {
 /*!*********************************!*\
   !*** ./components/LazyImage.js ***!
   \*********************************/
-/*! exports provided: LazyParalexImage, LazyFadeImage, default */
+/*! exports provided: LazyParalexImage, LazyFadeImage, FadeImage, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyParalexImage", function() { return LazyParalexImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyFadeImage", function() { return LazyFadeImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FadeImage", function() { return FadeImage; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
@@ -891,7 +901,7 @@ var defaulteImgRevealProps = {
 var LazyImage = function LazyImage(props) {
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
     height: 200,
-    offset: 500,
+    offset: 1000,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
@@ -920,7 +930,7 @@ var LazyParalexImage = function LazyParalexImage(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
     height: 200,
-    offset: 500,
+    offset: 1000,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 25
@@ -955,7 +965,7 @@ var LazyFadeImage = function LazyFadeImage(_ref2) {
 
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_5___default.a, {
     height: 200,
-    offset: 500,
+    offset: 1000,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
@@ -974,6 +984,24 @@ var LazyFadeImage = function LazyFadeImage(_ref2) {
     },
     __self: this
   }))));
+};
+var FadeImage = function FadeImage(_ref3) {
+  var revealProps = _ref3.revealProps,
+      props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref3, ["revealProps"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_6__["Fade"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaulteImgRevealProps, revealProps), {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_8__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: this
+  })));
 };
 LazyFadeImage.defaultProps = {
   image: {},
@@ -1001,6 +1029,428 @@ LazyFadeImage.propTypes = {
 
 /***/ }),
 
+/***/ "./components/Loader.js":
+/*!******************************!*\
+  !*** ./components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/maja/code/zuber/components/Loader.js";
+
+
+var Loader = function Loader(_ref) {
+  var classAdditions = _ref.classAdditions;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "loader ".concat(classAdditions),
+    id: "Layer_1",
+    "data-name": "Layer 1",
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlnsXlink: "http://www.w3.org/1999/xlink",
+    viewBox: "0 0 112.37 115.81",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    className: "cls-1",
+    points: "36.68 4.42 31.93 0.07 9.91 0.07 3.22 34.13 3.22 40.33 29.15 14.81 36.68 4.42",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-2",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    className: "cls-1",
+    points: "55.48 13.51 42.94 0.43 69.42 0.43 55.48 13.51",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-3",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    className: "cls-1",
+    points: "73.96 4.42 78.71 0.07 100.72 0.07 107.42 34.13 107.42 40.33 81.49 14.81 73.96 4.42",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-4",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    className: "cls-1",
+    points: "21.49 33.79 21.49 39.35 5.58 55.79 48.77 106.87 48.77 111.94 39.16 108.61 0 75.62 0 54.97 21.49 33.79",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-5",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polygon", {
+    className: "cls-1",
+    points: "89.16 33.79 89.16 39.35 105.06 55.79 61.87 106.87 61.87 111.94 71.48 108.61 110.64 75.62 110.64 54.97 89.16 33.79",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-6",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M37.6,51.45H32.78s-6,11.28,5.74,19.55L41,67.05Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-7",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M73,51.45h4.82s6,11.28-5.74,19.55l-2.49-3.94Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-8",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M55.33,57.6,43.7,50l-.13-13.88A3.93,3.93,0,0,0,42.38,33c-2.44-2.32-7.94-2.49-9.86-2.36l-.34-4.69c.91-.07,9.06-.52,13.43,3.63a8.6,8.6,0,0,1,2.66,6.61l.1,11.29,9.52,6.2Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-9",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M55.21,57.6l-2.57-3.94,9.52-6.2.1-11.36a8.55,8.55,0,0,1,2.66-6.53c4.37-4.16,12.52-3.7,13.43-3.63L78,30.61c-1.92-.13-7.43,0-9.86,2.36A3.87,3.87,0,0,0,67,36.06l-.13,14Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-10",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M55.34,90.09A54.36,54.36,0,0,1,38.8,81.5l-.87-.71V69.31l.19-.45c1.36-3.14,4.54-4.39,7.62-5.6C50.22,61.49,53,60.18,53,55.63h4.7c0,8-5.9,10.3-10.21,12-2.08.82-4.06,1.6-4.83,2.75v8.14a51.41,51.41,0,0,0,14.06,7.07Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+    id: "clip-path-11",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    className: "cls-1",
+    d: "M55.44,90.09l-1.34-4.5a51.41,51.41,0,0,0,14.06-7.07V70.38c-.78-1.15-2.75-1.93-4.83-2.75-4.31-1.7-10.21-4-10.21-12h4.7c0,4.55,2.75,5.86,7.24,7.63,3.08,1.21,6.26,2.47,7.62,5.6l.19.45V80.79L72,81.5A54.37,54.37,0,0,1,55.44,90.09Z",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }, "lion_paths"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-2",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polyline", {
+    id: "tl",
+    className: "cls-3",
+    points: "37.54 6.09 15.76 6.11 26.82 18.52 1.59 43.64",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-4",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    id: "cr",
+    className: "cls-5",
+    x1: "54.22",
+    y1: "15.55",
+    x2: "68.44",
+    y2: "2.19",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("line", {
+    id: "cl",
+    className: "cls-5",
+    x1: "45.2",
+    y1: "2.19",
+    x2: "58.32",
+    y2: "15.75",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-6",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("polyline", {
+    id: "tr",
+    className: "cls-3",
+    points: "74.83 6.09 96.61 6.11 85.55 18.52 110.79 43.64",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-7",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "bl",
+    className: "cls-3",
+    d: "M23,35.32,2.76,55.4c4.3,8,9.09,14.39,17.77,22.93l-5,4.89S28.81,100.78,49.75,110",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-8",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "br",
+    className: "cls-3",
+    d: "M87.65,35.32,107.88,55.4c-4.3,8-9.09,14.39-17.77,22.93l5,4.89S81.83,100.78,60.89,110",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-9",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "wisk-l",
+    className: "cc cls-3",
+    d: "M35.73,50.21S28.86,61.67,39.94,69",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-10",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "wisk-r",
+    className: "cc cls-3",
+    d: "M74.9,50.21S81.76,61.67,70.69,69",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-11",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "nose-l",
+    className: "cc cls-12",
+    d: "M32.35,28.25s13.76-1,13.57,7.85L46,48.72l10.57,6.89",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-13",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "nose-r",
+    className: "cc cls-12",
+    d: "M78.18,28.25s-13.76-1-13.57,7.85L64.5,48.72,53.93,55.61",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-14",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "mouth-l",
+    className: "cc cls-12",
+    d: "M56,87.82a52.39,52.39,0,0,1-15.74-8.17V69.78c2.44-5.62,15-3.56,15-14.17",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+    className: "cls-15",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    id: "mouth-r",
+    className: "cc cls-12",
+    d: "M54.77,87.82a52.39,52.39,0,0,0,15.74-8.17V69.78c-2.44-5.62-15-3.56-15-14.17",
+    transform: "translate(0.87 3.88)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
+
+/***/ }),
+
 /***/ "./components/NationalTeam.js":
 /*!************************************!*\
   !*** ./components/NationalTeam.js ***!
@@ -1018,13 +1468,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-lazyload */ "./node_modules/react-lazyload/lib/index.js");
 /* harmony import */ var react_lazyload__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_lazyload__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _LazyImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LazyImage */ "./components/LazyImage.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
-/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
-/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
+/* harmony import */ var _CountBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CountBar */ "./components/CountBar.js");
 
 var _jsxFileName = "/Users/maja/code/zuber/components/NationalTeam.js";
-
 
 
 
@@ -1046,12 +1494,13 @@ var NationalTeam = function NationalTeam() {
       endYear = nationalteam.endYear,
       playerNumber = nationalteam.playerNumber,
       position = nationalteam.position,
+      logo = nationalteam.logo,
       imageBwS = nationalteam.imageBwS,
       imageBwM = nationalteam.imageBwM,
       imageBwL = nationalteam.imageBwL,
-      image = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(nationalteam, ["copy", "assistsCount", "gamesCount", "goalsCount", "startYear", "endYear", "playerNumber", "position", "imageBwS", "imageBwM", "imageBwL"]);
+      image = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(nationalteam, ["copy", "assistsCount", "gamesCount", "goalsCount", "startYear", "endYear", "playerNumber", "position", "logo", "imageBwS", "imageBwM", "imageBwL"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_6__["default"], {
     title: labels.internationalCareer,
     baseClass: "national-team",
     name: "career",
@@ -1059,7 +1508,7 @@ var NationalTeam = function NationalTeam() {
     observeIntersection: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 14
     },
     __self: this
   }, function (_ref) {
@@ -1071,42 +1520,42 @@ var NationalTeam = function NationalTeam() {
       delay: 0,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 17
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "national-team__content",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 18
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "national-team__top",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 19
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-      src: "/static/svgs/swiss-national-team.svg",
+      src: logo,
       alt: "Swiss National Team Logo",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 20
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 21
       },
       __self: this
     }, copy)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "national-team__image-wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 23
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1114,18 +1563,18 @@ var NationalTeam = function NationalTeam() {
       offset: 500,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 24
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
       baseClass: "national-team",
       image: image,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 25
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
       baseClass: "national-team",
       classAddition: "national-team__bw".concat(reveal ? ' fadeOut' : ''),
       image: {
@@ -1135,31 +1584,31 @@ var NationalTeam = function NationalTeam() {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 26
       },
       __self: this
     }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "national-team__bottom t-gold",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 33
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-3 t-outline t-gold",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 34
       },
       __self: this
     }, startYear, "-", endYear), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "t-3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 35
       },
       __self: this
-    }, position, " #", playerNumber)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }, position, " #", playerNumber)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_CountBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
       baseClass: "national-team",
       items: [{
         count: gamesCount,
@@ -1176,7 +1625,7 @@ var NationalTeam = function NationalTeam() {
       }],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 39
       },
       __self: this
     }));
@@ -1191,25 +1640,33 @@ var NationalTeam = function NationalTeam() {
 /*!**********************************!*\
   !*** ./components/Navigation.js ***!
   \**********************************/
-/*! exports provided: default */
+/*! exports provided: disableScrolling, enableScrolling, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disableScrolling", function() { return disableScrolling; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enableScrolling", function() { return enableScrolling; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal */ "./node_modules/react-reveal/index.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
 var _jsxFileName = "/Users/maja/code/zuber/components/Navigation.js";
 
 
 
 
+
 var navLinks = [{
+  href: '/#home',
+  labelKey: 'home'
+}, {
   href: '/#statistics',
   labelKey: 'statistics'
 }, {
@@ -1222,13 +1679,11 @@ var navLinks = [{
   href: '/shop',
   labelKey: 'shop'
 }];
-
 var disableScrolling = function disableScrolling() {
   window.onscroll = function () {
     return window.scrollTo(0, 0);
   };
 };
-
 var enableScrolling = function enableScrolling() {
   window.onscroll = function () {};
 };
@@ -1239,10 +1694,11 @@ var Navigation = function Navigation() {
       isOpen = _useState2[0],
       toggleMenu = _useState2[1];
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_4__["DataContext"]),
       labels = _useContext.labels,
       heroimage = _useContext.heroimage,
       page = _useContext.page,
+      lang = _useContext.lang,
       changeLanguage = _useContext.changeLanguage;
 
   var isShop = page === 'shop';
@@ -1266,46 +1722,46 @@ var Navigation = function Navigation() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 46
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 47
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "menu-btn".concat(isOpen ? ' open' : '').concat(isShop ? ' dark' : ''),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 48
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 49
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 50
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
@@ -1313,30 +1769,30 @@ var Navigation = function Navigation() {
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
     className: "section section--menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 57
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
     image: heroimage,
     baseClass: "menu",
     alt: "Stefan Zuber",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "t-6",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 59
     },
     __self: this
   }, navLinks.map(function (_ref) {
@@ -1347,74 +1803,76 @@ var Navigation = function Navigation() {
       className: "cta-hover",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 61
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 62
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 62
       },
       __self: this
     }, labels[labelKey])));
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-    className: "t-8",
+    className: "t-8 toggle-lang",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 65
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick(e) {
       return onLanguageChange(e, 'en');
     },
+    className: lang === 'en' ? 'active' : '',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 66
     },
     __self: this
   }, "EN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 67
     },
     __self: this
   }, " | "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick(e) {
       return onLanguageChange(e, 'de');
     },
+    className: lang === 'de' ? 'active' : '',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 68
     },
     __self: this
   }, "DE"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "page-heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 73
     },
     __self: this
   }, isShop ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     className: "t-6 t-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 76
     },
     __self: this
   }, labels.shop) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -1422,7 +1880,7 @@ var Navigation = function Navigation() {
     alt: "Stefan Zuber logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 79
     },
     __self: this
   }))));
@@ -1452,10 +1910,11 @@ var _jsxFileName = "/Users/maja/code/zuber/components/Section.js";
 
 
 var createObserver = function createObserver(el, handleIntersect) {
+  var threshold = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.8;
   var options = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.8
+    threshold: threshold
   };
   var observer = new IntersectionObserver(handleIntersect, options);
   observer.observe(el);
@@ -1469,12 +1928,13 @@ var Section = function Section(_ref) {
       flexHeight = _ref.flexHeight,
       name = _ref.name,
       observeIntersection = _ref.observeIntersection,
-      disableFade = _ref.disableFade;
+      disableFade = _ref.disableFade,
+      threshold = _ref.threshold,
+      onReveal = _ref.onReveal;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
     reveal: false,
-    y: null,
-    scrollUp: false
+    y: null
   }),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
       state = _useState2[0],
@@ -1482,20 +1942,18 @@ var Section = function Section(_ref) {
 
   var sectionRef = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])();
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    if (sectionRef.current && observeIntersection) {
+    if (sectionRef.current && observeIntersection && 'IntersectionObserver' in window) {
       createObserver(sectionRef.current, function (entries) {
         var _entries$ = entries[0],
             isIntersecting = _entries$.isIntersecting,
             boundingClientRect = _entries$.boundingClientRect;
         var y = boundingClientRect.y;
-        setState(function (prevState) {
-          return {
-            y: y,
-            reveal: isIntersecting,
-            scrollUp: prevState.y && y !== prevState.y ? y > prevState.y : prevState.scrollUp
-          };
+        setState({
+          y: y,
+          reveal: isIntersecting
         });
-      });
+        if (onReveal) onReveal(isIntersecting);
+      }, threshold);
     }
   }, []);
 
@@ -1506,14 +1964,14 @@ var Section = function Section(_ref) {
     id: name,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 34
     },
     __self: this
   }, disableFade && title ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     className: "section-title t-6 t-grey ".concat(titleClass),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 36
     },
     __self: this
   }, title) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
@@ -1522,21 +1980,21 @@ var Section = function Section(_ref) {
     delay: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 38
     },
     __self: this
   }, title && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     className: "section-title t-6 t-grey ".concat(titleClass),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 39
     },
     __self: this
   }, title)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     ref: sectionRef,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 42
     },
     __self: this
   }, typeof children === 'function' ? children(state) : children));
@@ -1741,16 +2199,12 @@ var Statistics = function Statistics() {
     },
     __self: this
   }, function (_ref) {
-    var reveal = _ref.reveal,
-        scrollUp = _ref.scrollUp;
+    var reveal = _ref.reveal;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_3__["Fade"], {
       left: true,
-      opposite: true,
-      when: reveal,
-      mirror: scrollUp,
       duration: 500,
       distance: "1000px",
-      delay: 0,
+      delay: 300,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
@@ -1760,7 +2214,7 @@ var Statistics = function Statistics() {
       className: "statistics__image",
       src: image.imageS,
       sizes: "(max-width: 768px) 100vw, 75vw",
-      srcset: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
+      srcSet: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
@@ -1979,32 +2433,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal */ "./node_modules/react-reveal/index.js");
 /* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Section__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Section */ "./components/Section.js");
 var _jsxFileName = "/Users/maja/code/zuber/components/Video.js";
 
 
 
 
 
+
 var Video = function Video() {
+  var videoEl = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
       video = _useContext.video;
 
   if (!video) return null;
-  var url = video.url;
+  var url = video.url,
+      placeholder = video.placeholder;
   if (!url) return null;
+
+  var onReveal = function onReveal(isIntersecting) {
+    if (videoEl && videoEl.current) {
+      if (isIntersecting) {
+        videoEl.current.play();
+      } else videoEl.current.pause();
+    }
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_lazyload__WEBPACK_IMPORTED_MODULE_1___default.a, {
     height: 400,
-    offset: 500,
+    offset: 1000,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 26
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "video section section--flex",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    baseClass: "video",
+    flexHeight: true,
+    observeIntersection: true,
+    onReveal: onReveal,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 27
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal__WEBPACK_IMPORTED_MODULE_2__["Fade"], {
@@ -2012,19 +2483,32 @@ var Video = function Video() {
     opposite: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 33
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-    width: "100%",
-    height: "600px",
-    src: url,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "p-rel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 34
     },
     __self: this
-  }))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+    ref: videoEl,
+    controls: true,
+    poster: placeholder,
+    src: url,
+    playsInline: true,
+    style: {
+      width: "100%"
+    },
+    muted: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Video);
@@ -16362,7 +16846,7 @@ function (_App) {
               case 11:
                 _context2.t0 = _context2.sent;
                 _context2.t1 = categories;
-                _context2.t2 = Component.name.toLowerCase();
+                _context2.t2 = Component.id;
                 return _context2.abrupt("return", {
                   data: _context2.t0,
                   categories: _context2.t1,
@@ -16456,12 +16940,32 @@ function (_App) {
 
     _this.state = {
       lang: 'en',
-      data: _this.props.data
+      data: _this.props.data,
+      loaded: _this.props.page !== 'home'
     };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(MyApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      if (!this.state.loaded) {
+        if (window.location.hash) {
+          this.setState({
+            loaded: true
+          });
+        } else {
+          setTimeout(function () {
+            return _this2.setState({
+              loaded: true
+            });
+          }, 9000);
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -16469,58 +16973,62 @@ function (_App) {
           page = _this$props.page;
       var _this$state = this.state,
           data = _this$state.data,
-          lang = _this$state.lang;
+          lang = _this$state.lang,
+          loaded = _this$state.loaded;
       if (!data || !data[lang] || !data[lang].labels) return null;
       return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_12__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(DataContext.Provider, {
         value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, data[lang], {
-          changeLanguage: this.changeLanguage
+          lang: lang,
+          changeLanguage: this.changeLanguage,
+          page: page,
+          loaded: loaded
         }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_15__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 103
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", {
-        className: "page page--".concat(page),
+        className: "page page--".concat(page, " ").concat(loaded ? 'loaded' : 'loading'),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 104
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_16__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 105
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 106
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(Component, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 107
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 108
         },
         __self: this
       })))));
@@ -16615,6 +17123,7 @@ var Homepage = function Homepage() {
   }));
 };
 
+Homepage.id = 'home';
 /* harmony default export */ __webpack_exports__["default"] = (Homepage);
 
 /***/ }),

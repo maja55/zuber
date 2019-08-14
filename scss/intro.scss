@@ -16,6 +16,36 @@
     100% { filter: blur(0); opacity: 1; max-height: 77%; }
 }
 
+@keyframes move-logo {
+    0% {
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        width: 50vh;
+    }
+    100% {
+        width: 15vw;
+        bottom: 6%;
+        right: 5%;
+        transform: none;
+    }
+}
+
+@keyframes move-logo-lg {
+    0% {
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        width: 50vh;
+    }
+    100% {
+        width: 125px;
+        bottom: 6%;
+        right: 5%;
+        transform: none;
+    }
+}
+
 .intro {
     overflow: hidden;
     margin-bottom: 0;
@@ -28,7 +58,7 @@
         width: 120%;
         top: 3vh;
         left: -10%;
-        animation: focus 3.5s ease-in;
+        animation: focus 3.5s ease-in 5s both;
     }
 
     .intro__bg-desktop {
@@ -41,20 +71,17 @@
         left: 50%;
         height: 77%;
         transform: translateX(-50%);
-        animation: zoom-in-focus-sm 4s ease-in;
+        animation: zoom-in-focus-sm 4s ease-in 5s both;
     }
 
     .intro__logo {
-        width: 55px;
+        height: auto;
         position: absolute;
-        bottom: 6%;
-        right: 5%;
-    }
-
-    @media screen and (min-width: $screen-md) {
-        .intro__logo {
-            width: 110px;
-        }
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+        width: 50vh;
+        animation: move-logo 1s ease-in 4.5s forwards;
     }
 
     @media screen and (min-width: $screen-md) and (orientation: landscape) {
@@ -65,7 +92,7 @@
             width: 110%;
             top: 0;
             left: -5%;
-            animation: focus 3.5s ease-in;
+            animation: focus 3.5s ease-in 5s both;
         }
     
         .intro__bg-mobile {
@@ -74,7 +101,34 @@
 
         .intro__image {
             height: 90%;
-            animation: zoom-in-focus 4s ease-in;
+            animation: zoom-in-focus 4s ease-in 5s both;
+        }
+
+        .intro__logo {
+            animation: move-logo-lg 1s ease-in 4.5s forwards;
+        }
+    }
+}
+
+.page.loaded {
+    .intro__bg-desktop,
+    .intro__bg-mobile,
+    .intro__image {
+        animation: none;
+    }
+    .intro__logo {
+        animation: none;
+        width: 15vw;
+        bottom: 6%;
+        right: 5%;
+        transform: none;
+
+        @media screen and (min-width: $screen-md) and (orientation: landscape) {
+            width: 125px;
+        }
+
+        * {
+            animation: none;
         }
     }
 }

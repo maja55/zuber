@@ -1,33 +1,30 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Fade } from 'react-reveal';
 
-const createObserver = (el, handleIntersect) => {
+const createObserver = (el, handleIntersect, threshold=0.8) => {
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.8
+        threshold
     };
     const observer = new IntersectionObserver(handleIntersect, options);
 
     observer.observe(el);
 }
 
-const Section = ({ baseClass, titleClass, title, children, flexHeight, name, observeIntersection, disableFade }) => {
-    const [state, setState] = useState({ reveal: false, y: null, scrollUp: false })
+const Section = ({ baseClass, titleClass, title, children, flexHeight, name, observeIntersection, disableFade, threshold, onReveal }) => {
+    const [state, setState] = useState({ reveal: false, y: null })
     const sectionRef = useRef()
 
     useEffect(() => {
-        if (sectionRef.current && observeIntersection) {
+        if (sectionRef.current && observeIntersection && 'IntersectionObserver' in window) {
             createObserver(sectionRef.current, (entries) => {
                 const { isIntersecting, boundingClientRect } = entries[0]
                 const { y } = boundingClientRect
 
-                setState(prevState => ({
-                    y,
-                    reveal: isIntersecting,
-                    scrollUp: prevState.y && y !== prevState.y ? y > prevState.y : prevState.scrollUp
-                }))
-            })
+                setState({ y, reveal: isIntersecting })
+                if (onReveal) onReveal(isIntersecting)
+            }, threshold)
         }
     }, [])
 

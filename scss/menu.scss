@@ -1,5 +1,5 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -20,20 +20,33 @@
     }
 
     img {
-        width: 100px;
+        width: 120px;
         cursor: pointer;
     
         @media screen and (min-width: $screen-xs) {
-            width: 120px;
+            width: 140px;
         }
     
         @media screen and (min-width: $screen-md) {
-            width: 135px;
+            width: 150px;
         }
     
         @media screen and (min-width: $screen-xl) {
-            width: 146px;
+            width: 163px;
         }
+    }
+}
+
+.header,
+.page-heading {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.page.loaded {
+    .header,
+    .page-heading {
+        opacity: 1;
     }
 }
 
@@ -128,7 +141,8 @@
         max-height: 95%;
         max-width: 90%;
         transform: scale(0.5);
-        transition: 0.2s ease 0.2s;
+        transform-origin: bottom center;
+        transition: 0.6s ease-in 0.2s;
     }
 
     ul {
@@ -170,4 +184,21 @@
             }
         }
   }
+}
+
+.toggle-lang {
+    color: $grey;
+
+    button {
+        cursor: pointer;
+
+        &.active {
+            color: $dark;
+            cursor: text;
+        }
+
+        &:hover {
+            color: $dark;
+        }
+    }
 }

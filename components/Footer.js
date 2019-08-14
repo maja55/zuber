@@ -4,8 +4,8 @@ import { DataContext } from '../pages/_app';
 const Footer = () => {
     const { labels, footer } = useContext(DataContext)
     if (!footer) return null;
-    const { instagram, twitter, facebook, email, copyright } = footer
-    const socials = { instagram, twitter, facebook }
+    const { instagram, facebook, email, copyright } = footer
+    const socials = { instagram, facebook }
 
     return (
         <footer>
@@ -15,7 +15,7 @@ const Footer = () => {
                     <ul className="site-footer__social-links">
                         { Object.keys(socials).map((label, index, array) => (
                             <li key={ label }>
-                                <a href={ socials[label] }>{ label }</a>
+                                <a href={ socials[label] } target="_blank" rel="nofollow">{ label }</a>
                                 { index !== array.length - 1 && <span className='divider'>|</span> }
                             </li>
                         )) }

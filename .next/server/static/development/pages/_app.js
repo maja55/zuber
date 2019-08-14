@@ -119,13 +119,11 @@ var Footer = function Footer() {
 
   if (!footer) return null;
   var instagram = footer.instagram,
-      twitter = footer.twitter,
       facebook = footer.facebook,
       email = footer.email,
       copyright = footer.copyright;
   var socials = {
     instagram: instagram,
-    twitter: twitter,
     facebook: facebook
   };
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("footer", {
@@ -171,6 +169,8 @@ var Footer = function Footer() {
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
       href: socials[label],
+      target: "_blank",
+      rel: "nofollow",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
@@ -299,7 +299,7 @@ var Image = function Image(_ref) {
     className: "".concat(baseClass, "__image ").concat(classAddition ? classAddition : ''),
     src: image.imageS,
     sizes: "(max-width: 768px) 100vw, 75vw",
-    srcset: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
+    srcSet: "".concat(image.imageS, " 960w, ").concat(image.imageM, " 1536w, ").concat(image.imageL, " 2400w"),
     alt: alt,
     __source: {
       fileName: _jsxFileName,
@@ -327,25 +327,33 @@ Image.propTypes = {
 /*!**********************************!*\
   !*** ./components/Navigation.js ***!
   \**********************************/
-/*! exports provided: default */
+/*! exports provided: disableScrolling, enableScrolling, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disableScrolling", function() { return disableScrolling; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enableScrolling", function() { return enableScrolling; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
-/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal */ "react-reveal");
+/* harmony import */ var react_reveal__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
+/* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
 var _jsxFileName = "/Users/maja/code/zuber/components/Navigation.js";
 
 
 
 
+
 var navLinks = [{
+  href: '/#home',
+  labelKey: 'home'
+}, {
   href: '/#statistics',
   labelKey: 'statistics'
 }, {
@@ -358,13 +366,11 @@ var navLinks = [{
   href: '/shop',
   labelKey: 'shop'
 }];
-
 var disableScrolling = function disableScrolling() {
   window.onscroll = function () {
     return window.scrollTo(0, 0);
   };
 };
-
 var enableScrolling = function enableScrolling() {
   window.onscroll = function () {};
 };
@@ -375,10 +381,11 @@ var Navigation = function Navigation() {
       isOpen = _useState2[0],
       toggleMenu = _useState2[1];
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_3__["DataContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_pages_app__WEBPACK_IMPORTED_MODULE_4__["DataContext"]),
       labels = _useContext.labels,
       heroimage = _useContext.heroimage,
       page = _useContext.page,
+      lang = _useContext.lang,
       changeLanguage = _useContext.changeLanguage;
 
   var isShop = page === 'shop';
@@ -402,46 +409,46 @@ var Navigation = function Navigation() {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 46
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: "header",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 47
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "menu-btn".concat(isOpen ? ' open' : '').concat(isShop ? ' dark' : ''),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 48
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 49
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 50
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
@@ -449,30 +456,30 @@ var Navigation = function Navigation() {
     onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 56
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
     className: "section section--menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 57
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Image__WEBPACK_IMPORTED_MODULE_5__["default"], {
     image: heroimage,
     baseClass: "menu",
     alt: "Stefan Zuber",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 58
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "t-6",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 59
     },
     __self: this
   }, navLinks.map(function (_ref) {
@@ -483,74 +490,76 @@ var Navigation = function Navigation() {
       className: "cta-hover",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 61
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 62
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 62
       },
       __self: this
     }, labels[labelKey])));
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-    className: "t-8",
+    className: "t-8 toggle-lang",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 65
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick(e) {
       return onLanguageChange(e, 'en');
     },
+    className: lang === 'en' ? 'active' : '',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 66
     },
     __self: this
   }, "EN"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 67
     },
     __self: this
   }, " | "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
     onClick: function onClick(e) {
       return onLanguageChange(e, 'de');
     },
+    className: lang === 'de' ? 'active' : '',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 68
     },
     __self: this
   }, "DE"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "page-heading",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 73
     },
     __self: this
   }, isShop ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     className: "t-6 t-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74
+      lineNumber: 76
     },
     __self: this
   }, labels.shop) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -558,7 +567,7 @@ var Navigation = function Navigation() {
     alt: "Stefan Zuber logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 79
     },
     __self: this
   }))));
@@ -2146,7 +2155,7 @@ function (_App) {
               case 11:
                 _context2.t0 = _context2.sent;
                 _context2.t1 = categories;
-                _context2.t2 = Component.name.toLowerCase();
+                _context2.t2 = Component.id;
                 return _context2.abrupt("return", {
                   data: _context2.t0,
                   categories: _context2.t1,
@@ -2240,12 +2249,32 @@ function (_App) {
 
     _this.state = {
       lang: 'en',
-      data: _this.props.data
+      data: _this.props.data,
+      loaded: _this.props.page !== 'home'
     };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_5__["default"])(MyApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      if (!this.state.loaded) {
+        if (window.location.hash) {
+          this.setState({
+            loaded: true
+          });
+        } else {
+          setTimeout(function () {
+            return _this2.setState({
+              loaded: true
+            });
+          }, 9000);
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -2253,58 +2282,62 @@ function (_App) {
           page = _this$props.page;
       var _this$state = this.state,
           data = _this$state.data,
-          lang = _this$state.lang;
+          lang = _this$state.lang,
+          loaded = _this$state.loaded;
       if (!data || !data[lang] || !data[lang].labels) return null;
       return react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_12__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(DataContext.Provider, {
         value: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, data[lang], {
-          changeLanguage: this.changeLanguage
+          lang: lang,
+          changeLanguage: this.changeLanguage,
+          page: page,
+          loaded: loaded
         }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(react_scroll_parallax__WEBPACK_IMPORTED_MODULE_15__["ParallaxProvider"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 103
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement("div", {
-        className: "page page--".concat(page),
+        className: "page page--".concat(page, " ").concat(loaded ? 'loaded' : 'loading'),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 104
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_Head__WEBPACK_IMPORTED_MODULE_16__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 105
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_Navigation__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 106
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(Component, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 107
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_11___default.a.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 108
         },
         __self: this
       })))));
@@ -2591,6 +2624,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-reveal":
+/*!*******************************!*\
+  !*** external "react-reveal" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-reveal");
 
 /***/ }),
 

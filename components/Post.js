@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { DataContext } from '../pages/_app'
 import { Parallax } from 'react-scroll-parallax';
-import LazyImage, { LazyParalexImage } from './LazyImage';
+import { LazyParalexImage, FadeImage } from './LazyImage';
 
 const splitStringOnSlash = (string) => string ? string.split('/') : []
 
@@ -42,10 +42,10 @@ const Post = ({ type, textColor, heading, description, quotes, footnote, vectorI
                                 <img className="post__image" src={ vectorImage } />
                             </Parallax>
                         : type === 'passion' ?
-                            <LazyImage image={ heroimage } baseClass="post" />
+                            <div className="hero-wrapper"><FadeImage image={ heroimage } baseClass="post" /></div>
                         : image && image.imageS ?
                             <LazyParalexImage 
-                                y={[-5, 10]}
+                                y={[-5, 12]}
                                 image={ image }
                                 baseClass="post" />
                         : null

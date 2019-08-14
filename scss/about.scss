@@ -22,12 +22,16 @@
         margin-bottom: 4vw;
     }
 
+    .post__image {
+        width: 100vw;
+    }
+
     @media screen and (max-width: $screen-md - 1) {
         p,
         .post__heading,
         .post__footnote { 
-            margin-left: 5vw;
-            max-width: 85%;
+            // margin-left: 5vw;
+            max-width: 100%;
         }
 
         .post__heading {
@@ -49,7 +53,7 @@
 
     @media screen and (max-width: $screen-sm - 1) {
         .post__image {
-            margin: 0 -7vw 30px;
+            margin: 0 -7vw 40px;
             min-width: 100vw;
             max-width: 100vw;
         }
@@ -105,6 +109,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .post__heading {
@@ -210,6 +215,7 @@ section.passion {
     @media screen and (min-width: $screen-md) {
         .post__image {     
             left: 4vw;
+            bottom: -10vh;
         }
 
         .post__text h3 {
@@ -218,16 +224,32 @@ section.passion {
     }
 
     @media screen and (max-width: $screen-md - 1) {
-        background-position: 70vw 5vw;
-
-        .post__text {
-            background: linear-gradient(to bottom, transparent 0, $light 40px);
-            padding-top: 60px;
+        background-image: none;
+        margin-bottom: 15vw;
+        
+        .hero-wrapper {
+            background-image: url('/static/svgs/lion_gold.svg');
+            background-position: 0 0;
+            background-size: 50vw auto;
+            background-repeat: no-repeat;
+            padding-top: 40px;
+            margin-top: 25px;
         }
 
         .post__heading {
-            margin-bottom: 0;
+            margin-bottom: 7vw;
         }
+
+        .post__text {
+            order: initial;
+        }
+
+        .post__image {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            margin: 0 auto;
+        } 
     }
 }
 

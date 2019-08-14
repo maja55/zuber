@@ -12,14 +12,14 @@ const Statistics = () => {
 
     return (
         <Section title={ labels.statistics } baseClass="statistics" name="statistics" flexHeight observeIntersection>
-            { ({ reveal, scrollUp }) => (
+            { ({ reveal }) => (
                 <>
-                    <Fade left opposite when={ reveal } mirror={ scrollUp } duration={ 500 } distance="1000px" delay={ 0 }>
+                    <Fade left duration={ 500 } distance="1000px" delay={ 300 }>
                         <img
                             className="statistics__image"
                             src={ image.imageS }
                             sizes="(max-width: 768px) 100vw, 75vw"
-                            srcset={ `${image.imageS} 960w, ${image.imageM} 1536w, ${image.imageL} 2400w` }
+                            srcSet={ `${image.imageS} 960w, ${image.imageM} 1536w, ${image.imageL} 2400w` }
                         />
                     </Fade>
                     <div className="statistics__content">

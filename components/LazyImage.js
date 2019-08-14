@@ -14,7 +14,7 @@ const defaulteImgRevealProps = {
 }
 
 const LazyImage = (props) => (
-    <LazyLoad height={ 200 } offset={ 500 }>
+    <LazyLoad height={ 200 } offset={ 1000 }>
         <Fade top distance={ '20px' }>
             <Image {...props}/>
         </Fade>
@@ -22,7 +22,7 @@ const LazyImage = (props) => (
 )
 
 export const LazyParalexImage = ({ y, ...props }) => (
-    <LazyLoad height={ 200 } offset={ 500 }>
+    <LazyLoad height={ 200 } offset={ 1000 }>
         <Parallax y={ y }>
             <Fade top distance={ '20px' }>
                 <Image {...props}/>
@@ -32,11 +32,17 @@ export const LazyParalexImage = ({ y, ...props }) => (
 )
 
 export const LazyFadeImage = ({ revealProps, ...props }) => (
-    <LazyLoad height={ 200 } offset={ 500 }>
+    <LazyLoad height={ 200 } offset={ 1000 }>
         <Fade {...{ ...defaulteImgRevealProps, ...revealProps }}>
             <Image { ...props }/>
         </Fade>
     </LazyLoad>
+)
+
+export const FadeImage = ({ revealProps, ...props }) => (
+    <Fade {...{ ...defaulteImgRevealProps, ...revealProps }}>
+        <Image { ...props }/>
+    </Fade>
 )
 
 LazyFadeImage.defaultProps = {

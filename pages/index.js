@@ -19,4 +19,6 @@ const Homepage = () => (
     </div>
 )
 
+Homepage.id = 'home'
+
 export default Homepage

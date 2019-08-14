@@ -47,4 +47,6 @@ const About = () => {
     )
 }
 
+About.id = "about"
+
 export default About

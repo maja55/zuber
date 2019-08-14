@@ -46,7 +46,7 @@ $font-xl: 8.3vw; // 120px
 $font-xxl: 11vw; // 140px
 $font-xxxl: 20vw; // 259px
 
-$min-font-xxxs: 11px;
+$min-font-xxxs: 12px;
 $min-font-xxs: 14px;
 $min-font-s: 18px;
 $min-font-l: 28px;
@@ -64,8 +64,8 @@ $min-font-xl: 43px;
 .t-9 { font-size: $font-xxxs; font-family: 'Montserrat', Geneva, sans-serif; text-transform: none; }
 
 @media screen and (max-width: 870px) {
-    .t-8 { font-size: $min-font-xxs; }
-    .t-9 { font-size: $min-font-xxxs; }
+    .t-8 { font-size: $min-font-xxs !important; }
+    .t-9 { font-size: $min-font-xxxs !important; }
 }
 
 @media screen and (max-width: $screen-xs) { 
@@ -100,9 +100,17 @@ $min-font-xl: 43px;
 
 // utils
 .mb-0 { margin-bottom: 0; }
+.d-flex { display: flex; }
+.d-none { display: none; }
 .d-sm-none { @media screen and (min-width: $screen-sm) { display: none; } }
 .d-md-none { @media screen and (min-width: $screen-md) { display: none; } }
-.p-rel { position: realtive; }
+.p-rel { position: relative; }
+.p-abs { position: absolute; }
+.p-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 // global styles
 * {
@@ -152,6 +160,11 @@ button {
     &.page--shop {
         background-color: $light;
     }
+
+    &.loading {
+        height: 100vh;
+        overflow: hidden;
+    }
 }
 
 .section {
@@ -188,7 +201,7 @@ button {
 }
 
 .section-title {
-    margin-bottom: 6vw;
+    margin-bottom: 10vw;
 
     @media screen and (min-width: $screen-sm) {
         margin-bottom: 4vw;
@@ -224,3 +237,5 @@ button {
 @import './footer.scss';
 @import './shop.scss';
 @import './about.scss';
+@import './loader.scss';
+@import './video.scss';

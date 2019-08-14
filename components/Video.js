@@ -1,23 +1,51 @@
-import React, { useContext } from 'react'
-import LazyLoad from 'react-lazyload';
-import { Fade } from 'react-reveal';
-import { DataContext } from '../pages/_app'
+import React, { useContext, useRef } from "react";
+import LazyLoad from "react-lazyload";
+import { Fade } from "react-reveal";
+import { DataContext } from "../pages/_app";
+import Section from './Section';
 
 const Video = () => {
-      const { video } = useContext(DataContext)
-      if (!video) return null;
-      const { url } = video;
-      if (!url) return null;
+    const videoEl = useRef(null);
+    const { video } = useContext(DataContext);
 
-      return (
-        <LazyLoad height={ 400 } offset={ 500 }>
-            <section className="video section section--flex">
+    if (!video) return null;
+
+    const { url, placeholder } = video;
+
+    if (!url) return null;
+
+    const onReveal = (isIntersecting) => {
+        if (videoEl && videoEl.current) {
+            if (isIntersecting) {
+                videoEl.current.play()
+            } else videoEl.current.pause()
+        }
+    }
+
+    return (
+        <LazyLoad height={400} offset={1000}>
+            <Section
+                baseClass="video"
+                flexHeight
+                observeIntersection
+                onReveal={onReveal}
+            >
                 <Fade bottom opposite>
-                    <iframe width="100%" height="600px" src={ url } />
+                    <div className="p-rel">
+                        <video
+                            ref={videoEl}
+                            controls
+                            poster={placeholder}
+                            src={url}
+                            playsInline
+                            style={{ width: "100%" }}
+                            muted
+                        />
+                    </div>
                 </Fade>
-            </section>
+            </Section>
         </LazyLoad>
-    )
-}
+  );
+};
 
-export default Video
+export default Video;

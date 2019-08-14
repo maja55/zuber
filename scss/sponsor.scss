@@ -3,9 +3,14 @@
 }
 
 .sponsor__title {
-    width: 70vw;
+    width: 75vw;
     position: relative;
     margin-right: 10vw;
+
+    @media screen and (min-width: $screen-xs) {
+        width: 70vw;
+    }
+
 }
 
 .sponsor__copy {

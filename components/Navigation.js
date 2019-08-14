@@ -1,26 +1,28 @@
 import React, { useState, useContext } from 'react'
 import Link from 'next/link'
+import { Fade } from 'react-reveal';
 import { DataContext } from '../pages/_app'
 import Image from './Image'
 
 const navLinks = [
+    { href: '/#home', labelKey: 'home' },
     { href: '/#statistics', labelKey: 'statistics' },
     { href: '/#career', labelKey: 'career' },
     { href: '/about', labelKey: 'life' },
     { href: '/shop', labelKey: 'shop' }
 ]
 
-const disableScrolling = () => {
+export const disableScrolling = () => {
     window.onscroll = () => window.scrollTo(0, 0)
 }
 
-const enableScrolling = () => {
+export const enableScrolling = () => {
     window.onscroll = () => {}
 }
 
 const Navigation = () => {
     const [isOpen, toggleMenu] = useState(false)
-    const { labels, heroimage, page, changeLanguage } = useContext(DataContext)
+    const { labels, heroimage, page, lang, changeLanguage } = useContext(DataContext)
     const isShop = page === 'shop'
 
     const onClick = () => {
@@ -60,10 +62,10 @@ const Navigation = () => {
                                 <Link href={ href }><a href={ href }>{ labels[labelKey] }</a></Link>
                             </li>
                         )) }
-                        <li className="t-8">
-                            <button onClick={(e) => onLanguageChange(e, 'en')}>EN</button>
+                        <li className="t-8 toggle-lang">
+                            <button onClick={(e) => onLanguageChange(e, 'en')} className={ lang === 'en' ? 'active' : ''}>EN</button>
                             <span> | </span>
-                            <button onClick={(e) => onLanguageChange(e, 'de')}>DE</button>
+                            <button onClick={(e) => onLanguageChange(e, 'de')} className={ lang === 'de' ? 'active' : ''}>DE</button>
                         </li>
                     </ul>
                 </section>

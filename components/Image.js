@@ -6,7 +6,7 @@ const Image = ({ baseClass, classAddition, image={}, alt }) => (
         className={ `${baseClass}__image ${classAddition ? classAddition : ''}` }
         src={ image.imageS }
         sizes="(max-width: 768px) 100vw, 75vw"
-        srcset={ `${image.imageS} 960w, ${image.imageM} 1536w, ${image.imageL} 2400w` }
+        srcSet={ `${image.imageS} 960w, ${image.imageM} 1536w, ${image.imageL} 2400w` }
         alt={ alt }
     />
 )

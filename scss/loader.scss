@@ -1,0 +1,103 @@
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 110;
+  }
+  40% {
+    stroke-dashoffset: 110;
+  }
+  90% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-small {
+    0% {
+      stroke-dashoffset: 21;
+    }
+    35% {
+      stroke-dashoffset: 21;
+    }
+    65% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+@keyframes draw-reverse-small {
+    0% {
+        stroke-dashoffset: 42;
+    }
+    35% {
+        stroke-dashoffset: 42;
+    }
+    65% {
+        stroke-dashoffset: 21;
+    }
+    100% {
+        stroke-dashoffset: 21;
+    }
+}
+
+@keyframes draw-reverse-medium {
+    0% {
+        stroke-dashoffset: 140;
+    }
+    40% {
+        stroke-dashoffset: 140;
+    }
+    90% {
+        stroke-dashoffset: 70;
+    }
+    100% {
+        stroke-dashoffset: 70;
+    }
+}
+
+.cls-1,.cls-12,.cls-3,.cls-5{fill:none;}
+.cls-2{clip-path:url(#clip-path);}
+.cls-4{clip-path:url(#clip-path-2);}
+.cls-6{clip-path:url(#clip-path-3);}
+.cls-7{clip-path:url(#clip-path-4);}
+.cls-8{clip-path:url(#clip-path-5);}
+.cls-9{clip-path:url(#clip-path-6);}
+.cls-10{clip-path:url(#clip-path-7);}
+.cls-11{clip-path:url(#clip-path-8);}
+.cls-13{clip-path:url(#clip-path-9);}
+.cls-14{clip-path:url(#clip-path-10);}
+.cls-15{clip-path:url(#clip-path-11);}
+.cls-3{stroke-width:4.5px;}
+.cls-12{stroke-width:4.7px;}
+.cls-5{stroke-width:6px;}
+
+.cls-12,.cls-3,.cls-5 {
+    stroke: $light;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 110;
+    stroke-dashoffset: 0;
+    animation: draw 1s ease-in 5 alternate both;
+}
+
+#cl, #cr {
+    stroke-dasharray: 21;
+}
+
+#cr {
+    animation-name: draw-small;
+}
+
+#cl {
+    animation-name: draw-reverse-small;
+    animation-direction: alternate-reverse;
+}
+
+.cc {
+    stroke-dasharray: 70;
+    animation-name: draw-reverse-medium;
+    animation-direction: alternate-reverse;
+}

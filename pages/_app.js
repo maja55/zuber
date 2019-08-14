@@ -50,7 +50,7 @@ class MyApp extends App {
             jsonCategories.map(({ id, name }) => categories[id] = name)
         }
     
-        return { data: await fetchContent('en', categories), categories, page: Component.name.toLowerCase() }
+        return { data: await fetchContent('en', categories), categories, page: Component.id }
     }
 
     constructor(props) {
@@ -59,6 +59,17 @@ class MyApp extends App {
         this.state = {
             lang: 'en',
             data: this.props.data,
+            loaded: this.props.page !== 'home',
+        }
+    }
+
+    componentDidMount() {
+        if (!this.state.loaded) {
+            if (window.location.hash) {
+                this.setState({ loaded: true })
+            } else {
+                setTimeout(() => this.setState({ loaded: true }), 9000)
+            }
         }
     }
 
@@ -82,15 +93,15 @@ class MyApp extends App {
 
     render() {
         const { Component, page, } = this.props;
-        const { data, lang } = this.state;
+        const { data, lang, loaded } = this.state;
 
         if (!data || !data[lang] || !data[lang].labels) return null;
 
         return (
             <Container>
-                <DataContext.Provider value={ { ...data[lang], changeLanguage: this.changeLanguage } }>
+                <DataContext.Provider value={ { ...data[lang], lang, changeLanguage: this.changeLanguage, page, loaded } }>
                     <ParallaxProvider>
-                        <div className={ `page page--${page}` }>
+                        <div className={ `page page--${page} ${loaded ? 'loaded' : 'loading'}` }>
                             <Head />
                             <Navigation />
                             <Component />

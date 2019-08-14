@@ -14,12 +14,14 @@ const Shop = () => {
                 { hasProducts ?
                     products.map((product) => <ProductItem product={ product } key={ product.name } />) :
                     <Fade right opposite duration={ 500 } distance="1000px" delay={ 200 }>
-                        <h1 className="t-center" style={{ height: '45vh', paddingTop: '20vh' }}>{labels.comingSoon || 'Coming soon'}</h1>
+                        <h1 className="t-center" style={{ height: '40vh', paddingTop: '20vh' }}>{labels.comingSoon || 'Coming soon'}</h1>
                     </Fade>
                 }
             </div>
         </Section>
     )
 }
+
+Shop.id = 'shop'
 
 export default Shop

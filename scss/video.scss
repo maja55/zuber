@@ -1,0 +1,37 @@
+video:focus {
+    outline: none;
+}
+
+.video__button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    @media screen and (min-width: $screen-lg) {
+        bottom: 20px;
+        left: 30px;
+    }
+
+    &:hover {
+        color: white;
+    }
+
+    .loader {
+        width: 30px;
+        height: auto;
+
+        .cls-12,.cls-3,.cls-5 {
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+.video {
+    @media screen and (max-width: $screen-sm - 1) {
+        padding: 6vh 0;
+    }
+
+    video {
+        background-color: rgba(255, 255, 255, .1);
+    }
+}

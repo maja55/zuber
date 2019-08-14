@@ -8,15 +8,14 @@ import { LazyFadeImage } from './LazyImage';
 const Fifa = () => {
     const { labels, fifa } = useContext(DataContext);
     if (!fifa) return null;
-    const { copy, minutesCount, gamesCount, goalsCount, ...image } = fifa
+    const { heading, copy, minutesCount, gamesCount, goalsCount, ...image } = fifa
 
     return (
         <Section baseClass="fifa" name="fifa" flexHeight>
             <div className="fifa__content">
-                <Fade bottom opposite cascade delay={ 50 }>
+                <Fade bottom delay={ 50 }>
                     <div className="fifa__top t-gold t-3">
-                        <div>{ labels.fifaWorldCup } 2019</div>
-                        <div>{ labels.statistics }</div>
+                        { heading }
                     </div>
                 </Fade>
                 <LazyFadeImage baseClass="fifa" image={ image } />
