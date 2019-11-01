@@ -2258,7 +2258,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/maja/code/zuber/pages/_document.js";
+var _jsxFileName = "/Users/maja/Code/ZuberSite/pages/_document.js";
 
 
 

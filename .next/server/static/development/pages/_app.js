@@ -108,7 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
 
-var _jsxFileName = "/Users/maja/code/zuber/components/Footer.js";
+var _jsxFileName = "/Users/maja/Code/ZuberSite/components/Footer.js";
 
 
 
@@ -224,7 +224,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/maja/code/zuber/components/Head.js";
+var _jsxFileName = "/Users/maja/Code/ZuberSite/components/Head.js";
 
 
 
@@ -285,7 +285,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/maja/code/zuber/components/Image.js";
+var _jsxFileName = "/Users/maja/Code/ZuberSite/components/Image.js";
 
 
 
@@ -344,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/_app */ "./pages/_app.js");
 /* harmony import */ var _Image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Image */ "./components/Image.js");
 
-var _jsxFileName = "/Users/maja/code/zuber/components/Navigation.js";
+var _jsxFileName = "/Users/maja/Code/ZuberSite/components/Navigation.js";
 
 
 
@@ -2038,7 +2038,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/maja/code/zuber/pages/_app.js";
+var _jsxFileName = "/Users/maja/Code/ZuberSite/pages/_app.js";
 
 
 
