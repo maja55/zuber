@@ -11,7 +11,7 @@ const Clubs = () => {
 
     if (!clubs || !clubs.length) return null;
 
-    const sortedClubs = clubs.sort((a, b) => (a.startYear > b.startYear) ? 1 : -1)
+    const sortedClubs = clubs.sort((a, b) => (!a.endYear || a.startYear > b.startYear || a.endYear > b.endYear) ? 1 : -1)
     const [activeClub, setActiveClub ] = useState(sortedClubs.length - 1)
     const [fade, setFade ] = useState(true)
     const [transitionClass, setTransitionClass ] = useState('')
@@ -34,7 +34,7 @@ const Clubs = () => {
                         <div className="club__top">
                             <ul className="clubs__menu t-7 t-grey">
                                 { sortedClubs.map(({ name, startYear }, index) => (
-                                    <Fade key={ name } bottom opposite delay={ index * 200 } duration={ 200 }>
+                                    <Fade key={ `${name}-${index}` } bottom opposite delay={ index * 200 } duration={ 200 }>
                                         <li className={ `clubs__menu-item cta-hover${index === activeClub ? ' active t-light' : ''}` }>
                                             <button onClick={ () => onClick(index) }>
                                                 { startYear } - { name }
@@ -45,7 +45,7 @@ const Clubs = () => {
                             </ul>
                             <div className="club-bg__wrapper d-flex">
                                 { sortedClubs.map(({ name, imageBgS, imageBgM, imageBgL }, index) => (
-                                    <div key={ `${name} Stadium` } className={ `club-bg${(reveal || !fade) && index === activeClub ? ' active' : ''}` }>
+                                    <div key={ `${name}-${index} Stadium` } className={ `club-bg${(reveal || !fade) && index === activeClub ? ' active' : ''}` }>
                                         <Image
                                             baseClass='club-bg'
                                             alt={ `${name} Stadium` }
@@ -67,7 +67,7 @@ const Clubs = () => {
                                 <img className="club__logo" src={ logo } alt={ `${name} Coat of Arms` } />
                             </Fade>
                             <CountBar
-                                key={ name }
+                                key={ `${name}-${endYear}` }
                                 baseClass="club"
                                 revealProps={{ delay: 500 }}
                                 isVertical
@@ -79,7 +79,7 @@ const Clubs = () => {
                             />
                         </div>
                         { sortedClubs.map(({ name, imageS, imageM, imageL }, index) => (
-                            <div key={ `${name} player` } className={`club-player ${(reveal || !fade) && index === activeClub ? ' active' : ''}`}>
+                            <div key={ `${name}-${index} player` } className={`club-player ${(reveal || !fade) && index === activeClub ? ' active' : ''}`}>
                                 <Image
                                     baseClass='club-top'
                                     alt={ `Steven Zuber in ${name}` }
