@@ -16,7 +16,7 @@ const MULTIPOST_CATEGORIES = ['clubs', 'life', 'love', 'passion', 'hobby', 'prod
 export const DataContext = createContext();
 
 const fetchContent = async (lang, categoriesMap) => {
-    const res = await fetch(`http://35.228.27.202/index.php/wp-json/wp/v2/posts?per_page=50&lang=${lang}`)
+    const res = await fetch(`http://35.228.154.255/index.php/wp-json/wp/v2/posts?per_page=50&lang=${lang}`)
     const jsonResponse = await res.json()
     const data = {}
 
@@ -42,7 +42,7 @@ const fetchContent = async (lang, categoriesMap) => {
 
 class MyApp extends App {
     static async getInitialProps({ Component }) {
-        const cat = await fetch('http://35.228.27.202/index.php/wp-json/wp/v2/categories')
+        const cat = await fetch('http://35.228.154.255/index.php/wp-json/wp/v2/categories')
         const jsonCategories = await cat.json()
         const categories = {}
     
